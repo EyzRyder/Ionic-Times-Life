@@ -1,0 +1,7 @@
+{
+  "name": "Times Life",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
