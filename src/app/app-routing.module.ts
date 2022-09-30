@@ -10,6 +10,22 @@ const routes: Routes = [
   {
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  },
+  {
+    path: 'dashborad',
+    loadChildren: () => import('./pages/dashborad/dashborad.module').then( m => m.DashboradPageModule)
+  },
+  {
+    path: 'metas',
+    loadChildren: () => import('./pages/metas/metas.module').then( m => m.MetasPageModule)
+  },
+  {
+    path: 'saude',
+    loadChildren: () => import('./pages/saude/saude.module').then( m => m.SaudePageModule)
+  },
+  {
+    path: 'blogs',
+    loadChildren: () => import('./pages/blogs/blogs.module').then( m => m.BlogsPageModule)
   }
 ];
 
