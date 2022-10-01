@@ -8,5 +8,11 @@
 </ion-header>
 
 <ion-content>
-<h1>oi</h1>
+<ion-card>
+  Ola, usuário <br>
+  seu imc é {{imc}}
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/Grafico_3_-_Rela%C3%A7%C3%A3o_entre_IMC_e_o_grau_de_incontin%C3%AAncia_urin%C3%A1ria.png" alt="gráfico">
+</ion-card>
+
+<ion-button expand="block" fill="outline" (click)="alertaEntrada()">Calcular IMC</ion-button>
 </ion-content>
