@@ -37,12 +37,12 @@ export class DashboradPage implements OnInit {
         {
           name: 'inputPeso',
           type: 'number',
-          placeholder: 'Digite peso',
+          placeholder: 'Digite peso em kg',
         },
         {
           name: 'inputAltura',
           type: 'number',
-          placeholder: 'Digite altura',
+          placeholder: 'Digite altura em m',
         },
         {
           name: 'inputNascimento',
@@ -68,7 +68,7 @@ export class DashboradPage implements OnInit {
             this.idade = valor['inputIdade'];
             this.peso = valor['inputPeso'];
             this.altura = valor['inputAltura'];
-            this.imc = this.peso / this.altura;
+            this.imc = this.peso / (this.altura*2);
           }
         }
       ]
