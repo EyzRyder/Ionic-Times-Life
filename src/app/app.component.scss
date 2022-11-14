@@ -148,3 +148,19 @@ ion-note {
 ion-item.selected {
   --color: #6FE7DB;
 }
+
+// .loginOptions {
+//   --background: rgba(208, 161, 219, 0.6);
+//   --backdrop-opacity: 0.6;
+//   --box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.6);
+//   --color: white;
+//   --width: 300px;
+// }
+
+// .loginOptions ion-content {
+//   --background: rgba(40, 173, 218, 0.6);
+// }
+
+ion-popover.loginOptions::part(backdrop) {
+  background-color: rgba(170, 119, 190, 0.212);
+}

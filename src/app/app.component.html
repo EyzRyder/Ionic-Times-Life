@@ -2,12 +2,23 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <div class="menu-header-bg"></div>
-      <div class="header-content">
+      <div *ngIf="!this.userAuthService.isLoggedIn == true" class="header-content" id="popover-button">
         <img src="https://avatars.githubusercontent.com/u/85580011?v=4" alt="Foto de perfil">
         <ion-label>
           <h2>Eyz Ryder</h2>
         </ion-label>
       </div>
+      <ion-popover class="loginOptions" trigger="popover-button" [dismissOnSelect]="true">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              <ion-item [button]="true" routerLink="/user" [detail]="false">Usuário</ion-item>
+              <ion-item [button]="true" [detail]="false" routerLink="/config">Configuração</ion-item>
+              <ion-item [button]="true" [detail]="false">Log out</ion-item>
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
       <ion-content>
         
         <ion-list id="inbox-list" >
