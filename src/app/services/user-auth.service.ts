@@ -86,7 +86,11 @@ export class UserAuthService {
             let user = {
               id: userAuthData.user.uid,
               email: email,
-              username: username
+              username: username,
+              genero: '',
+              dataNasc: '',
+              altura: '',
+              peso: ''
             };
             this.db.collection("users").doc(user.id).set(user).then(userData => {
               resolve(userData);
