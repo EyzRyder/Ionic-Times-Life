@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
+import { AppComponent } from '../../app.component'
+
 
 @Component({
   selector: 'app-dashborad',
@@ -18,6 +20,7 @@ export class DashboradPage implements OnInit {
   constructor(
     public toastController: ToastController,
     public alertController: AlertController,
+    public appComponent: AppComponent,
     public router: Router
   ) { }
 
