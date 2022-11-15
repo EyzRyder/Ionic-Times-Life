@@ -10,11 +10,6 @@ export class AppComponent {
   user;
   name;
   imc;
-  sexo;
-  dataNasc;
-  idade;
-  altura;
-  peso;
   observacaoImc;
   headerText = 'Sign Up';
 
@@ -30,22 +25,20 @@ export class AppComponent {
   constructor(
     public userAuthService: UserAuthService,
   ) {
-    this.name = 'Bessi';
+    this.userAuthService.userObservable.subscribe((userData) => {
+      this.user = userData;
+    })
   }
 
 
   getLoginButtonText() {
     if (this.user == null) {
-      this.name = 'pessoa';
-      return this.headerText = 'Login';
+      return this.name = 'pessoa';
     } else {
-      this.name = this.user.username;
-
-      if (this.user.imc) {
-        this.idade = (new Date().getFullYear() - parseInt((this.user.dataNasc).substring(0, 4)));
+        // this.idade = (new Date().getFullYear() - parseInt((this.user.dataNasc).substring(0, 4)));
         this.imc = this.user.imc;
-      }
-      return ;
+      
+      return this.name = this.user.username;
     }
   }
 
