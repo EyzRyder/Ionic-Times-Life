@@ -1,12 +1,19 @@
 ion-card {
     --background: hsla(286, 80%, 50%, 0.589);
     --color: #9efff0;
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    position: relative;
+    height: 250px;
     display: flex;
     align-items: center;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 40px;
+    margin-right: 50px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
 
     img {
         width: 80px;
@@ -14,7 +21,7 @@ ion-card {
         border-radius: 50%;
         border: 7px solid rgba(82, 255, 229, 0.795);
         margin-right: 14px;
-        }
+    }
 
 }
 
