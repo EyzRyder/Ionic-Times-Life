@@ -10,6 +10,7 @@ export class AppComponent {
   user;
   name;
   imc;
+  pic;
   headerText = 'Sign Up';
 
   public appPages = [
@@ -36,6 +37,7 @@ export class AppComponent {
     } else {
         // this.idade = (new Date().getFullYear() - parseInt((this.user.dataNasc).substring(0, 4)));
       this.imc = this.user.imc;
+      this.pic = this.user.profilePic;
       return this.name = this.user.username;
     }
   }
