@@ -7,36 +7,44 @@
     font-size: 16px;
     font-family: "Work Sans";
 
-    .login {
-        // position: absolute;
-        // top: 111px;
-        // left: 156px;
-
-        cursor: auto;
-        border: 0;
+    .buttonLogin {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 90px;
+        margin-right: 100px;
         // padding: 10px 16px;
-        border-radius: 20px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        box-sizing: border-box;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
 
-        label {
-            position: relative;
-            font-size: 14px;
-            letter-spacing: 0.2px;
-            line-height: 20px;
-            font-weight: 500;
-            font-family: "Work Sans";
-            text-align: left;
-            display: inline-block;
+        .login {
+            // position: absolute;
+            // top: 111px;
+            // left: 156px;
+
+            cursor: auto;
+            border: 0;
+            // padding: 10px 16px;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+
+            label {
+                position: relative;
+                font-size: 14px;
+                letter-spacing: 0.2px;
+                line-height: 20px;
+                font-weight: 500;
+                font-family: "Work Sans";
+                text-align: left;
+                display: inline-block;
+            }
         }
     }
 
-        .login:hover {
+    .login:hover {
         cursor: pointer;
     }
 
@@ -131,7 +139,9 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin: 5px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
         // position: absolute;
         // top: 194px;
         // left: 16px;
@@ -140,22 +150,23 @@
         gap: 12px;
 
         .pills-select {
-                border-radius: 20px;
-                border: 2px solid #24ce8d;
-                box-sizing: border-box;
-                overflow: hidden;
-                padding: 8px 16px;
-                align-items: center;
-                gap: 8px;
-            }
+            border-radius: 20px;
+            border: 2px solid #24ce8d;
+            box-sizing: border-box;
+            overflow: hidden;
+            padding: 8px 16px;
+            align-items: center;
+            gap: 8px;
+        }
     }
-    .carroseu{
-        img{
+
+    .carroseu {
+        img {
             position: relative;
-                margin: 15px;
-                box-sizing: border-box;
-                display: flex;
-                padding: 8px 8px 12px;
+            margin: 15px;
+            box-sizing: border-box;
+            display: flex;
+            padding: 8px 8px 12px;
         }
     }
 }
