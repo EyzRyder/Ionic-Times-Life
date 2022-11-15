@@ -13,7 +13,7 @@ export class DashboradPage implements OnInit {
   peso: number;
   altura: number;
   sexo: string;
-  imc: number;
+  imc;
 
   constructor(
     public toastController: ToastController,
@@ -68,7 +68,7 @@ export class DashboradPage implements OnInit {
             this.idade = valor['inputIdade'];
             this.peso = valor['inputPeso'];
             this.altura = valor['inputAltura'];
-            this.imc = this.peso / (this.altura*2);
+            this.imc = ((this.peso / (this.altura * this.altura )).toFixed(1));
           }
         }
       ]
