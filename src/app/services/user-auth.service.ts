@@ -78,7 +78,7 @@ export class UserAuthService {
     })
   }
 
-  public createUser(email, password, username) {
+  public createUser(email, password, username, genero, dataNasc, altura, peso) {
     return new Promise((resolve, reject) => {
       this.checkUserName(username).then(isTaken => {
         if (isTaken) {
@@ -89,10 +89,11 @@ export class UserAuthService {
               id: userAuthData.user.uid,
               email: email,
               username: username,
-              genero: '',
-              dataNasc: '',
+              genero: genero,
+              dataNasc: dataNasc,
               altura: '',
-              peso: ''
+              peso: '',
+              imc: '',
             };
             this.db.collection("users").doc(user.id).set(user).then(userData => {
               resolve(userData);
@@ -100,6 +101,7 @@ export class UserAuthService {
               .catch(error => {
                 reject(error);
               })
+            this.IMC(user.id, user, altura, peso);
           }).catch(error => {
             reject("This email is already in use");
           })
@@ -130,9 +132,9 @@ export class UserAuthService {
     })
   }
 
-  public RegistrarDados(id, userid, sexo, dataNasc, altura, peso) {
+  public RegistrarDados(id, userData, sexo, dataNasc, altura, peso) {
     return new Promise((resolve, reject) => {
-      let user = userid;
+      let user = userData;
       user.genero = sexo;
       user.dataNasc = dataNasc;
       this.db.collection("users").doc(id).set(user).then(userData => {
@@ -141,14 +143,14 @@ export class UserAuthService {
         .catch(error => {
           reject(error);
         })
-      this.IMC(id, userid, altura, peso);
+      this.IMC(id, userData, altura, peso);
     })
   }
 
-  public IMC(id, userid, altura, peso) {
+  public IMC(id, userData, altura, peso) {
     return new Promise((resolve, reject) => {
       let IMC = (peso / (altura * altura)).toFixed(1);
-      let user = userid;
+      let user = userData;
       user.altura = altura;
       user.peso = peso;
       user.imc = IMC;

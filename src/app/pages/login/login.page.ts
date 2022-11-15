@@ -78,13 +78,13 @@ export class LoginPage implements OnInit {
         this.presentToast('Por favor coloque seu data de nascimento', 'danger');
         return;
       }
-      console.log('Nome - ' + this.userNameInput + ' Email - ' + this.emailInput + ' senha - ' + this.passwordInput + ' Peso - ' + this.peso + ' altura - ' + this.altura + ' sexo - ' + this.sexo + ' Data - ' + this.dataNasc.substring(0, 10))
-      // this.userAuthService.createUser(this.emailInput, this.passwordInput, this.userNameInput).then(userData => {
-      //   this.presentToast("Obrigado por se cadastrar", "success");
-      //   this.location.back();
-      // }).catch(errorMsg => {
-      //   this.presentToast(errorMsg, "danger");
-      // });
+
+      this.userAuthService.createUser(this.emailInput, this.passwordInput, this.userNameInput, this.sexo, this.dataNasc.substring(0, 10), this.altura, this.peso).then(userData => {
+        this.presentToast("Obrigado por se cadastrar", "success");
+        this.location.back();
+      }).catch(errorMsg => {
+        this.presentToast(errorMsg, "danger");
+      });
     }
   }
 
