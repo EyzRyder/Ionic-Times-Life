@@ -2,32 +2,37 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <div class="menu-header-bg"></div>
-      <div *ngIf="this.userAuthService.isLoggedIn == true" class="header-content" id="popover-button">
+      <ion-button routerLink="/login" class="header-content" *ngIf="!this.userAuthService.isLoggedIn">
+        LogIn
+      </ion-button>
+      <div *ngIf="this.userAuthService.isLoggedIn == true">
+      <div class="header-content" id="popover-button">
         <img src="https://avatars.githubusercontent.com/u/85580011?v=4" alt="Foto de perfil">
         <ion-label>
           <h2>{{name}}</h2>
         </ion-label>
       </div>
-<ion-button routerLink="/login" class="header-content" *ngIf="!this.userAuthService.isLoggedIn == true"> LogIn</ion-button>
-      <ion-popover class="loginOptions" trigger="popover-button" [dismissOnSelect]="true">
+      <ion-popover  class="loginOptions" trigger="popover-button" [dismissOnSelect]="true">
         <ng-template>
           <ion-content>
             <ion-list>
               <ion-item [button]="true" routerLink="/user" [detail]="false">Usuário</ion-item>
               <ion-item [button]="true" [detail]="false" routerLink="/config">Configuração</ion-item>
-              <ion-item [button]="true" [detail]="false">Log out</ion-item>
+              <ion-item [button]="true" [detail]="false"  (click)="this.userAuthService.logout();">Log out</ion-item>
             </ion-list>
           </ion-content>
         </ng-template>
       </ion-popover>
+      </div>
       <ion-content>
-        
-        <ion-list id="inbox-list" >
+
+        <ion-list id="inbox-list">
           <!-- <ion-list-header class="pinkesh">Times Saúde</ion-list-header>
           <ion-note>Oi Amanda Campbell</ion-note> -->
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
+            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false"
+              routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
               <ion-label class="pinkesh">{{ p.title }}</ion-label>
             </ion-item>
