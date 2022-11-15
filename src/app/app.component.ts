@@ -29,5 +29,24 @@ export class AppComponent {
   public labels = ['beba 2L de água por dia', 'Coma de 3 horas e 3 hora', '16:30 tomar remedia'];
   constructor(
     public userAuthService: UserAuthService,
-  ) {}
+  ) {
+    this.name = 'Bessi';
+  }
+
+
+  getLoginButtonText() {
+    if (this.user == null) {
+      this.name = 'pessoa';
+      return this.headerText = 'Login';
+    } else {
+      this.name = this.user.username;
+
+      if (this.user.imc) {
+        this.idade = (new Date().getFullYear() - parseInt((this.user.dataNasc).substring(0, 4)));
+        this.imc = this.user.imc;
+      }
+      return ;
+    }
+  }
+
 }

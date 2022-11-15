@@ -1,0 +1,37 @@
+.container {
+    margin: auto;
+    display: flex;
+    // width: 36.749125em;
+    width: 100%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.login-template {
+    height: auto;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+ion-input {
+    border: 1px solid #6FE7DB;
+    border-radius: 5px;
+    margin-bottom: 3%;
+}
+
+.header-text {
+    font-size: 1.5em;
+    margin-top: 1em;
+}
+
+.change-template-link {
+    margin-bottom: 3%;
+}
+
+.submit-button {
+    margin-top: 1%;
+}

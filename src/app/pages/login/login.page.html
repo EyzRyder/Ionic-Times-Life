@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+<div class="container">
+  <div class="login-template">
+    <p class="header-text">{{userAuthService.headerText}}</p>
+    <ion-input *ngIf="userAuthService.state == 'signup'" [(ngModel)]="userNameInput" placeholder="Enter User name">
+    </ion-input>
+    <ion-input type="email" [(ngModel)]="emailInput" placeholder="Enter Email"></ion-input>
+    <ion-input type="password" *ngIf="userAuthService.state != 'forgotPassword'" [(ngModel)]="passwordInput"
+      placeholder="Enter Password"></ion-input>
+    <a *ngIf="userAuthService.state!='signup'" (click)="userAuthService.changeState('signup')"
+      class="change-template-link" href="javascript:;">Don't
+      have an account? Click here to sign up!</a>
+    <a *ngIf="userAuthService.state=='login'" (click)="userAuthService.changeState('forgotPassword')"
+      class="change-template-link" href="javascript:;">Forgot your password?</a>
+    <a *ngIf="userAuthService.state != 'login'" (click)="userAuthService.changeState('login')"
+      class="change-template-link" href="javascript:;">Already
+      have an account? Click here to login</a>
+    <ion-button (click)="submit()" class="submit-button" color="primary">Submit</ion-button>
+  </div>
+</div>
 </ion-content>
