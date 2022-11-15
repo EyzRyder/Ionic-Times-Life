@@ -13,6 +13,15 @@ export class LoginPage implements OnInit {
   userNameInput = '';
   emailInput = '';
   passwordInput = '';
+  
+  imc;
+  sexo;
+  dataNasc;
+  idade;
+  altura;
+  peso;
+  observacaoImc;
+  headerText = 'Sign Up';
 
   constructor(
     public toastController: ToastController,
@@ -28,7 +37,7 @@ export class LoginPage implements OnInit {
 
   submit() {
     if (!this.validateEmail(this.emailInput)) {
-      this.presentToast('Please enter a valid email', 'danger');
+      this.presentToast('Por favor coloque um email valido', 'danger');
       return;
     }
     if (this.userAuthService.state != 'forgotPassword' && (this.passwordInput.length < 8 || this.passwordInput == "")) {
@@ -36,28 +45,46 @@ export class LoginPage implements OnInit {
       return;
     }
     if (this.userAuthService.state == 'signup' && this.userNameInput == "") {
-      this.presentToast('Please enter a username', 'danger');
+      this.presentToast('Por favor coloque um nome de usuário', 'danger');
       return;
     }
 
     //End of validation
     if (this.userAuthService.state == 'login') {
       this.userAuthService.login(this.emailInput, this.passwordInput).then(() => {
-        this.presentToast("You have login", "success");
+        this.presentToast("Você está logado", "success");
         this.location.back();
       });
     } else if (this.userAuthService.state == 'signup') {
-      this.userAuthService.createUser(this.emailInput, this.passwordInput, this.userNameInput).then(userData => {
-        this.presentToast("thank you for signing up", "success");
-        this.location.back();
-      }).catch(errorMsg => {
-        this.presentToast(errorMsg, "danger");
-      });
+      this.userAuthService.changeState('form');
+      return
     } else if (this.userAuthService.state == 'forgotPassword') {
       this.userAuthService.sendForgotPassword(this.emailInput).then(() => {
         this.presentToast("Reset Password email has been sent", "success");
         this.location.back();
       });
+    } else if (this.userAuthService.state == 'form') {
+
+      if (!this.peso || this.peso < 0) {
+        this.presentToast('Por favor digite seu peso', 'danger');
+        return;
+      } else if (!this.altura || this.altura < 0) {
+        this.presentToast('Por favor digite sua altura', 'danger');
+        return;
+      } else if (!this.sexo) {
+        this.presentToast('Por favor selecione seu gênero', 'danger');
+        return;
+      } else if (!this.dataNasc) {
+        this.presentToast('Por favor coloque seu data de nascimento', 'danger');
+        return;
+      }
+      console.log('Nome - ' + this.userNameInput + ' Email - ' + this.emailInput + ' senha - ' + this.passwordInput + ' Peso - ' + this.peso + ' altura - ' + this.altura + ' sexo - ' + this.sexo + ' Data - ' + this.dataNasc.substring(0, 10))
+      // this.userAuthService.createUser(this.emailInput, this.passwordInput, this.userNameInput).then(userData => {
+      //   this.presentToast("Obrigado por se cadastrar", "success");
+      //   this.location.back();
+      // }).catch(errorMsg => {
+      //   this.presentToast(errorMsg, "danger");
+      // });
     }
   }
 

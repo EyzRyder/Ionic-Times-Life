@@ -30,6 +30,8 @@ export class UserAuthService {
       this.headerText = 'Sign Up';
     } else if (this.state === 'forgotPassword') {
       this.headerText = 'Forgot Password';
+    } else if (this.state === 'form') {
+      this.headerText = 'Form';
     }
   }
 
