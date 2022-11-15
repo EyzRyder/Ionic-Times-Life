@@ -13,7 +13,7 @@
 </ion-header>
 
 <ion-content class="home-page-div">
-        <ion-button class="login" autofocus>
+        <ion-button *ngIf="!this.userAuthService.isLoggedIn" class="login" routerLink="/login" >
           <label>Faça Login</label>
         </ion-button>
 
