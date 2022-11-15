@@ -19,10 +19,10 @@ export class AppComponent {
   headerText = 'Sign Up';
 
   public appPages = [
+    { title: 'Home', url: '/home', icon: 'newspaper' },
     { title: 'Dashboard', url: '/dashborad', icon: 'bar-chart' },
     { title: 'Metas', url: '/metas', icon: 'barbell' },
     { title: 'Saúde', url: '/saude', icon: 'heart' },
-    { title: 'Blogs', url: '/blogs', icon: 'newspaper' },
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
     // { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
   ];
