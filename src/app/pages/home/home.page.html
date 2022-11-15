@@ -1,12 +1,52 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
+<ion-header color="transparent">
+  <ion-toolbar color="transparent">
+    <ion-buttons class="group-div" slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Home</ion-title>
+
+    <ion-title>
+          <div>
+            Home
+            </div>
+          </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="home-page-div">
+        <ion-button class="login" autofocus>
+          <label>Faça Login</label>
+        </ion-button>
 
+        <div class="selctions">
+          <ion-select interface="popover" placeholder="Selecione" class="pills-select">
+            <ion-select-option value="Remédio">Remedio</ion-select-option>
+          </ion-select>
+          <ion-select interface="popover" placeholder="Selecione" class="pills-select" autofocus="">
+            <ion-select-option value="Saude">Saúde</ion-select-option>
+            <ion-select-option value="Nutricao">Nutrição</ion-select-option>
+          </ion-select>
+          <ion-select interface="popover" placeholder="Selecione" class="pills-select">
+            <ion-select-option value="Fisica">Física</ion-select-option>
+            <ion-select-option  value="Malhacao">Malhação</ion-select-option>
+          </ion-select>
+        </div>
+
+        <div class="carroseu">
+          <img class="placeholder-icon" alt="" src="../../../assets/03-placeholder--icon.svg">
+        </div>
+
+      <div class="frame-div">
+        <img class="placeholder-icon" alt="" src="../../../assets/03-placeholder--icon.svg" />
+        <div class="frame-div1">
+          <label class="title-label">Kawa Ijen</label>
+          <div class="text-medium-div">
+            <img class="iconlylight-outlinelocation" alt="" src="../../../assets/iconlylightoutlinelocation.svg" /><label
+              class="text-label">
+              <div class="label-div">Jawa Timur, Indonesia</div>
+            </label>
+          </div>
+        </div>
+        <img class="icon-button" alt="" src="../../../assets/icon-button.svg" />
+      </div>
+      
 </ion-content>

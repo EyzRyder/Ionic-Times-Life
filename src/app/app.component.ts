@@ -9,8 +9,6 @@ import { UserAuthService } from './services/user-auth.service';
 export class AppComponent {
   user;
   name;
-  imc;
-  observacaoImc;
   headerText = 'Sign Up';
 
   public appPages = [
@@ -36,8 +34,6 @@ export class AppComponent {
       return this.name = 'pessoa';
     } else {
         // this.idade = (new Date().getFullYear() - parseInt((this.user.dataNasc).substring(0, 4)));
-        this.imc = this.user.imc;
-      
       return this.name = this.user.username;
     }
   }

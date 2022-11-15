@@ -1,0 +1,33 @@
+ion-card {
+    --background: hsla(286, 80%, 50%, 0.589);
+    --color: #9efff0;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 7px solid rgba(82, 255, 229, 0.795);
+        margin-right: 14px;
+        }
+
+}
+
+ion-card-title {
+    --color: #52ffe4;
+}
+
+ion-card-subtitle {
+    --color: #d1fff8;
+}
+
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+}

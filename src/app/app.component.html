@@ -7,9 +7,9 @@
       </ion-button>
       <div *ngIf="this.userAuthService.isLoggedIn == true">
       <div class="header-content" id="popover-button">
-        <img src="https://ionicframework.com/docs/img/demos/card-media.png" alt="Foto de perfil">
+        <img src="../assets/Avatar.svg" alt="Foto de perfil">
         <ion-label>
-          <h2>{{getLoginButtonText()}}</h2>
+          <h1>Bem vindo</h1> <h2><b> <ion-label color="success">{{getLoginButtonText()}} </ion-label></b> </h2> 
         </ion-label>
       </div>
       <ion-popover  class="loginOptions" trigger="popover-button" [dismissOnSelect]="true">
