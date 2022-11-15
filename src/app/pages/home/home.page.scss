@@ -44,17 +44,13 @@
         }
     }
 
-    .login:hover {
-        cursor: pointer;
-    }
-
     .frame-div {
         position: relative;
         margin: 15px;
         // top: 516px;
         // left: 19px;
         border-radius: 12px;
-        background-color: rgb(190, 26, 231);
+        background-color: rgba(199, 99, 224, 0.692);
         border: 1px solid var(--background);
         box-sizing: border-box;
         display: flex;
