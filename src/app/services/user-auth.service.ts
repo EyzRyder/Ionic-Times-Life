@@ -94,6 +94,7 @@ export class UserAuthService {
               altura: '',
               peso: '',
               imc: '',
+              profilePic:'https://firebasestorage.googleapis.com/v0/b/times-new-life.appspot.com/o/img%2FAvatar.svg?alt=media&token=930a25ad-6a2b-449a-b4b2-694177b3206b',
             };
             this.db.collection("users").doc(user.id).set(user).then(userData => {
               resolve(userData);
