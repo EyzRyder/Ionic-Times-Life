@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AppComponent } from '../../app.component';
+import { UserAuthService } from '../../services/user-auth.service';
 @Component({
   selector: 'app-metas',
   templateUrl: './metas.page.html',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MetasPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public appComponent: AppComponent,
+    public userAuthService: UserAuthService,
+  ) { }
 
   ngOnInit() {
   }

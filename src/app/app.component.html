@@ -2,12 +2,10 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <div class="menu-header-bg"></div>
-      <ion-button routerLink="/login" class="header-content" *ngIf="!this.userAuthService.isLoggedIn">
-        LogIn
-      </ion-button>
-      <div *ngIf="this.userAuthService.isLoggedIn == true">
-        <div class="header-content" id="popover-button">
-          <img src={{this.user.profilePic}} alt="Foto de perfil">
+      <div >
+        <div class="header-content">
+          <img routerLink="/login" *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.perfilpadrao}} alt="Foto de perfil">
+          <img id="popover-button" *ngIf="this.userAuthService.isLoggedIn == true" src={{this.pic}} alt="Foto de perfil">
           <ion-label>
             <h1>Bem vindo</h1>
             <h2><b>

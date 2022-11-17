@@ -1,7 +1,13 @@
 <ion-header color="transparent">
   <ion-toolbar color="transparent">
+
     <ion-buttons class="group-div" slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button>
+                      <div class="header-content">
+                        <img *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.appComponent.perfilpadrao}} alt="Foto de perfil">
+                        <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
+                      </div>
+      </ion-menu-button>
     </ion-buttons>
 
     <ion-title>

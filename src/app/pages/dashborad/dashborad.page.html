@@ -1,22 +1,33 @@
 <ion-header color="transparent">
   <ion-toolbar color="transparent">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button>
+                      <div class="header-content">
+                        <img *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.appComponent.perfilpadrao}} alt="Foto de perfil">
+                        <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
+                      </div>
+      </ion-menu-button>
     </ion-buttons>
     <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-card>
+<ion-card >
   <ion-card-header>
-    <ion-card-title>Seu IMC é {{this.appComponent.imc}}</ion-card-title>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    <ion-card-title>Seu IMC é {{showImc()}}</ion-card-title>
   </ion-card-header>
 
-    <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+    <ion-card-content *ngIf="this.userAuthService.isLoggedIn == true">
+      <!-- {{showPesoInfo()}} -->
     </ion-card-content>
+
+      <ion-button *ngIf="this.userAuthService.isLoggedIn == false" color="primary" (click)="alertaEntrada()">Descubra seu imc
+      </ion-button>
 </ion-card>
+
+
+
+
 
 </ion-content>

@@ -7,6 +7,7 @@ import { UserAuthService } from './services/user-auth.service';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
+  perfilpadrao = 'https://firebasestorage.googleapis.com/v0/b/times-new-life.appspot.com/o/img%2FAvatar.svg?alt=media&token=930a25ad-6a2b-449a-b4b2-694177b3206b';
   user;
   name;
   imc;
@@ -36,6 +37,7 @@ export class AppComponent {
       return this.name = 'pessoa';
     } else {
         // this.idade = (new Date().getFullYear() - parseInt((this.user.dataNasc).substring(0, 4)));
+      this.pic = this.user.profilePic;
       this.imc = this.user.imc;
       return this.name = this.user.username;
     }

@@ -1,0 +1,10 @@
+.header-content {
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    img {
+        border-radius: 50%;
+        border: 3px solid rgba(82, 255, 229, 0.795);
+    }
+}
