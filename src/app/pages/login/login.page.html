@@ -1,50 +1,67 @@
 <ion-content>
-<div class="container">
-  <div class="login-template">
-    <p class="header-text">{{userAuthService.headerText}}</p>
 
-    <div *ngIf="userAuthService.state !== 'form'">
-    <ion-input *ngIf="userAuthService.state == 'signup'" [(ngModel)]="userNameInput" placeholder="Digite seu Nome de Usurário">
-    </ion-input>
-    <ion-input type="email" [(ngModel)]="emailInput" placeholder="Digite seu Email"></ion-input>
-    <ion-input type="password" *ngIf="userAuthService.state != 'forgotPassword'" [(ngModel)]="passwordInput"
-      placeholder="Digite sua Senha"></ion-input>
-    <a *ngIf="userAuthService.state!='signup'" (click)="userAuthService.changeState('signup')"
-      class="change-template-link" href="javascript:;">Não tem uma conta? Click aqui para se cadastrar!</a> <br>
+  <div class="logo">
+  
+  </div>
+  
+  
+  <div class="header">
+    <img src="../../../assets/img/Vector.svg" class="log">
+    <img src="../../../assets/img/T I M E S L I F E.svg" class="log2">
+  </div>
+  
+  <div class="container">
+    <div class="login-template">
+      <p class="header-text">{{userAuthService.headerText}}</p>
+  
+      <div *ngIf="userAuthService.state !== 'form'">
+      <ion-input *ngIf="userAuthService.state == 'signup'" [(ngModel)]="userNameInput" placeholder="Usuário"><img src="../../../assets/img/person.circle.svg" class="env"></ion-input>
+      <ion-input type="email" [(ngModel)]="emailInput" placeholder="Email"><img src="../../../assets/img/Envelope Fill.svg" class="env"></ion-input>
+      <ion-input type="password" *ngIf="userAuthService.state != 'forgotPassword'" [(ngModel)]="passwordInput"
+        placeholder="Senha"><img src="../../../assets/img/lock.fill.svg" class="env"></ion-input> 
+      <!-- <a *ngIf="userAuthService.state!='signup'" (click)="userAuthService.changeState('signup')"
+        class="change-template" href="javascript:;">Não Possui uma conta?<br> <u>Registre-se</u></a> <br>
+      <a *ngIf="userAuthService.state=='login'" (click)="userAuthService.changeState('forgotPassword')"
+        class="change-template-link" href="javascript:;">Esqueci minha senha</a> <br> -->
+      <!-- <a *ngIf="userAuthService.state != 'login'" (click)="userAuthService.changeState('login')"
+        class="change-template-link" href="javascript:;">Possui uma conta? Entrar</a> <br>   -->
+  
+    </div>
+  
+    <div *ngIf="userAuthService.state == 'form'">
+      <ion-input [(ngModel)]="peso" type="number" placeholder="Digite seu peso em Kg">
+      </ion-input>
+      <ion-input [(ngModel)]="altura" type="number" placeholder="Digite seu altura em M">
+      </ion-input>
+      <ion-label>Gênero</ion-label>
+      <ion-radio-group class="generoRadio" [value]="sexo" [(ngModel)]="sexo">
+        <ion-item>
+          <ion-label>Masculino</ion-label>
+        <ion-radio slot="start" value="M"></ion-radio>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Feminino</ion-label>
+          <ion-radio slot="start" value="F"></ion-radio>
+        </ion-item>
+  
+      </ion-radio-group>
+      <!-- <ion-label>Data de Nascimento</ion-label> -->
+      <ion-datetime [(ngModel)]="dataNasc" displayFormat="YYYY-MM-DD">
+          <span slot="title">Coloque Data de Nascimento</span>
+      </ion-datetime>
+    </div>
+  
+      <ion-button (click)="submit()" class="submit-button" color="third">Entrar</ion-button>  <!-- Alterar o botão para 'Registrar' 'Entrar'-->
+      <a *ngIf="userAuthService.state!='signup'" (click)="userAuthService.changeState('signup')"
+      class="change-template" href="javascript:;">Não Possui uma conta?<br> <u class="ul">Registre-se</u></a> <br>
     <a *ngIf="userAuthService.state=='login'" (click)="userAuthService.changeState('forgotPassword')"
-      class="change-template-link" href="javascript:;">Esqueceu seu senha?</a> <br>
-    <a *ngIf="userAuthService.state != 'login'" (click)="userAuthService.changeState('login')"
-      class="change-template-link" href="javascript:;">Já tem uma conta? Click aqui para login</a> <br>  
-
+      class="change-template-link" href="javascript:;">Esqueci minha senha</a> <br>
+      <a *ngIf="userAuthService.state != 'login'" (click)="userAuthService.changeState('login')"
+      class="change-template-link" href="javascript:;">Possui uma conta?<u class="ul">Entrar</u></a><br> 
+    </div>
+  
   </div>
-
-  <div *ngIf="userAuthService.state == 'form'">
-    <ion-input [(ngModel)]="peso" type="number" placeholder="Digite seu peso em Kg">
-    </ion-input>
-    <ion-input [(ngModel)]="altura" type="number" placeholder="Digite seu altura em M">
-    </ion-input>
+  
+  </ion-content>
     
-    <ion-label>Gênero</ion-label>
-    <ion-radio-group class="generoRadio" [value]="sexo" [(ngModel)]="sexo">
-      <ion-item>
-        <ion-label>Masculino</ion-label>
-      <ion-radio slot="start" value="M"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Feminino</ion-label>
-        <ion-radio slot="start" value="F"></ion-radio>
-      </ion-item>
-
-    </ion-radio-group>
-    <!-- <ion-label>Data de Nascimento</ion-label> -->
-    <ion-datetime [(ngModel)]="dataNasc" displayFormat="YYYY-MM-DD">
-        <span slot="title">Coloque Data de Nascimento</span>
-    </ion-datetime>
-  </div>
-
-    <ion-button (click)="submit()" class="submit-button" color="primary">Submit</ion-button>
-  </div>
-
-</div>
-</ion-content>

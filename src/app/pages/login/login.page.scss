@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@700&display=swap');
+// Vou colocar a fonte geral dps, só peguei essa afim de teste
+
 .container {
     margin: auto;
+    margin-top: 15rem;
     display: flex;
     // width: 36.749125em;
     width: 100%;
@@ -18,9 +22,26 @@
 }
 
 ion-input {
-    border: 1px solid #6FE7DB;
+    border: 2px solid #fff;
+    opacity: 60%;
     border-radius: 5px;
     margin-bottom: 3%;
+}
+
+ion-input:nth-child(1){
+    margin-bottom: 27px;
+}
+
+ion-input:nth-child(2){
+    margin-top: 27px;
+
+}
+ion-input:nth-child(3){
+    margin-top: 27px;
+}
+
+.env{
+    margin-left: 0.7em;
 }
 
 .header-text {
@@ -29,11 +50,36 @@ ion-input {
 }
 
 .change-template-link {
-    margin-bottom: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #FFF;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
+.change-template{
+    margin-top: 1em;
+    font-size: 1.1em;
+    text-indent: 0.5em;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-decoration: none;
+    color: #FFF;
+}
+
+
 .submit-button {
-    margin-top: 1%;
+    height: 4em;
+    margin-top: 10%;
+    font-size: 13px;
+    background-color: #9400FF;
+    border-radius: 0.5em;
+    font-family: 'Work Sans', sans-serif;
+    color: #fff;
 }
 
 .generoRadio{
@@ -42,4 +88,36 @@ ion-input {
         justify-content: center;
         align-content: center;
         align-items: center;
+}
+
+.container .logo{
+    width: 120px;
+    height: auto;
+}
+
+.ul{
+    font-family: 'Work Sans', sans-serif;
+    font-style: bold;
+    font-weight: 10px;
+}
+
+.header{
+    display: grid;
+    justify-content: center;
+}
+
+.header .log{
+    position: absolute;
+    left: 43%;
+    right: 42.83%;
+    top: 10.27%;
+    bottom: 83.61%;
+}
+
+.header .log2{
+    position: absolute;
+    width: 279px;
+    height: 54px;
+    left: 67px;
+    top: 175px;
 }
