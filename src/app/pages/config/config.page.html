@@ -2,10 +2,10 @@
   <ion-toolbar color="transparent">
     <ion-buttons slot="start">
       <ion-menu-button>
-                      <div class="header-content">
-                        <img *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.appComponent.perfilpadrao}} alt="Foto de perfil">
-                        <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
-                      </div>
+        <div class="header-content">
+          <img *ngIf="this.userAuthService.isLoggedIn !== true" src="../assets/Avatar.svg" alt="Foto de perfil">
+          <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
+        </div>
       </ion-menu-button>
     </ion-buttons>
     <ion-title>Config</ion-title>
@@ -13,11 +13,11 @@
 </ion-header>
 
 <ion-content>
-        <ion-item lines="full">
-          <ion-icon slot="start" name="moon"></ion-icon>
-          <ion-label>
-            Toggle Dark Theme
-          </ion-label>
-          <ion-toggle id="themeToggle" slot="end"></ion-toggle>
-        </ion-item>
+  <ion-item lines="full">
+    <ion-icon slot="start" name="moon"></ion-icon>
+    <ion-label>
+      Toggle Dark Theme
+    </ion-label>
+    <ion-toggle id="themeToggle" slot="end"></ion-toggle>
+  </ion-item>
 </ion-content>

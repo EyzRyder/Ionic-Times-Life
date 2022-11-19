@@ -3,58 +3,58 @@
 
     <ion-buttons class="group-div" slot="start">
       <ion-menu-button>
-                      <div class="header-content">
-                        <img *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.appComponent.perfilpadrao}} alt="Foto de perfil">
-                        <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
-                      </div>
+        <div class="header-content">
+          <img *ngIf="this.userAuthService.isLoggedIn !== true" src="../assets/Avatar.svg" alt="Foto de perfil">
+          <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
+        </div>
       </ion-menu-button>
     </ion-buttons>
 
     <ion-title>
-          <div>
-            Home
-            </div>
-          </ion-title>
+      <div>
+        Home
+      </div>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="home-page-div">
   <div class="buttonLogin">
-        <ion-button *ngIf="!this.userAuthService.isLoggedIn" class="login" routerLink="/login" >
-          <label>Faça Login</label>
-        </ion-button>
-        </div>
+    <ion-button *ngIf="!this.userAuthService.isLoggedIn" class="login" routerLink="/login">
+      <label>Faça Login</label>
+    </ion-button>
+  </div>
 
-        <div class="selctions">
-          <ion-select interface="popover" placeholder="Selecione" class="pills-select">
-            <ion-select-option value="Remédio">Remedio</ion-select-option>
-          </ion-select>
-          <ion-select interface="popover" placeholder="Selecione" class="pills-select" autofocus="">
-            <ion-select-option value="Saude">Saúde</ion-select-option>
-            <ion-select-option value="Nutricao">Nutrição</ion-select-option>
-          </ion-select>
-          <ion-select interface="popover" placeholder="Selecione" class="pills-select">
-            <ion-select-option value="Fisica">Física</ion-select-option>
-            <ion-select-option  value="Malhacao">Malhação</ion-select-option>
-          </ion-select>
-        </div>
+  <div class="selctions">
+    <ion-select interface="popover" placeholder="Selecione" class="pills-select">
+      <ion-select-option value="Remédio">Remedio</ion-select-option>
+    </ion-select>
+    <ion-select interface="popover" placeholder="Selecione" class="pills-select" autofocus="">
+      <ion-select-option value="Saude">Saúde</ion-select-option>
+      <ion-select-option value="Nutricao">Nutrição</ion-select-option>
+    </ion-select>
+    <ion-select interface="popover" placeholder="Selecione" class="pills-select">
+      <ion-select-option value="Fisica">Física</ion-select-option>
+      <ion-select-option value="Malhacao">Malhação</ion-select-option>
+    </ion-select>
+  </div>
 
-        <div class="carroseu">
-          <img class="placeholder-icon" alt="" src="../../../assets/03-placeholder--icon.svg">
-        </div>
+  <div class="carroseu">
+    <img class="placeholder-icon" alt="" src="../../../assets/03-placeholder--icon.svg">
+  </div>
 
-      <div class="frame-div">
-        <img class="placeholder-icon" alt="" src="../../../assets/03-placeholder--icon.svg" />
-        <div class="frame-div1">
-          <label class="title-label">Title</label>
-          <div class="text-medium-div">
-            <img class="iconlylight-outlinelocation" alt="" src="../../../assets/iconlylightoutlinelocation.svg" /><label
-              class="text-label">
-              <div class="label-div">Rua sei la o que, São Paulo, SP</div>
-            </label>
-          </div>
-        </div>
-        <img class="icon-button" alt="" src="../../../assets/icon-button.svg" />
+  <div class="frame-div">
+    <img class="placeholder-icon" alt="" src="../../../assets/03-placeholder--icon.svg" />
+    <div class="frame-div1">
+      <label class="title-label">Title</label>
+      <div class="text-medium-div">
+        <img class="iconlylight-outlinelocation" alt="" src="../../../assets/iconlylightoutlinelocation.svg" /><label
+          class="text-label">
+          <div class="label-div">Rua sei la o que, São Paulo, SP</div>
+        </label>
       </div>
-      
+    </div>
+    <img class="icon-button" alt="" src="../../../assets/icon-button.svg" />
+  </div>
+
 </ion-content>

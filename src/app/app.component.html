@@ -2,10 +2,9 @@
   <ion-split-pane contentId="main-content">
     <ion-menu contentId="main-content" type="overlay">
       <div class="menu-header-bg"></div>
-      <div >
-        <div class="header-content">
-          <img routerLink="/login" *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.perfilpadrao}} alt="Foto de perfil">
-          <img id="popover-button" *ngIf="this.userAuthService.isLoggedIn == true" src={{this.pic}} alt="Foto de perfil">
+<div *ngIf="this.userAuthService.isLoggedIn == true" >
+        <div id="popover-button" class="header-content">
+          <img src={{this.pic}} alt="Foto de perfil">
           <ion-label>
             <h1>Bem vindo</h1>
             <h2><b>
@@ -14,6 +13,7 @@
               </b></h2>
           </ion-label>
         </div>
+        
         <ion-popover class="loginOptions" trigger="popover-button" [dismissOnSelect]="true">
           <ng-template>
             <ion-content>
@@ -25,7 +25,23 @@
             </ion-content>
           </ng-template>
         </ion-popover>
-      </div>
+</div>
+
+<div *ngIf="this.userAuthService.isLoggedIn !== true">
+          <div id="popover-button" class="header-content">
+  
+            <img src="../assets/Avatar.svg" alt="Foto de perfil">
+            <ion-label>
+              <h1>Bem vindo</h1>
+              <h2><b>
+                  <ion-label color="success">{{getLoginButtonText()}}
+                  </ion-label>
+                </b></h2>
+                <h2  routerLink="/login">Faz Um Log in</h2>
+            </ion-label>
+          </div>
+</div>
+
       <ion-content>
 
         <ion-list id="inbox-list">

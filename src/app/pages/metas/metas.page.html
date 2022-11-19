@@ -1,21 +1,21 @@
 <ion-header color="transparent">
   <ion-toolbar color="transparent">
-      <ion-buttons slot="start">
-        <ion-menu-button>
-                      <div class="header-content">
-                        <img *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.appComponent.perfilpadrao}} alt="Foto de perfil">
-                        <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
-                      </div>
-        </ion-menu-button>
-      </ion-buttons>
-      <ion-title>Metas</ion-title>
-    </ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button>
+        <div class="header-content">
+          <img *ngIf="this.userAuthService.isLoggedIn !== true" src="../assets/Avatar.svg" alt="Foto de perfil">
+          <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
+        </div>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title>Metas</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button>
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

@@ -2,10 +2,10 @@
   <ion-toolbar color="transparent">
     <ion-buttons slot="start">
       <ion-menu-button>
-                    <div class="header-content">
-                      <img *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.appComponent.perfilpadrao}} alt="Foto de perfil">
-                      <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
-                    </div>
+        <div class="header-content">
+          <img *ngIf="this.userAuthService.isLoggedIn !== true" src="../assets/Avatar.svg" alt="Foto de perfil">
+          <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
+        </div>
       </ion-menu-button>
     </ion-buttons>
     <ion-title>User</ion-title>
@@ -13,17 +13,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-card >
+  <ion-card>
     <ion-card-header>
-        <img src="../../../assets/Avatar.svg" alt="Foto de perfil">
+      <img src="../../../assets/Avatar.svg" alt="Foto de perfil">
 
       <ion-card-title>
-        <ion-label> 
+        <ion-label>
           {{this.appComponent.getLoginButtonText()}}
-          </ion-label>
+        </ion-label>
       </ion-card-title>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
     </ion-card-header>
-</ion-card>
- 
+  </ion-card>
+
 </ion-content>

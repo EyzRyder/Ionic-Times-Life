@@ -2,10 +2,10 @@
   <ion-toolbar color="transparent">
     <ion-buttons slot="start">
       <ion-menu-button>
-                      <div class="header-content">
-                        <img *ngIf="this.userAuthService.isLoggedIn !== true" src={{this.appComponent.perfilpadrao}} alt="Foto de perfil">
-                        <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
-                      </div>
+        <div class="header-content">
+          <img *ngIf="this.userAuthService.isLoggedIn !== true" src="../assets/Avatar.svg" alt="Foto de perfil"/>
+          <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
+        </div>
       </ion-menu-button>
     </ion-buttons>
     <ion-title>Dashboard</ion-title>
@@ -13,18 +13,19 @@
 </ion-header>
 
 <ion-content>
-<ion-card >
-  <ion-card-header>
-    <ion-card-title>Seu IMC é {{showImc()}}</ion-card-title>
-  </ion-card-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Seu IMC é {{showImc()}}</ion-card-title>
+    </ion-card-header>
 
     <ion-card-content *ngIf="this.userAuthService.isLoggedIn == true">
       <!-- {{showPesoInfo()}} -->
     </ion-card-content>
 
-      <ion-button *ngIf="this.userAuthService.isLoggedIn == false" color="primary" (click)="alertaEntrada()">Descubra seu imc
-      </ion-button>
-</ion-card>
+    <ion-button *ngIf="this.userAuthService.isLoggedIn == false" color="primary" (click)="alertaEntrada()">Descubra seu
+      imc
+    </ion-button>
+  </ion-card>
 
 
 
