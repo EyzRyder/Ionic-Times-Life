@@ -201,3 +201,23 @@ ion-title {
         border: 3px solid rgba(82, 255, 229, 0.795);
     }
 }
+
+
+.top {
+    margin-top: 0.3em;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+    .img1{
+        margin-right: 4em;
+    }
+
+	.img2 {
+		width: 48%;
+	}
+
+    .img3{
+        margin-left: 4em;
+    }
+}
