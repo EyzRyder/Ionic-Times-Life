@@ -2,7 +2,7 @@ import { UserAuthService } from './../../services/user-auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, ToastController } from '@ionic/angular';
-import { AppComponent } from '../../app.component'
+import { TabsPage } from './../../tabs/tabs.page'; 
 
 
 @Component({
@@ -23,7 +23,7 @@ export class DashboradPage implements OnInit {
   constructor(
     public toastController: ToastController,
     public alertController: AlertController,
-    public appComponent: AppComponent,
+    public tabsPage: TabsPage,
     public userAuthService: UserAuthService,
     public router: Router
   ) {
@@ -138,7 +138,7 @@ export class DashboradPage implements OnInit {
 
   showImc() {
     if (this.userAuthService.isLoggedIn == true) {
-      return this.imc = this.appComponent.imc;
+      return this.imc = this.tabsPage.imc;
     } else {
       return this.imc;
     }

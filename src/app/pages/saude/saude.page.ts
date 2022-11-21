@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../../app.component';
 import { UserAuthService } from '../../services/user-auth.service';
 @Component({
   selector: 'app-saude',
@@ -9,7 +8,6 @@ import { UserAuthService } from '../../services/user-auth.service';
 export class SaudePage implements OnInit {
 
   constructor(
-    public appComponent: AppComponent,
     public userAuthService: UserAuthService,
 
   ) { }

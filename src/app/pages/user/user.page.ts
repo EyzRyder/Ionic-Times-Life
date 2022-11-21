@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppComponent } from '../../app.component';
+import { TabsPage } from './../../tabs/tabs.page';
 import { UserAuthService } from '../../services/user-auth.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UserAuthService } from '../../services/user-auth.service';
 export class UserPage implements OnInit {
 
   constructor(
-    public appComponent: AppComponent,
+    public tabsPage: TabsPage,
     public userAuthService: UserAuthService,
 
   ) { }

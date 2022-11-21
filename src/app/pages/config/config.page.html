@@ -1,14 +1,17 @@
 <ion-header color="transparent">
   <ion-toolbar color="transparent">
-    <ion-buttons slot="start">
-      <ion-menu-button>
-        <div class="header-content">
-          <img *ngIf="this.userAuthService.isLoggedIn !== true" src="../assets/Avatar.svg" alt="Foto de perfil">
-          <img *ngIf="this.userAuthService.isLoggedIn == true" src={{this.appComponent.pic}} alt="Foto de perfil">
-        </div>
-      </ion-menu-button>
-    </ion-buttons>
-    <ion-title>Config</ion-title>
+        <ion-segment value="all">
+          <ion-segment-button value="all">
+            User
+          </ion-segment-button>
+          <ion-segment-button value="favorites">
+            Config
+          </ion-segment-button>
+        </ion-segment>
+        <!-- <h2 style="    display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;">Config</h2> -->
   </ion-toolbar>
 </ion-header>
 

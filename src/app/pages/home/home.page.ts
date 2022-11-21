@@ -1,6 +1,6 @@
+import { TabsPage } from './../../tabs/tabs.page';
 import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from '../../services/user-auth.service';
-import { AppComponent } from '../../app.component'
 
 
 @Component({
@@ -11,7 +11,7 @@ import { AppComponent } from '../../app.component'
 export class HomePage implements OnInit {
 
   constructor(
-    public appComponent: AppComponent,
+    public tabsPage: TabsPage,
     public userAuthService: UserAuthService,
   ) { }
 
