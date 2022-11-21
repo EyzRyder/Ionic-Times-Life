@@ -1,10 +1,10 @@
 <ion-header color="transparent">
   <ion-toolbar color="transparent">
-        <ion-segment value="all">
-          <ion-segment-button value="all">
+        <ion-segment value="user" (ionChange)="segmentChange($event)">
+          <ion-segment-button value="user">
             User
           </ion-segment-button>
-          <ion-segment-button value="favorites">
+          <ion-segment-button value="config">
             Config
           </ion-segment-button>
         </ion-segment>
@@ -15,7 +15,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="this.selectedPage == 'config'">
   <ion-item lines="full">
     <ion-icon slot="start" name="moon"></ion-icon>
     <ion-label>
@@ -23,4 +23,24 @@
     </ion-label>
     <ion-toggle id="themeToggle" slot="end"></ion-toggle>
   </ion-item>
+</ion-content>
+
+<ion-content *ngIf="this.selectedPage == 'user'">
+  <ion-card>
+    <ion-card-header>
+      <img src="../../../assets/Avatar.svg" alt="Foto de perfil">
+
+      <ion-card-title>
+        <ion-label>
+          {{this.tabsPage.getLoginButtonText()}}
+        </ion-label>
+      </ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    </ion-card-header>
+          <ion-card-content>
+            <button routerLink="../login" *ngIf="this.userAuthService.isLoggedIn !== true">Login</button>
+            <button *ngIf="this.userAuthService.isLoggedIn == true" (click)="this.userAuthService.logout();">logout</button>
+          </ion-card-content>
+  </ion-card>
+
 </ion-content>
