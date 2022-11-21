@@ -11,6 +11,10 @@ export const environment = {
     storageBucket: "times-new-life.appspot.com",
     messagingSenderId: "391973753598",
     appId: "1:391973753598:web:523e5dcaa15192f7e14baf"
+  },
+  news: {
+    api_key: 'ebc48f55665f43258270f92a66f50a0b',
+    url_base: 'https://newsapi.org/v2/'
   }
 };
 
