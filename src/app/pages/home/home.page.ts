@@ -14,7 +14,7 @@ export class HomePage implements OnInit {
   topHeadlines = [];
 
   slideOpts = {
-    slidesPerView: 2,
+    slidesPerView: 1.5,
     coverflowEffect: {
       rotate: 10,
       stretch: 0,
