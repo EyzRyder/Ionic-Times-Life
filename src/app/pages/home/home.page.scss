@@ -1,3 +1,7 @@
+ion-header::after {
+    background-image: none; // Divisória da header, basicamente tira a sombra 
+  }
+
 .home-page-div {
     position: relative;
     width: 100%;
