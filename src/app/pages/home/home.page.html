@@ -14,12 +14,54 @@
 </ion-header>
 
 <ion-content class="home-page-div">
-  <div class="buttonLogin">
-    <!-- <ion-button *ngIf="!this.userAuthService.isLoggedIn" class="login" routerLink="/login">
+  <!-- <div class="buttonLogin" *ngIf="!this.userAuthService.isLoggedIn">
+    <ion-button  class="login" routerLink="/login">
       <label>Faça Login</label>
-    </ion-button> -->
-  </div>
+    </ion-button>
+  </div> -->
 
+  <div class="calender">
+<div class="meta-da-semana">Meta Da Semana</div>
+<div class="dias-do-semana">0/5</div>
+<div class="group-dias">
+  <div class="dia-card">
+    <div class="card-layout"></div>
+    <div class="num">20</div>
+    <div class="text">Hoje</div>
+  </div>
+  <div class="dia-card">
+      <div class="card-layout"></div>
+    <div class="num">22</div>
+    <div class="text">Ter</div>
+  </div>
+  <div class="dia-card">
+    <div class="card-layout"></div>
+    <div class="num">24</div>
+    <div class="text">Qui</div>
+  </div>
+  <div class="dia-card">
+    <div class="card-layout"></div>
+    <div class="num">21</div>
+    <div class="text">Seg</div>
+  </div>
+  <div class="dia-card">
+    <div class="card-layout"></div>
+    <div class="num">23</div>
+    <div class="text">Qua</div>
+  </div>
+  <div class="dia-card">
+    <div class="card-layout"></div>
+    <div class="num">25</div>
+    <div class="text">Sex</div>
+  </div>
+  <div class="dia-card">
+    <div class="card-layout"></div>
+    <div class="num">26</div>
+    <div class="text">Sab</div>
+  </div>
+</div>
+  </div>
+  
 <ion-slides pager="true" [options]="slideOpts">
   <ion-slide *ngFor="let article of topHeadlines">
     <ion-card>
