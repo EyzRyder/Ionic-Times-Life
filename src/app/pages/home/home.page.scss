@@ -1,6 +1,6 @@
-ion-header::after {
-    background-image: none; // Divisória da header, basicamente tira a sombra 
-  }
+// ion-header::after {
+//     background-image: none; // Divisória da header, basicamente tira a sombra 
+//   }
 
 .home-page-div {
     position: relative;
@@ -205,19 +205,25 @@ ion-title {
 
 .top {
     margin-top: 0.3em;
-	display: inline-flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 
     .img1{
+        display: none;
+        width: 2.5em;
         margin-right: 4em;
+        margin-left: 1em;
     }
 
-	.img2 {
-		width: 48%;
+	.home {
+        padding: 0.4em;
+        width: 30%;
 	}
 
     .img3{
-        margin-left: 4em;
+        display: none;
+        width: 1.8em;
+        margin-left: 6em;
     }
 }
