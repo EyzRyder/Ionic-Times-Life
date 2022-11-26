@@ -64,7 +64,7 @@
   
 <ion-slides pager="true" [options]="slideOpts">
   <ion-slide *ngFor="let article of topHeadlines">
-    <ion-card  class="carroseu" style="background-image: url({{article.urlToImage}});">
+    <ion-card  class="carroseu" style="background-image: url({{article.urlToImage}});     background-size: cover;">
       <!-- <img src={{article.urlToImage}} alt=""/> -->
     
       <ion-card-content>
