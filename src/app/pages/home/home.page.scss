@@ -1,6 +1,6 @@
-// ion-header::after {
-//     background-image: none; // Divisória da header, basicamente tira a sombra 
-//   }
+ion-header::after {
+    background-image: none; // Divisória da header, basicamente tira a sombra 
+  }
 
 .home-page-div {
     position: relative;
@@ -77,6 +77,42 @@
                 mix-blend-mode: normal;
             }
 
+            .card-layoutt{
+                position: absolute;
+                border-radius: 10px;
+                box-sizing: border-box;
+                width: 48.75px;
+                height: 59px;
+                opacity: 0.4;
+                background: linear-gradient(180deg, #8561CD 0%, #DBA4C4 100%);
+            }
+            //a poha do child não funciona por algum motivo tmnc
+            .numm {
+                color: #fff;
+                position: absolute;
+                left: 15.83px;
+                display: inline-block;
+                top: 28px;
+                line-height: 18px;
+                font-weight: 600;
+                width: 23px;
+            }
+
+
+            .textt {
+                color: #fff;
+                position: absolute;
+                left: 15.83px;
+                display: inline-block;
+                top: 11px;
+                font-size: 11px;
+                line-height: 16px;
+                width: 28px;
+                opacity: 0.6;
+                mix-blend-mode: normal;
+            }
+        }
+
             .num {
                 position: absolute;
                 left: 15.83px;
@@ -86,6 +122,7 @@
                 font-weight: 600;
                 width: 23px;
             }
+
 
             .text {
                 position: absolute;
@@ -167,7 +204,7 @@
         }
 
     }
-}
+
 
 ion-title {
     position: absolute;

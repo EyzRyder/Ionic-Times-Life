@@ -4,16 +4,17 @@
     align-items: center;
 
     img {
-        border-radius: 50%;
+        // border-radius: 50%;
         border: 3px solid rgba(82, 255, 229, 0.795);
     }
 }
 
 ion-card {
-    --background: hsla(286, 80%, 50%, 0.589);
+    --background: white;
     --color: #9efff0;
     position: relative;
     height: 250px;
+    // width: 350px;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -25,23 +26,35 @@ ion-card {
     flex-wrap: nowrap;
     align-content: center;
     justify-content: center;
-
+    border-radius: 12px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     img {
+        align-items: center;
+        justify-content: center;
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        border: 7px solid rgba(82, 255, 229, 0.795);
-        margin-right: 14px;
+        // border: 7px solid rgba(82, 255, 229, 0.795);
     }
-
+    ion-card-content{
+        button{
+            font-size: 1em;
+            background: none;
+            color: #1c1c1c;
+            justify-content: center;
+            align-items: center;
+        }
+    }
 }
 
 ion-card-title {
-    --color: #52ffe4;
+    display: flex;
+    justify-content: center;
+    --color: #2A282F;
 }
 
 ion-card-subtitle {
-    --color: #d1fff8;
+    --color: #2A282F;
 }
 
 /* iOS places the subtitle above the title */

@@ -28,14 +28,14 @@
 <ion-content *ngIf="this.selectedPage == 'user'">
   <ion-card>
     <ion-card-header>
-      <img src="../../../assets/Avatar.svg" alt="Foto de perfil">
+      <img src="../../../assets/placeholder/Group 21 (1).svg" alt="Foto de perfil">
 
       <ion-card-title>
         <ion-label>
           {{this.tabsPage.getLoginButtonText()}}
         </ion-label>
       </ion-card-title>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      <ion-card-subtitle>Editar Perfil</ion-card-subtitle>
     </ion-card-header>
           <ion-card-content>
             <button routerLink="../login" *ngIf="this.userAuthService.isLoggedIn !== true">Login</button>
