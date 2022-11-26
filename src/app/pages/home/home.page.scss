@@ -182,8 +182,6 @@ ion-header::after {
         height: 250px;
         font-size: 16px;
 
-        ion-card {
-
             img {
                 
                 position: absolute;
@@ -196,6 +194,14 @@ ion-header::after {
             }
 
             ion-card-content {
+                    position: absolute;
+                        // top: 55%;
+                        padding-bottom: 121px;
+                        color: white;
+                        background-color: #b8d7cc5e;
+                        font-size: 14px;
+                        line-height: 1.5;
+
                 top: 151px;
                 border-radius: 0 0 20px 20px;
                 background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.59) 59.23%, rgba(0, 0, 0, 0.85));
@@ -204,7 +210,6 @@ ion-header::after {
             }
         }
 
-    }
 
 
 ion-title {
