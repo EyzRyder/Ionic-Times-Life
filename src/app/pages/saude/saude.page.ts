@@ -1,3 +1,4 @@
+import { ListService } from './../../services/list.service';
 import { Component, OnInit } from '@angular/core';
 import { UserAuthService } from '../../services/user-auth.service';
 @Component({
@@ -7,12 +8,22 @@ import { UserAuthService } from '../../services/user-auth.service';
 })
 export class SaudePage implements OnInit {
 
+  list;
+  
   constructor(
     public userAuthService: UserAuthService,
+    public listService: ListService,
+  ) {
 
-  ) { }
 
-  ngOnInit() {
   }
 
-}
+  ngOnInit() {
+
+
+  }
+
+
+  }
+
+  
