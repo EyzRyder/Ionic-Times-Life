@@ -1,6 +1,6 @@
 <ion-header color="transparent">
   <ion-toolbar color="transparent">
-        <h2 style="    display: flex;
+    <h2 style="    display: flex;
             align-content: center;
             justify-content: center;
             align-items: center;">Plano de Treino</h2>
@@ -14,31 +14,34 @@
       Seus Treinos
     </h2>
     <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+      <ion-fab-button>
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
   </div>
   <div>
 
-    <div class="card">
-      <div class="TreinoNome">Braço</div>
-      <div class="treinoNum">28 Exercícios</div>
-        <ion-label id="toggoleMenuBalls">
-          <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-        </ion-label>
-          <ion-popover trigger="toggoleMenuBalls" side="left" alignment="start">
-            <ng-template>
-              <ion-content class="ion-padding">
-                  <ion-label>
-                    Editar
-                  </ion-label>
-                  <ion-label>
-                    Editar
-                  </ion-label>
-              </ion-content>
-            </ng-template>
-          </ion-popover>
+    <div *ngFor="let treino of treinos; let i = index" class="ion-margin card">
+      <div (click)="openTreino(treino)">
+        <div class="TreinoNome">{{treino.nome}}</div>
+        <div class="treinoNum">{{treino.num}} Exercícios</div>
+        <div class="treinoNum">{{treino.dificuldade}}</div>
+      </div>
+      <ion-label id={{i}}>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-label>
+      <ion-popover trigger={{i}} side="left" alignment="start">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <ion-item>
+              Editar
+            </ion-item>
+            <ion-item>
+              Delete
+            </ion-item>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
 
 
     </div>

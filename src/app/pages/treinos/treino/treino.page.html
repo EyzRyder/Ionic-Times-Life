@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{treino.nome}}</ion-title>
+    <ion-label id="menu" slot="end">
+      <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+    </ion-label>
+    <ion-popover trigger="menu" side="left" alignment="start">
+      <ng-template>
+        <ion-content class="ion-padding">
+          <ion-item>
+            Editar
+          </ion-item>
+          <ion-item>
+            Delete
+          </ion-item>
+        </ion-content>
+      </ng-template>
+    </ion-popover>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div class="exercicios" *ngFor="let exercicio of treino.exercicios; let i = index">
+  <img src={{exercicio.imgUrl}} alt="">
+  <div class="exercicioName">{{exercicio.nome}}</div>
+  <div class="exercicioName"><div *ngIf="exercicio.setTemp == 'set' ">x</div>{{exercicio.num}}</div>
+</div>
+</ion-content>
