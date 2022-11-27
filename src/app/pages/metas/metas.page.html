@@ -3,15 +3,46 @@
         <h2 style="    display: flex;
             align-content: center;
             justify-content: center;
-            align-items: center;">Metas</h2>
+            align-items: center;">Plano de Treino</h2>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <div>
+    <h2>
+      Seus Treinos
+    </h2>
+    <ion-fab vertical="top" horizontal="end" slot="fixed">
     <ion-fab-button>
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  </div>
+  <div>
+
+    <div class="card">
+      <div class="TreinoNome">Braço</div>
+      <div class="treinoNum">28 Exercícios</div>
+        <ion-label id="toggoleMenuBalls">
+          <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </ion-label>
+          <ion-popover trigger="toggoleMenuBalls" side="left" alignment="start">
+            <ng-template>
+              <ion-content class="ion-padding">
+                  <ion-label>
+                    Editar
+                  </ion-label>
+                  <ion-label>
+                    Editar
+                  </ion-label>
+              </ion-content>
+            </ng-template>
+          </ion-popover>
+
+
+    </div>
+
+  </div>
+
 </ion-content>
