@@ -38,9 +38,23 @@ export class TreinoPage implements OnInit {
     modal.onDidDismiss().then(newTask => {
       // console.log(newTaskObj.data);
       // this.toDoList.push(newTaskObj.data)
+      this.treinoAtual++;
+      console.log(this.treinoAtual);
     })
     return await modal.present();
   }
+
+  async trocarTreino(e) {
+    const modal = await this.modalCtrl.create({
+      component: TelaDeDescansoComponent
+    })
+    modal.onDidDismiss().then(newTask => {
+      // console.log(newTaskObj.data);
+      // this.toDoList.push(newTaskObj.data)
+    })
+    return await modal.present();
+  }
+
 
   start() {
     this.temp = setInterval(() => { this.timer(); }, 1000);

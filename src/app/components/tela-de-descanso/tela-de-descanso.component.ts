@@ -1,3 +1,5 @@
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { async } from '@firebase/util';
@@ -15,6 +17,8 @@ export class TelaDeDescansoComponent implements OnInit {
   
   constructor(
     public modalCtrl: ModalController,
+    public router: Router,
+    public location: Location
   ) { }
 
   ngOnInit() { 
@@ -23,15 +27,6 @@ export class TelaDeDescansoComponent implements OnInit {
 
   }
 
-  timeBack() {
-
-    if (this.ss == 0) {
-        clearInterval(this.temp);
-      this.modalCtrl.dismiss();
-      // this.hh; this.mm; this.ss; return
-  // console.log(this.ss);
-    } 
-  }
   
   start() {
     this.temp = setInterval(() => { this.timer(); }, 1000);
