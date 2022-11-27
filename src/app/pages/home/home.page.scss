@@ -12,7 +12,7 @@ ion-header::after {
     font-family: "Work Sans";
 
     .calender {
-        position: relative;
+         position: relative;
         margin: 15px;
         border-radius: 10px;
         background-color: white;
@@ -176,14 +176,15 @@ ion-header::after {
     }
 
     .carroseu {
-
+        margin-top: 2em;
         box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
         width: 262px;
         height: 250px;
         font-size: 16px;
-
+        border-radius: 20px;
+        
             img {
-                
+                   
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -203,7 +204,7 @@ ion-header::after {
                         line-height: 1.5;
 
                 top: 151px;
-                border-radius: 0 0 20px 20px;
+                border-radius: 20px;
                 background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.59) 59.23%, rgba(0, 0, 0, 0.85));
                 width: 262px;
                 height: 99px;
@@ -239,27 +240,74 @@ ion-title {
 }
 
 
-.top {
-    margin-top: 0.3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card-div {
+	position: relative;
+	top: 0;
+	margin-left: 20px;
+	border-radius: 12px;
+	background-color: #070417;
+	width: 360px;
+	height: 114px;
+}
+.lorem-div {
+    color: #fff;
+	position: relative;
+	top: 0;
+	left: 35px;
+	line-height: 20px;
+	display: inline-block;
+}
+.ellipse-icon {
+	position: absolute;
+	top: 4px;
+	left: 15px;
+	width: 12px;
+	height: 12px;
+}
+.task-div {
+	position: absolute;
+	top: 4px;
+	left: 0;
+	width: 12px;
+	height: 12px;
+	top: 70px;
+	left: 16px;
+	width: 72px;
+	height: 20px;
+}
+.right-arrow-icon {
+	position: absolute;
+	top: 20px;
+	left: 340px;
+	width: 22px;
+	height: 24px;
+	overflow: hidden;
+}
+.dirio-div {
+    color: #fff;
+	position: absolute;
+	top: 24px;
+	left: 30px;
+	font-size: 32px;
+	line-height: 20px;
+	font-weight: 500;
+	text-align: right;
+	display: inline-block;
+}
+.timer-card-div {
+	position: relative;
+	width: 100%;
+	height: 114px;
+	text-align: left;
+	font-size: 16px;
+	color: #fff;
+}
 
-    .img1 {
-        display: none;
-        width: 2.5em;
-        margin-right: 4em;
-        margin-left: 1em;
+
+.treino{
+
+    h2{
+        margin-left: 20px;
     }
 
-    .home {
-        padding: 0.4em;
-        width: 30%;
-    }
-
-    .img3 {
-        display: none;
-        width: 1.8em;
-        margin-left: 6em;
-    }
 }

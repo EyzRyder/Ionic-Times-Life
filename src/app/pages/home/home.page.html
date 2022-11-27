@@ -1,26 +1,25 @@
 <ion-header color="transparent">
+  <!-- <img class="tst" src="../../assets/placeholder/Rectangle 2052.svg"> -->
   <ion-toolbar color="transparent">
-        <!-- <h2 style="    display: flex;
-            align-content: center;
-            justify-content: center;
-            align-items: center;">Home</h2> -->
             <div class="top">
-            <!-- <img class="img1" src="../../assets/img/icontemplate1.svg"> -->
-            <img class="home" src="../../assets/img/homee.svg"> <!--   Só de Placeholder (=    )-->
-            <!-- <img class="img2" src="../../assets/img/Vector.svg"> casinha  -->
-            <!-- <img class="img3" src="../../assets/img/Notification.svg"> -->
+            <!-- <img class="home" src="../../assets/placeholder/DarkHome.svg">  -->
             </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="home-page-div">
-  <!-- <div class="buttonLogin" *ngIf="!this.userAuthService.isLoggedIn">
-    <ion-button  class="login" routerLink="/login">
-      <label>Faça Login</label>
-    </ion-button>
-  </div> -->
+<ion-content class="timer-card-div">
+  <div class="card-div"></div>
+  <div class="task-div">
+    <div class="lorem-div">Lorem</div>
+    <img class="ellipse-icon" alt="" src="../../assets/placeholder/ellipse.svg" />
+  </div>
+  <img class="right-arrow-icon" alt="" src="../../assets/placeholder/right-arrow.svg" />
+  <div class="dirio-div">Diário</div>
 
-  <div class="calender">
+
+<!-- <ion-content class="home-page-div"> -->
+
+  <!-- <div class="calender">
 <div class="meta-da-semana">Meta Da Semana</div>
 <div class="dias-do-semana">0/5</div>
 <div class="group-dias">
@@ -60,20 +59,26 @@
     <div class="text">Dom</div>
   </div>
 </div>
-  </div>
+  </div> -->
   
-<ion-slides pager="true" [options]="slideOpts">
+<ion-slides pager="false" [options]="slideOpts">
   <ion-slide *ngFor="let article of topHeadlines">
     <ion-card  class="carroseu" style="background-image: url({{article.urlToImage}});     background-size: cover;">
       <!-- <img src={{article.urlToImage}} alt=""/> -->
     
       <ion-card-content>
         <p>{{article.title}}</p>
-          <p>{{article.author}}</p>
+          <!-- <p>{{article.author}}</p> -->
       </ion-card-content>
     </ion-card>
   </ion-slide>
 </ion-slides>
-  
+
+<ion-content class="treino">
+
+  <h2>Seus Treinos</h2>
 
 </ion-content>
+
+</ion-content>
+
