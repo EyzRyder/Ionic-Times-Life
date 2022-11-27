@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class WorkoutService {
   treino: any;
   treinoAtual: number = 0;
+  count;
 
   constructor() { }
 

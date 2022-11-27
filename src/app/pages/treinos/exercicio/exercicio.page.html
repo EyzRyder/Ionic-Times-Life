@@ -1,12 +1,20 @@
 <ion-content>
-<div>{{this.workoutService.treinoAtual}}/28</div>
+<div>
+  {{this.workoutService.treinoAtual}}/{{this.workoutService.count}}
+</div>
 <img src={{exercicio[this.workoutService.treinoAtual-1].imgUrl}} />
-<div>{{exercicio[this.workoutService.treinoAtual-1].nome}}</div>
+<div>
+  {{exercicio[this.workoutService.treinoAtual-1].nome}}
+</div>
 <div *ngIf="exercicio[this.workoutService.treinoAtual-1].setTemp == 'set'">
   {{exercicio[this.workoutService.treinoAtual-1].num}}
+  <ion-button (click)="buttonPausePronto()">Pronto</ion-button>
+
 </div>
 <div *ngIf="exercicio[this.workoutService.treinoAtual-1].setTemp == 'temp'">
-{{exercicio[this.workoutService.treinoAtual-1].num}}
+00:{{this.ss}} 
+<ion-button (click)="buttonPausePronto()">Pausa</ion-button>
 </div>
+
 
 </ion-content>

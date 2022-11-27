@@ -1,3 +1,5 @@
+import { Location } from '@angular/common';
+import { FinalTreinoComponent } from './../../../components/final-treino/final-treino.component';
 
 import { WorkoutService } from './../../../services/workout.service';
 import { TelaDeDescansoComponent } from './../../../components/tela-de-descanso/tela-de-descanso.component';
@@ -14,7 +16,7 @@ export class TreinoPage implements OnInit {
   treino: any;
   ss: number = 0;
   mm: number = 0;
-  hh: number = 0; 
+  hh: number = 0;
   temp: any;
 
   constructor(
@@ -22,9 +24,11 @@ export class TreinoPage implements OnInit {
     private route: ActivatedRoute,
     public modalCtrl: ModalController,
     public workoutService: WorkoutService,
+    private location: Location,
+
   ) {
 
-   }
+  }
 
   ngOnInit() {
     this.workoutService.treino = [];
@@ -34,9 +38,22 @@ export class TreinoPage implements OnInit {
         this.treino = getNav.extras.state.paramFilme;
       }
     });
+
   }
 
-  async ComecarTreino() {
+  // async final() {
+  //   const modal = await this.modalCtrl.create({
+  //     component: FinalTreinoComponent
+  //   })
+  //   modal.onDidDismiss().then(newTask => {
+  //     this.workoutService.treinoAtual = 0;
+  //     this.location.back();
+  //   })
+  //   return await modal.present();
+  // }
+
+
+  async ComecarContator() {
     const modal = await this.modalCtrl.create({
       component: TelaDeDescansoComponent
     })
@@ -44,7 +61,7 @@ export class TreinoPage implements OnInit {
       // console.log(newTaskObj.data);
       // this.toDoList.push(newTaskObj.data)
       this.workoutService.treinoAtual++;
-      const navigationExtras: NavigationExtras = { state: { paramFilme: this.treino.exercicios  } };
+      const navigationExtras: NavigationExtras = { state: { paramFilme: this.treino.exercicios } };
       this.router.navigate(['exercicio'], navigationExtras);
     })
     return await modal.present();
