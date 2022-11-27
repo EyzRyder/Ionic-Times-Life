@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ExercicoComponent } from './exercico/exercico.component';
 
 @NgModule({
     imports: [
@@ -15,7 +14,7 @@ import { ExercicoComponent } from './exercico/exercico.component';
         FormsModule,
         IonicModule,
     ],
-    exports: [ExercicoComponent, FinalTreinoComponent, TelaDeDescansoComponent],
-    declarations: [ExercicoComponent, FinalTreinoComponent, TelaDeDescansoComponent]
+    exports: [ FinalTreinoComponent, TelaDeDescansoComponent],
+    declarations: [ FinalTreinoComponent, TelaDeDescansoComponent]
 })
 export class ComponentsModule { }

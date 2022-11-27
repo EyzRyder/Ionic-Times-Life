@@ -1,5 +1,7 @@
+
+import { WorkoutService } from './../../../services/workout.service';
 import { TelaDeDescansoComponent } from './../../../components/tela-de-descanso/tela-de-descanso.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
@@ -10,7 +12,6 @@ import { ModalController } from '@ionic/angular';
 })
 export class TreinoPage implements OnInit {
   treino: any;
-  treinoAtual: number = 0;
   ss: number = 0;
   mm: number = 0;
   hh: number = 0; 
@@ -20,9 +21,13 @@ export class TreinoPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     public modalCtrl: ModalController,
-  ) { }
+    public workoutService: WorkoutService,
+  ) {
+
+   }
 
   ngOnInit() {
+    this.workoutService.treino = [];
     this.route.queryParams.subscribe(params => {
       const getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {
@@ -31,26 +36,16 @@ export class TreinoPage implements OnInit {
     });
   }
 
-  async ComecarTreino(e) {
+  async ComecarTreino() {
     const modal = await this.modalCtrl.create({
       component: TelaDeDescansoComponent
     })
     modal.onDidDismiss().then(newTask => {
       // console.log(newTaskObj.data);
       // this.toDoList.push(newTaskObj.data)
-      this.treinoAtual++;
-      console.log(this.treinoAtual);
-    })
-    return await modal.present();
-  }
-
-  async trocarTreino(e) {
-    const modal = await this.modalCtrl.create({
-      component: TelaDeDescansoComponent
-    })
-    modal.onDidDismiss().then(newTask => {
-      // console.log(newTaskObj.data);
-      // this.toDoList.push(newTaskObj.data)
+      this.workoutService.treinoAtual++;
+      const navigationExtras: NavigationExtras = { state: { paramFilme: this.treino.exercicios  } };
+      this.router.navigate(['exercicio'], navigationExtras);
     })
     return await modal.present();
   }

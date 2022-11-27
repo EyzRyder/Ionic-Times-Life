@@ -4,6 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WorkoutService {
+  treino: any;
+  treinoAtual: number = 0;
 
   constructor() { }
+
+  
 }

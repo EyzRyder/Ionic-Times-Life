@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'add-exercicio',
     loadChildren: () => import('./pages/treinos/add-exercicio/add-exercicio.module').then( m => m.AddExercicioPageModule)
   },
+  {
+    path: 'exercicio',
+    loadChildren: () => import('./pages/treinos/exercicio/exercicio.module').then( m => m.ExercicioPageModule)
+  },
 
   
 ];

@@ -10,7 +10,7 @@ import { async } from '@firebase/util';
   styleUrls: ['./tela-de-descanso.component.scss'],
 })
 export class TelaDeDescansoComponent implements OnInit {
-  ss: number = 20;
+  ss: number = 0;
   mm: number = 0;
   hh: number = 0;
   temp: any;
@@ -22,7 +22,8 @@ export class TelaDeDescansoComponent implements OnInit {
   ) { }
 
   ngOnInit() { 
-    this.ss = 20;
+    // this.ss = 20;
+    this.ss = 5;
     this.start();
 
   }
