@@ -24,7 +24,7 @@ export class MetasPage implements OnInit {
         {
           nome: 'Flexões Militar',
           setTemp: 'set',
-          num: '14',
+          num: 'x14',
           imgUrl: 'https://blog.eumilitar.com/wp-content/uploads/2021/05/militar-flex-03-min-300x281.jpg'
         },
       ]
@@ -43,7 +43,7 @@ export class MetasPage implements OnInit {
         {
           nome: 'Flexões Militar',
           setTemp: 'set',
-          num: '14',
+          num: 'x14',
           imgUrl: 'https://blog.eumilitar.com/wp-content/uploads/2021/05/militar-flex-03-min-300x281.jpg'
         },
       ]

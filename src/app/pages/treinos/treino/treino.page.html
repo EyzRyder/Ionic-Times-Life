@@ -27,6 +27,6 @@
 <div class="exercicios" *ngFor="let exercicio of treino.exercicios; let i = index">
   <img src={{exercicio.imgUrl}} alt="">
   <div class="exercicioName">{{exercicio.nome}}</div>
-  <div class="exercicioName"><div *ngIf="exercicio.setTemp == 'set' ">x</div>{{exercicio.num}}</div>
+  <div class="exercicioName">{{exercicio.num}}</div>
 </div>
 </ion-content>
