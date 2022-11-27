@@ -16,11 +16,11 @@ export class HomePage implements OnInit {
   slideOpts = {
     slidesPerView: 1.2,
     coverflowEffect: {
-      rotate: 10,
+      rotate: 1,
       stretch: 0,
-      depth: 100,
+      depth: 10,
       modifier: 1,
-      slideShadows: true,
+      slideShadows: false,
     },
     on: {
       beforeInit() {
