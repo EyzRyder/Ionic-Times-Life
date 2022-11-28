@@ -1,7 +1,12 @@
+// ion-header{
+//     // display: flex;
+// }
+
 ion-header::after {
-    background-image: none; // Divisória da header, basicamente tira a sombra 
+    // background-image: none; // Divisória da header, basicamente tira a sombra 
   }
 
+  
 .home-page-div {
     position: relative;
     width: 100%;
@@ -57,7 +62,6 @@ ion-header::after {
             width: 391px;
             font-size: 15px;
             color: #000;
-            font-family: Inter;
         }
 
         .dia-card {
@@ -241,6 +245,7 @@ ion-title {
 
 
 .card-div {
+    margin-top: 2em;
 	position: relative;
 	top: 0;
 	margin-left: 20px;
@@ -250,6 +255,7 @@ ion-title {
 	height: 114px;
 }
 .lorem-div {
+    margin-top: 0.8em;
     color: #fff;
 	position: relative;
 	top: 0;
@@ -258,6 +264,7 @@ ion-title {
 	display: inline-block;
 }
 .ellipse-icon {
+    margin-top: 0.8em;
 	position: absolute;
 	top: 4px;
 	left: 15px;
@@ -265,6 +272,7 @@ ion-title {
 	height: 12px;
 }
 .task-div {
+    margin-top: 2em;
 	position: absolute;
 	top: 4px;
 	left: 0;
@@ -276,6 +284,7 @@ ion-title {
 	height: 20px;
 }
 .right-arrow-icon {
+    margin-top: 2em;
 	position: absolute;
 	top: 20px;
 	left: 340px;
@@ -284,6 +293,7 @@ ion-title {
 	overflow: hidden;
 }
 .dirio-div {
+    margin-top: 1em;
     color: #fff;
 	position: absolute;
 	top: 24px;
@@ -295,6 +305,7 @@ ion-title {
 	display: inline-block;
 }
 .timer-card-div {
+    
 	position: relative;
 	width: 100%;
 	height: 114px;
@@ -303,11 +314,85 @@ ion-title {
 	color: #fff;
 }
 
-
-.treino{
-
-    h2{
+h2{
         margin-left: 20px;
-    }
-
 }
+
+
+.rectangle-icon {
+    border-radius: 90px;
+    position: absolute;
+    top: 0;
+    left: 10px;
+    border-radius: 0px;
+    width: 382px;
+    height: 133px;
+    object-fit: cover;
+}
+  .hello-world-div {
+    margin-left: 0.5em;
+    color: #fff;
+    flex: 1;
+    position: relative;
+    letter-spacing: 0.2px;
+    line-height: 40px;
+    font-weight: bold;
+    display: inline-block;
+  }
+  .text-largeicon2-div {
+    position: absolute;
+    top: 0;
+    left: 18px;
+    width: 302px;
+    height: 59px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .mask-group-icon,
+  .mask-group-icon1,
+  .mask-group-icon2 {
+    position: absolute;
+    top: 104px;
+    left: 16px;
+    width: 24.83px;
+    height: 20px;
+    object-fit: cover;
+  }
+  .mask-group-icon1,
+  .mask-group-icon2 {
+    left: 45px;
+  }
+  .mask-group-icon2 {
+    left: 30px;
+  }
+  .group-div {
+    border-radius: 20px;
+    position: relative;
+    width: 100%;
+    height: 133px;
+    text-align: left;
+    font-size: 20px;
+    color: #fff;
+    font-family: "Work Sans";
+  }
+
+  ion-searchbar.custom {
+    margin-top: 1em;
+    --background: transparent;
+    --color: none;
+    --placeholder-color: #1c1c1c;
+    --icon-color: #1c1c1c;
+    --border-radius: 20px;
+    box-shadow: none ;
+    color: #000 !important;
+  
+  }
+
+  ion-searchbar.custom::after{
+    color: transparent;
+    box-shadow: none;
+    background-image: none;
+  }
