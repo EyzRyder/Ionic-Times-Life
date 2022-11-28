@@ -1,5 +1,9 @@
+import { Location } from '@angular/common';
+import { FinalTreinoComponent } from './../../../components/final-treino/final-treino.component';
+
+import { WorkoutService } from './../../../services/workout.service';
 import { TelaDeDescansoComponent } from './../../../components/tela-de-descanso/tela-de-descanso.component';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
@@ -10,47 +14,55 @@ import { ModalController } from '@ionic/angular';
 })
 export class TreinoPage implements OnInit {
   treino: any;
-  treinoAtual: number = 0;
   ss: number = 0;
   mm: number = 0;
-  hh: number = 0; 
+  hh: number = 0;
   temp: any;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     public modalCtrl: ModalController,
-  ) { }
+    public workoutService: WorkoutService,
+    private location: Location,
+
+  ) {
+
+  }
 
   ngOnInit() {
+    this.workoutService.treino = [];
     this.route.queryParams.subscribe(params => {
       const getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {
         this.treino = getNav.extras.state.paramFilme;
       }
     });
+
   }
 
-  async ComecarTreino(e) {
+  // async final() {
+  //   const modal = await this.modalCtrl.create({
+  //     component: FinalTreinoComponent
+  //   })
+  //   modal.onDidDismiss().then(newTask => {
+  //     this.workoutService.treinoAtual = 0;
+  //     this.location.back();
+  //   })
+  //   return await modal.present();
+  // }
+
+
+  async ComecarContator() {
     const modal = await this.modalCtrl.create({
       component: TelaDeDescansoComponent
     })
     modal.onDidDismiss().then(newTask => {
       // console.log(newTaskObj.data);
       // this.toDoList.push(newTaskObj.data)
-      this.treinoAtual++;
-      console.log(this.treinoAtual);
-    })
-    return await modal.present();
-  }
-
-  async trocarTreino(e) {
-    const modal = await this.modalCtrl.create({
-      component: TelaDeDescansoComponent
-    })
-    modal.onDidDismiss().then(newTask => {
-      // console.log(newTaskObj.data);
-      // this.toDoList.push(newTaskObj.data)
+      this.workoutService.treinoAtual++;
+      const navigationExtras: NavigationExtras = { state: { paramFilme: this.treino.exercicios } };
+      this.router.navigate(['exercicio'], navigationExtras);
     })
     return await modal.present();
   }
