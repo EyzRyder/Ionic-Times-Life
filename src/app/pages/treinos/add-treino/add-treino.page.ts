@@ -20,6 +20,7 @@ export class AddTreinoPage implements OnInit {
 
   ngOnInit() {
   }
+  addNewTreino(){}
 
   async addNewExercicio() {
     const modal = await this.modalCtrl.create({

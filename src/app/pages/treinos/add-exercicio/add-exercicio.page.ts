@@ -31,7 +31,7 @@ export class AddExercicioPage implements OnInit {
   onIonInfinite(ev) {
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();
-    }, 500);
+    }, 50);
   }
 
   async pesquisarExercicio() {
@@ -42,11 +42,13 @@ export class AddExercicioPage implements OnInit {
 
     } else if (this.selectedtarget == 'musculo'){
       const exData = await this.dbExercicioService.fetchData('target', this.treinoMusculo);
-      console.log(exData);
+      this.exercicios = exData;
+      console.log(this.exercicios);
 
     } else {
       const exData = await this.dbExercicioService.fetchData('', '');
-      console.log(exData);
+      this.exercicios = exData;
+      console.log(this.exercicios);
 
     }
     
