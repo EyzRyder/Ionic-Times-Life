@@ -9,7 +9,7 @@ export class WorkoutService {
   treinos = [
     {
       nome: 'Braço',
-      num: '28',
+      num: '2',
       dificuldade: 'Avançado',
       exercicios: [
         {
@@ -28,7 +28,7 @@ export class WorkoutService {
     },
     {
       nome: 'Abdomin',
-      num: '20',
+      num: '2',
       dificuldade: 'Avançado',
       exercicios: [
         {
