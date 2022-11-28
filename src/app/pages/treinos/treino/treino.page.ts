@@ -31,7 +31,7 @@ export class TreinoPage implements OnInit {
   }
 
   ngOnInit() {
-    this.workoutService.treino = [];
+    this.treino = [];
     this.route.queryParams.subscribe(params => {
       const getNav = this.router.getCurrentNavigation();
       if (getNav.extras.state) {

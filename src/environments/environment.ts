@@ -15,8 +15,15 @@ export const environment = {
   news: {
     api_key: 'ebc48f55665f43258270f92a66f50a0b',
     url_base: 'https://newsapi.org/v2/'
+  },
+  ExerciseDB: {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '5272259bacmshbc289ff18460e32p16a5aajsn6f9687de1d28',
+      'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+    }
   }
-};
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

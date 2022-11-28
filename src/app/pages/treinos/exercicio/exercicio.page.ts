@@ -52,6 +52,7 @@ export class ExercicioPage implements OnInit {
       this.location.back();
       this.final();
     } else {
+      clearInterval(this.temp);
       this.ComecarContator();
       // this.workoutService.treinoAtual++;
     }

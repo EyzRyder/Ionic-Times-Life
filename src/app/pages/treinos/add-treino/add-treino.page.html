@@ -1,9 +1,27 @@
 <ion-header>
   <ion-toolbar>
+      <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="this.modalCtrl.dismiss()"></ion-icon>
     <ion-title>addTreino</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+<ion-card>
+  <ion-item>
+    <ion-textarea [(ngModel)]="treinoName" placeholder="Write your task here"></ion-textarea>
+  </ion-item>
+    <ion-item>
+      <ion-label>Dificuldade</ion-label>
+      <ion-select [(ngModel)]="treinoPriority">
+        <ion-select-option value="Facil">Fácil</ion-select-option>
+        <ion-select-option value="Normal">Normal</ion-select-option>
+        <ion-select-option value="Avancado" selected>Avançado</ion-select-option>
+      </ion-select>
+    </ion-item>
+<ion-button (click)="addNewExercicio()"></ion-button>
+        <ion-item *ngIf="exercicios">
+          <ion-label>{{exercicios.nome}}</ion-label>
 
+        </ion-item>
+    
+</ion-card>
 </ion-content>
