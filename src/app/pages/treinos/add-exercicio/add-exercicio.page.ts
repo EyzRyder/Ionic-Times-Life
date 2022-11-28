@@ -1,6 +1,7 @@
 import { DbExercicioService } from './../../../api/db-exercicio.service';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { InfiniteScrollCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-add-exercicio',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-exercicio.page.scss'],
 })
 export class AddExercicioPage implements OnInit {
+  exercicios;
   exercicio;
   exercicioName;
   selectedtarget = 'corpo';
@@ -23,15 +25,20 @@ export class AddExercicioPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    
   }
 
- 
-
+  onIonInfinite(ev) {
+    setTimeout(() => {
+      (ev as InfiniteScrollCustomEvent).target.complete();
+    }, 500);
+  }
 
   async pesquisarExercicio() {
     if (this.selectedtarget == 'corpo') {
       const exData = await this.dbExercicioService.fetchData('bodyPart', this.treinoCorpo);
-      console.log(exData);
+      this.exercicios = exData;
+      console.log(this.exercicios);
 
     } else if (this.selectedtarget == 'musculo'){
       const exData = await this.dbExercicioService.fetchData('target', this.treinoMusculo);

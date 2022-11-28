@@ -78,10 +78,17 @@
     <ion-button (click)="addNewExercicio()">
       Adicionar Exercício
     </ion-button>
-    <ion-item *ngIf="exercicio">
-      <ion-label>{{exercicio.nome}}</ion-label>
 
-    </ion-item>
+    <ion-list *ngIf="exercicios">
+      <ion-item *ngFor="let item of exercicios; let i">
+          <img src={{item.gifUrl}} alt="avatar" />
+        <ion-label>{{item.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+
 
   </ion-card>
 </ion-content>
