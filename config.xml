@@ -1,0 +1,12 @@
+<platform name="android">
+    <!-- Health plugin -->
+    <plugin name="cordova-plugin-health" source="npm">
+      <variable name="HEALTH_READ_PERMISSION" value="App needs read access"/>
+      <variable name="HEALTH_WRITE_PERMISSION" value="App needs write access"/>
+      <variable name="PLAY_AUTH_VERSION" value="19.0.0"/>
+      <variable name="FIT_API_VERSION" value="20.0.0"/>
+    </plugin>
+    <edit-config file="AndroidManifest.xml" mode="merge" target="/manifest/uses-permission" xmlns:android="http://schemas.android.com/apk/res/android">
+        <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    </edit-config>
+</platform>

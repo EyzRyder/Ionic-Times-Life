@@ -1,29 +1,35 @@
 <ion-header color="transparent">
   <ion-toolbar color="transparent">
-    <h2 style="    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;">Dashboard</h2>
+    <h2
+      style="
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      Dashboard
+    </h2>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
     <ion-card-header>
-      <ion-card-title>Seu IMC é {{showImc()}}</ion-card-title>
+      <ion-card-title
+        >Seu IMC é {{showImc()}} | Passos: {{steps}}</ion-card-title
+      >
     </ion-card-header>
 
     <ion-card-content *ngIf="this.userAuthService.isLoggedIn == true">
       <!-- {{showPesoInfo()}} -->
     </ion-card-content>
 
-    <ion-button *ngIf="this.userAuthService.isLoggedIn == false" color="primary" (click)="alertaEntrada()">Descubra seu
-      imc
+    <ion-button
+      *ngIf="this.userAuthService.isLoggedIn == false"
+      color="primary"
+      (click)="alertaEntrada()"
+      >Descubra seu imc
     </ion-button>
   </ion-card>
-
-
-
-
-
 </ion-content>
