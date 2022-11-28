@@ -13,35 +13,35 @@ export class WorkoutService {
       dificuldade: 'Avançado',
       exercicios: [
         {
-          nome: 'Pular Corda',
+          nome: 'Modified push up to lower arms',
           setTemp: 'temp',
           num: '00:30',
-          imgUrl: 'https://treinomestre.com.br/wp-content/uploads/2014/07/pular-corda-emagrece.jpg.webp'
+          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/1421.gif'
         },
         {
           nome: 'Flexões Militar',
           setTemp: 'set',
           num: 'x14',
-          imgUrl: 'https://blog.eumilitar.com/wp-content/uploads/2021/05/militar-flex-03-min-300x281.jpg'
+          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0662.gif'
         },
       ]
     },
     {
-      nome: 'Perna',
+      nome: 'Abdomin',
       num: '20',
       dificuldade: 'Avançado',
       exercicios: [
         {
-          nome: 'Pular Corda',
+          nome: 'air bike',
           setTemp: 'temp',
           num: '00:30',
-          imgUrl: 'https://treinomestre.com.br/wp-content/uploads/2014/07/pular-corda-emagrece.jpg.webp'
+          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0003.gif'
         },
         {
-          nome: 'Flexões Militar',
+          nome: '3/4 sit-up',
           setTemp: 'set',
           num: 'x14',
-          imgUrl: 'https://blog.eumilitar.com/wp-content/uploads/2021/05/militar-flex-03-min-300x281.jpg'
+          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0001.gif'
         },
       ]
     },
