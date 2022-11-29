@@ -1,4 +1,33 @@
+.dados {
+    margin: 10px 0px 0px 8px;
+    font-size: 16px;
+    font-weight: 520;
+}
 
+.tendencies {
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+ion-card {
+    width: 100%;
+    background-color: #3b3943;
+    border-radius: 8px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+ion-card-title {
+    display: flex; 
+    justify-content: space-between;
+}
+
+ion-card-subtitle {
+    margin-top: 0;
+}
 
 // ion-toolbar {
 //     --background: #19422d;
