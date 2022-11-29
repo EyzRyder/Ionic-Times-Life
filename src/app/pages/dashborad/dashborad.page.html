@@ -12,9 +12,8 @@
     </h2>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <ion-card>
+  <!--<ion-card>
     <ion-card-header>
       <ion-card-title
         >Seu IMC é {{showImc()}} | Passos: {{steps}}</ion-card-title
@@ -22,7 +21,7 @@
     </ion-card-header>
 
     <ion-card-content *ngIf="this.userAuthService.isLoggedIn == true">
-      <!-- {{showPesoInfo()}} -->
+      <!-- {{showPesoInfo()}}
     </ion-card-content>
 
     <ion-button
@@ -31,5 +30,44 @@
       (click)="alertaEntrada()"
       >Descubra seu imc
     </ion-button>
-  </ion-card>
+  </ion-card>-->
+  <ion-text>
+    <h3 class="dados">DADOS</h3>
+  </ion-text>
+  <div class="tendencies">
+    <!-- Card de Passos -->
+    <ion-card class="ion-activatable ripple-parent rectangle">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-text>Passos</ion-text>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-card-title>
+        <ion-card-subtitle>Últimos 7 dias</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{totalDailySteps}}</h1>
+        <h2>Hoje</h2>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-text>
+    <h3 class="dados" style="margin-top: 0;">SINAIS VITAIS</h3>
+  </ion-text>
+  <div class="tendencies">
+    <!-- Card de Passos -->
+    <ion-card class="ion-activatable ripple-parent rectangle">
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-card-header>
+        <ion-card-title>
+          <ion-text>Frequência cardiaca</ion-text>
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-card-title>
+        <ion-card-subtitle>Últimos 7 dias</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <h1>{{lastHeartRate}} bpm</h1>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

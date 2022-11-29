@@ -24,6 +24,9 @@ export class DashboradPage implements OnInit {
   dataNasc;
   imc;
 
+  totalDailySteps: number = 0;
+  lastHeartRate: number = 0;
+
   dailySteps = [];
   weeklySteps = [];
   monthlySteps = [];
@@ -34,7 +37,7 @@ export class DashboradPage implements OnInit {
     'android.permission.ACCESS_FINE_LOCATION',
   ];
 
-  dataTypes: string[] = ['steps'];
+  dataTypes: string[] = ['steps', 'weight', 'heart_rate'];
 
   constructor(
     private platform: Platform,
@@ -48,9 +51,11 @@ export class DashboradPage implements OnInit {
   ) {
     this.requestPermissions();
     this.requestAuthorization();
+
   }
 
   ngOnInit() {
+
   }
 
   requestPermissions() {
@@ -64,7 +69,8 @@ export class DashboradPage implements OnInit {
     if (ready) {
       this.health.isAuthorized(this.dataTypes).then(() => {
         this.health.requestAuthorization(this.dataTypes).then(() => {
-          this.getDailySteps();
+          this.getTotalDailySteps();
+          this.getLastHeartRate();
         });
       }).catch((err) => {
         console.log(err);
@@ -72,66 +78,36 @@ export class DashboradPage implements OnInit {
     }
   }
 
-  getDailySteps() {
-    this.health.query({
-      startDate: new Date(new Date().setHours(0, 0, 0, 0)),
+  getTotalDailySteps() {
+    this.health.queryAggregated({
+      startDate: new Date(),
       endDate: new Date(),
       dataType: 'steps',
-      limit: 1000,
+      bucket: 'day',
       filtered: true
     }).then(arr => {
-      arr.forEach(obj => {
-        console.log(obj.value);
-        let datePipe: DatePipe = new DatePipe('en-US');
-        this.dailySteps.push({startDate: datePipe.transform(obj.startDate, 'HH:mm'), endDate: datePipe.transform(obj.endDate, 'HH:mm'), value: obj.value});
+      arr.forEach(res => {
+        this.totalDailySteps = Number(res.value);
       });
     }).catch(err => {
       console.log(err);
     });
   }
 
-  getWeeklySteps() {
+  getLastHeartRate() {
     this.health.query({
-      startDate: this.setToMonday(new Date()),
-      endDate: this.setToFriday(new Date()),
-      dataType: 'steps',
-      limit: 1000,
+      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
+      endDate: new Date(),
+      dataType: 'heart_rate',
       filtered: true
     }).then(arr => {
-      arr.forEach(obj => {
-        this.weeklySteps.push({startDate: obj.startDate.toISOString(), endDate: obj.endDate.toISOString(), value: obj.value});
+      arr.forEach(res => {
+        console.log(res);
+        this.lastHeartRate = Number(res.value);
       });
     }).catch(err => {
       console.log(err);
     });
-  }
-
-  setToMonday(date: Date) {
-    let day = date.getDay() || 7;
-    if (day !== 1) date.setHours(-24 * (day - 1));
-    return date; 
-  }
-
-  setToFriday(date: Date) {
-    let day = date.getDay() || 7;
-    if (day !== 7) date.setHours(24 * (day + 1));
-    return date;
-  }
-
-  getUserSteps(startDate: Date, endDate: Date) {
-    this.health.query
-  }
-
-  getUserDailySteps() {
-
-  }
-
-  query() {
-
-  }
-
-  queryAggregated() {
-
   }
 
   async registrarUser() {
