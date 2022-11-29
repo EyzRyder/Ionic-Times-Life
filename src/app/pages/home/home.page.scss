@@ -1,11 +1,25 @@
-// ion-header{
-//     // display: flex;
-// }
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
+ion-content{
+    
+}
 ion-header::after {
-    // background-image: none; // Divisória da header, basicamente tira a sombra 
+    background-image: none; // Divisória da header, basicamente tira a sombra 
   }
+ion-header{
+    font-family: 'Lato', sans-serif;
+    color: #192126;
+    h2{
+        // position: absolute;
+        font-size: 1em;
+    }
 
+    h1{
+        margin-top: -10px;
+        margin-left: 0.6em;
+        font-size: 1.9em;
+    }
+}
   
 .home-page-div {
     position: relative;
@@ -14,7 +28,7 @@ ion-header::after {
     overflow: hidden;
     text-align: left;
     font-size: 16px;
-    font-family: "Work Sans";
+    // font-family: "Work Sans";
 
     .calender {
          position: relative;
@@ -172,7 +186,7 @@ ion-header::after {
                 letter-spacing: 0.2px;
                 line-height: 20px;
                 font-weight: 500;
-                font-family: "Work Sans";
+                // font-family: "Work Sans";
                 text-align: left;
                 display: inline-block;
             }
@@ -376,7 +390,7 @@ h2{
     text-align: left;
     font-size: 20px;
     color: #fff;
-    font-family: "Work Sans";
+    // font-family: "Work Sans";
   }
 
   ion-searchbar.custom {
