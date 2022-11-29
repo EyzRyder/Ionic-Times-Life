@@ -20,7 +20,7 @@ This project is licensed under the MIT License
 
 <h2>💖Like my work?</h2>
 
-Integrantes: 
+Integrantes: <br>
 -Kauã Miguel <br>
 -Bruno Oliveira<br>
 -Gabriel Bessi<br>
