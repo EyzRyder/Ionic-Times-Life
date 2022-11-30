@@ -13,7 +13,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <!--<ion-card>
+  <ion-card>
     <ion-card-header>
       <ion-card-title
         >Seu IMC é {{showImc()}} | Passos: {{steps}}</ion-card-title
@@ -21,7 +21,7 @@
     </ion-card-header>
 
     <ion-card-content *ngIf="this.userAuthService.isLoggedIn == true">
-      <!-- {{showPesoInfo()}}
+      {{showPesoInfo()}}
     </ion-card-content>
 
     <ion-button
@@ -30,7 +30,7 @@
       (click)="alertaEntrada()"
       >Descubra seu imc
     </ion-button>
-  </ion-card>-->
+  </ion-card>
   <ion-text>
     <h3 class="dados">DADOS</h3>
   </ion-text>
