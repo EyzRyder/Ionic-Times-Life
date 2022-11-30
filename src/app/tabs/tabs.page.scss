@@ -1,14 +1,15 @@
 ion-tab-bar {
     bottom: 20px;
     position: relative;
-    border-radius: 16px;
+    border-radius: 20px;
     width: 92%;
     margin: 0 auto;
   }
   
   ion-tab-button {
-    background: #070417;
-    opacity: 80%;
+    background: #192126;
+    // background: #070417;
+    opacity: 100%;
   
     &::before {
       background-color: transparent;
@@ -21,12 +22,13 @@ ion-tab-bar {
   
     &.tab-selected::before {
     //   background-color: var(--ion-color-primary);
-    background-color: #9933FF;
+    // background-color: #9933FF;
+    background-color: #BBF246;
     }
 
     &.tab-selected{
         //   background-color: var(--ion-color-primary);
-        color: #9933FF;
+        color: #BBF246;
         }
 
   }

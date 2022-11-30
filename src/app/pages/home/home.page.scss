@@ -1,198 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-ion-content{
-    
-}
 ion-header::after {
     background-image: none; // Divisória da header, basicamente tira a sombra 
   }
 ion-header{
-    font-family: 'Lato', sans-serif;
+    font-family: var(--ion-head);
     color: #192126;
     h2{
-        // position: absolute;
+        font-weight: 600;
         font-size: 1em;
+        font-weight: 500;
     }
 
     h1{
+        font-weight: 600;
         margin-top: -10px;
         margin-left: 0.6em;
         font-size: 1.9em;
     }
 }
   
-.home-page-div {
-    position: relative;
-    width: 100%;
-    height: 896px;
-    overflow: hidden;
-    text-align: left;
-    font-size: 16px;
-    // font-family: "Work Sans";
-
-    .calender {
-         position: relative;
-        margin: 15px;
-        border-radius: 10px;
-        background-color: white;
-        height: 114px;
-
-        .meta-da-semana {
-            position: absolute;
-            top: 12%;
-            left: 3%;
-            font-size: 13px;
-            letter-spacing: 0.2px;
-            line-height: 40px;
-            font-weight: 500;
-            color: #2a282f;
-            display: flex;
-            align-items: center;
-            width: 134px;
-            height: 12px;
-        }
-
-        .dias-do-semana {
-            position: absolute;
-            top: 7%;
-            left: 92%;
-            font-size: 13px;
-            letter-spacing: 0.2px;
-            line-height: 40px;
-            font-weight: 500;
-            color: #2a282f;
-            display: flex;
-            align-items: center;
-            width: 377px;
-            height: 24px;
-        }
-
-        .group-dias {
-            position: absolute;
-            top: 35%;
-            left: 3%;
-            display: flex;
-            height: 59px;
-            width: 391px;
-            font-size: 15px;
-            color: #000;
-        }
-
-        .dia-card {
-            position: relative;
-            width: 48.75px;
-            height: 59px;
-            margin-right: 16px;
-
-            .card-layout {
-                position: absolute;
-                border-radius: 10px;
-                border: 0.5px solid #2a282f;
-                box-sizing: border-box;
-                width: 48.75px;
-                height: 59px;
-                opacity: 0.4;
-                mix-blend-mode: normal;
-            }
-
-            .card-layoutt{
-                position: absolute;
-                border-radius: 10px;
-                box-sizing: border-box;
-                width: 48.75px;
-                height: 59px;
-                opacity: 0.4;
-                background: linear-gradient(180deg, #8561CD 0%, #DBA4C4 100%);
-            }
-            //a poha do child não funciona por algum motivo tmnc
-            .numm {
-                color: #fff;
-                position: absolute;
-                left: 15.83px;
-                display: inline-block;
-                top: 28px;
-                line-height: 18px;
-                font-weight: 600;
-                width: 23px;
-            }
-
-
-            .textt {
-                color: #fff;
-                position: absolute;
-                left: 15.83px;
-                display: inline-block;
-                top: 11px;
-                font-size: 11px;
-                line-height: 16px;
-                width: 28px;
-                opacity: 0.6;
-                mix-blend-mode: normal;
-            }
-        }
-
-            .num {
-                position: absolute;
-                left: 15.83px;
-                display: inline-block;
-                top: 28px;
-                line-height: 18px;
-                font-weight: 600;
-                width: 23px;
-            }
-
-
-            .text {
-                position: absolute;
-                left: 15.83px;
-                display: inline-block;
-                top: 11px;
-                font-size: 11px;
-                line-height: 16px;
-                width: 28px;
-                opacity: 0.6;
-                mix-blend-mode: normal;
-            }
-        }
-    }
-
-    .buttonLogin {
-        margin-top: 15px;
-        margin-bottom: 15px;
-        margin-left: 90px;
-        margin-right: 100px;
-        // padding: 10px 16px;
-
-        .login {
-            // position: absolute;
-            // top: 111px;
-            // left: 156px;
-
-            cursor: auto;
-            border: 0;
-            // padding: 10px 16px;
-            border-radius: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-sizing: border-box;
-            align-items: center;
-            justify-content: center;
-            align-content: center;
-
-            label {
-                position: relative;
-                font-size: 14px;
-                letter-spacing: 0.2px;
-                line-height: 20px;
-                font-weight: 500;
-                // font-family: "Work Sans";
-                text-align: left;
-                display: inline-block;
-            }
-        }
-    }
-
     .carroseu {
         margin-top: 2em;
         box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
@@ -251,156 +76,19 @@ ion-title {
     }
 }
 
-.header-content {
-    position: absolute;
-    display: flex;
-    align-items: center;
-}
-
-
-.card-div {
-    margin-top: 2em;
-	position: relative;
-	top: 0;
-	margin-left: 20px;
-	border-radius: 12px;
-	background-color: #070417;
-	width: 360px;
-	height: 114px;
-}
-.lorem-div {
-    margin-top: 0.8em;
-    color: #fff;
-	position: relative;
-	top: 0;
-	left: 35px;
-	line-height: 20px;
-	display: inline-block;
-}
-.ellipse-icon {
-    margin-top: 0.8em;
-	position: absolute;
-	top: 4px;
-	left: 15px;
-	width: 12px;
-	height: 12px;
-}
-.task-div {
-    margin-top: 2em;
-	position: absolute;
-	top: 4px;
-	left: 0;
-	width: 12px;
-	height: 12px;
-	top: 70px;
-	left: 16px;
-	width: 72px;
-	height: 20px;
-}
-.right-arrow-icon {
-    margin-top: 2em;
-	position: absolute;
-	top: 20px;
-	left: 340px;
-	width: 22px;
-	height: 24px;
-	overflow: hidden;
-}
-.dirio-div {
-    margin-top: 1em;
-    color: #fff;
-	position: absolute;
-	top: 24px;
-	left: 30px;
-	font-size: 32px;
-	line-height: 20px;
-	font-weight: 500;
-	text-align: right;
-	display: inline-block;
-}
-.timer-card-div {
-    
-	position: relative;
-	width: 100%;
-	height: 114px;
-	text-align: left;
-	font-size: 16px;
-	color: #fff;
-}
 
 h2{
         margin-left: 20px;
 }
 
 
-.rectangle-icon {
-    border-radius: 90px;
-    position: absolute;
-    top: 0;
-    left: 10px;
-    border-radius: 0px;
-    width: 382px;
-    height: 133px;
-    object-fit: cover;
-}
-  .hello-world-div {
-    margin-left: 0.5em;
-    color: #fff;
-    flex: 1;
-    position: relative;
-    letter-spacing: 0.2px;
-    line-height: 40px;
-    font-weight: bold;
-    display: inline-block;
-  }
-  .text-largeicon2-div {
-    position: absolute;
-    top: 0;
-    left: 18px;
-    width: 302px;
-    height: 59px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-  }
-  .mask-group-icon,
-  .mask-group-icon1,
-  .mask-group-icon2 {
-    position: absolute;
-    top: 104px;
-    left: 16px;
-    width: 24.83px;
-    height: 20px;
-    object-fit: cover;
-  }
-  .mask-group-icon1,
-  .mask-group-icon2 {
-    left: 45px;
-  }
-  .mask-group-icon2 {
-    left: 30px;
-  }
-  .group-div {
-    border-radius: 20px;
-    position: relative;
-    width: 100%;
-    height: 133px;
-    text-align: left;
-    font-size: 20px;
-    color: #fff;
-    // font-family: "Work Sans";
-  }
-
   ion-searchbar.custom {
     margin-top: 1em;
     --background: transparent;
-    --color: none;
-    --placeholder-color: #1c1c1c;
-    --icon-color: #1c1c1c;
+    --color: black;
+    --placeholder-color: #8C9093;
+    --icon-color: #8C9093;
     --border-radius: 20px;
-    box-shadow: none ;
     color: #000 !important;
   
   }

@@ -33,3 +33,9 @@ import { Health } from '@awesome-cordova-plugins/health/ngx';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+// Esses dois comandos a seguir resolvem possiveis problemas 
+// de falar o plugin
+
+// $ npm install cordova-plugin-health 
+// $ npm install @awesome-cordova-plugins/health
