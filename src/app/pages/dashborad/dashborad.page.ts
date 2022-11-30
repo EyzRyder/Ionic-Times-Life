@@ -229,19 +229,4 @@ export class DashboradPage implements OnInit {
     }
   }
 
-  showPesoInfo() {
-    if (this.imc < 20) {
-      return;
-    } else if (this.imc <= 25) {
-      // this.userAuthService.getPesoInfo()
-      // console.log(this.userAuthService.getPesoInfo());
-      return;
-    } else if (this.imc <= 30) {
-      return;
-    } else if (this.imc <= 40) {
-      return;
-    } else {
-      return;
-    }
-  }
 }

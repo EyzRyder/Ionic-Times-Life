@@ -20,10 +20,6 @@
       >
     </ion-card-header>
 
-    <ion-card-content *ngIf="this.userAuthService.isLoggedIn == true">
-      {{showPesoInfo()}}
-    </ion-card-content>
-
     <ion-button
       *ngIf="this.userAuthService.isLoggedIn == false"
       color="primary"
