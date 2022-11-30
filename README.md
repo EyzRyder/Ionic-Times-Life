@@ -21,8 +21,8 @@ This project is licensed under the MIT License
 <h2>💖Like my work?</h2>
 
 Integrantes: <br>
--Kauã Miguel <br>
+-Ana Julia <br>
 -Bruno Oliveira<br>
--Gabriel Bessi<br>
 -Carlos Maletti<br>
--Juliana
+-Gabriel Bessi<br>
+-Kauã Miguel <br>
