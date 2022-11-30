@@ -6,8 +6,8 @@
   
   
   <div class="header">
-    <img src="../../../assets/img/Vector.svg" class="log">
-    <img src="../../../assets/img/T I M E S L I F E.svg" class="log2">
+    <!-- <img src="../../../assets/img/Vector.svg" class="log">
+    <img src="../../../assets/img/T I M E S L I F E.svg" class="log2"> -->
   </div>
   
   <div class="container">
@@ -19,12 +19,7 @@
       <ion-input type="email" [(ngModel)]="emailInput" placeholder="Email"><img src="../../../assets/img/Envelope Fill.svg" class="env"></ion-input>
       <ion-input type="password" *ngIf="userAuthService.state != 'forgotPassword'" [(ngModel)]="passwordInput"
         placeholder="Senha"><img src="../../../assets/img/lock.fill.svg" class="env"></ion-input> 
-      <!-- <a *ngIf="userAuthService.state!='signup'" (click)="userAuthService.changeState('signup')"
-        class="change-template" href="javascript:;">Não Possui uma conta?<br> <u>Registre-se</u></a> <br>
-      <a *ngIf="userAuthService.state=='login'" (click)="userAuthService.changeState('forgotPassword')"
-        class="change-template-link" href="javascript:;">Esqueci minha senha</a> <br> -->
-      <!-- <a *ngIf="userAuthService.state != 'login'" (click)="userAuthService.changeState('login')"
-        class="change-template-link" href="javascript:;">Possui uma conta? Entrar</a> <br>   -->
+
   
     </div>
   
