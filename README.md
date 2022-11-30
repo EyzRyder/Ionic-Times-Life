@@ -25,4 +25,5 @@ Integrantes: <br>
 -Bruno Oliveira<br>
 -Carlos Maletti<br>
 -Gabriel Bessi<br>
+-Gustavo Gabriel<br>
 -Kauã Miguel <br>
