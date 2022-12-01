@@ -5,7 +5,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'treino',
     loadChildren: () => import('./pages/treinos/treino/treino.module').then( m => m.TreinoPageModule)
   },
@@ -20,6 +21,10 @@ const routes: Routes = [
   {
     path: 'exercicio',
     loadChildren: () => import('./pages/treinos/exercicio/exercicio.module').then( m => m.ExercicioPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
 
   

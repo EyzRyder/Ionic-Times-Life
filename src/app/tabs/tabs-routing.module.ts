@@ -28,10 +28,6 @@ const routes: Routes = [
         loadChildren: () => import('../pages/config/config.module').then(m => m.ConfigPageModule)
       },
       {
-        path: 'login',
-        loadChildren: () => import('../pages/login/login.module').then(m => m.LoginPageModule)
-      },
-      {
         path: '',
         redirectTo: '/tabs/home',
         pathMatch: 'full'

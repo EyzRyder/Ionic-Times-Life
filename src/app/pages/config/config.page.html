@@ -39,7 +39,7 @@
       <ion-card-subtitle>Editar Perfil</ion-card-subtitle>
     </ion-card-header>
           <ion-card-content>
-            <button routerLink="../login" *ngIf="this.userAuthService.isLoggedIn !== true">Login</button>
+            <button routerLink="../../login" *ngIf="this.userAuthService.isLoggedIn !== true">Login</button>
             <button *ngIf="this.userAuthService.isLoggedIn == true" (click)="this.userAuthService.logout();">logout</button>
           </ion-card-content>
   </ion-card>
