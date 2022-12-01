@@ -1,20 +1,29 @@
 import { UserAuthService } from './../../services/user-auth.service';
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, Platform, ToastController } from '@ionic/angular';
 import { TabsPage } from './../../tabs/tabs.page';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 import { Health } from '@awesome-cordova-plugins/health/ngx';
-import { DatePipe, formatDate } from '@angular/common';
+import { Chart, scales } from 'chart.js/auto';
 
 @Component({
   selector: 'app-dashborad',
   templateUrl: './dashborad.page.html',
   styleUrls: ['./dashborad.page.scss'],
 })
-export class DashboradPage implements OnInit {
-  platformReady: boolean = false;
-  hasData: boolean = true;
+export class DashboradPage implements OnInit, AfterViewInit {
+  @ViewChild('barCanvas') private barCanvas: ElementRef;
+  barChart: any;
+
+  platformReady = false;
+  hasData = true;
 
   nome;
   idade;
@@ -22,10 +31,10 @@ export class DashboradPage implements OnInit {
   altura;
   sexo;
   dataNasc;
-  imc;
+  imc = '0';
   steps;
-  totalDailySteps: number = 0;
-  lastHeartRate: number = 0;
+  totalDailySteps = 0;
+  lastHeartRate = 0;
 
   dailySteps = [];
   weeklySteps = [];
@@ -44,18 +53,19 @@ export class DashboradPage implements OnInit {
     public toastController: ToastController,
     public alertController: AlertController,
     public tabsPage: TabsPage,
-    public userAuthService: UserAuthService, 
-    public androidPermissions: AndroidPermissions, 
+    public userAuthService: UserAuthService,
+    public androidPermissions: AndroidPermissions,
     public health: Health,
-    public router: Router,
+    public router: Router
   ) {
-    this.requestPermissions();
-    this.requestAuthorization();
-
+    //this.requestPermissions();
+    //this.requestAuthorization();
   }
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  ngAfterViewInit(): void {
+    this.barChartMethod();
   }
 
   requestPermissions() {
@@ -63,50 +73,82 @@ export class DashboradPage implements OnInit {
       this.androidPermissions.requestPermission(permission);
     });
   }
-  
+
   async requestAuthorization() {
-    const ready = !!await this.platform.ready();
+    const ready = !!(await this.platform.ready());
     if (ready) {
-      this.health.isAuthorized(this.dataTypes).then(() => {
-        this.health.requestAuthorization(this.dataTypes).then(() => {
-          this.getTotalDailySteps();
-          this.getLastHeartRate();
+      this.health
+        .isAuthorized(this.dataTypes)
+        .then(() => {
+          this.health.requestAuthorization(this.dataTypes).then(() => {
+            this.getTotalDailySteps();
+            this.getLastHeartRate();
+          });
+        })
+        .catch((err) => {
+          console.log(err);
         });
-      }).catch((err) => {
-        console.log(err);
-      });
     }
   }
 
   getTotalDailySteps() {
-    this.health.queryAggregated({
-      startDate: new Date(),
-      endDate: new Date(),
-      dataType: 'steps',
-      bucket: 'day',
-      filtered: true
-    }).then(arr => {
-      arr.forEach(res => {
-        this.totalDailySteps = Number(res.value);
+    this.health
+      .queryAggregated({
+        startDate: new Date(),
+        endDate: new Date(),
+        dataType: 'steps',
+        bucket: 'day',
+        filtered: true,
+      })
+      .then((arr) => {
+        arr.forEach((res) => {
+          this.totalDailySteps = Number(res.value);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    }).catch(err => {
-      console.log(err);
-    });
   }
 
   getLastHeartRate() {
-    this.health.query({
-      startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-      endDate: new Date(),
-      dataType: 'heart_rate',
-      filtered: true
-    }).then(arr => {
-      arr.forEach(res => {
-        console.log(res);
-        this.lastHeartRate = Number(res.value);
+    this.health
+      .query({
+        startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
+        endDate: new Date(),
+        dataType: 'heart_rate',
+        filtered: true,
+      })
+      .then((arr) => {
+        arr.forEach((res) => {
+          console.log(res);
+          this.lastHeartRate = Number(res.value);
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    }).catch(err => {
-      console.log(err);
+  }
+
+  barChartMethod() {
+    this.barChart = new Chart(this.barCanvas.nativeElement, {
+      type: 'bar',
+      data: {
+        labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        datasets: [
+          {
+            data: [200, 50, 30, 15, 20, 34, 87],
+            borderRadius: 8,
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          }
+        },
+      }
     });
   }
 
@@ -228,5 +270,4 @@ export class DashboradPage implements OnInit {
       return this.imc;
     }
   }
-
 }
