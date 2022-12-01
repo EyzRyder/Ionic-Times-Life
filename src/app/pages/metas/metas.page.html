@@ -21,11 +21,12 @@
   </div>
   <div>
 
-    <div *ngFor="let treino of treinos; let i = index" class="ion-margin card">
-      <div (click)="openTreino(treino)">
-        <div class="TreinoNome">{{treino.nome}}</div>
+    <div *ngFor="let treino of treinos; let i = index" class="ion-margin">
+      <ion-card class="card" >
+        <div (click)="openTreino(treino)">
+        <div class="treinoNome">{{treino.nome}}</div>
         <div class="treinoNum">{{treino.num}} Exercícios</div>
-        <div class="treinoNum">{{treino.dificuldade}}</div>
+        <div class="treinoNivel">{{treino.dificuldade}}</div>
       </div>
       <ion-label id={{i}}>
         <ion-icon name="ellipsis-vertical-outline"></ion-icon>
@@ -41,9 +42,8 @@
             </ion-item>
           </ion-content>
         </ng-template>
-      </ion-popover>
-
-
+      </ion-popover> 
+      </ion-card>
     </div>
 
   </div>
