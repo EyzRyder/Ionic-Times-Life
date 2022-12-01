@@ -2,12 +2,63 @@
 
   <ion-toolbar color="transparent">
               <h2>Bom Dia👋</h2>
-              <h1>Gabriel Bessi</h1>
+              <h1>{{this.tabsPage.getLoginButtonText()}}</h1>
+              <!-- {{this.tabsPage.getLoginButtonText()}} -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="timer-card-div">
- 
+  <ion-content class="date-div">
+    <div class="frame-div">
+      <div class="s-10-div">
+        <p class="s-p">D</p>
+        <p class="p">27</p>
+      </div>
+    </div>
+    <div class="frame-div1">
+      <div class="s-10-div">
+        <p class="s-p">S</p>
+        <p class="p">28</p>
+      </div>
+    </div>
+    <div class="frame-div2">
+      <div class="s-10-div">
+        <p class="s-p">T</p>
+        <p class="p">29</p>
+      </div>
+    </div>
+    <div class="frame-div3">
+      <div class="s-10-div">
+        <p class="s-p">Q</p>
+        <p class="p">30</p>
+      </div>
+    </div>
+    <div class="frame-div4">
+      <div class="s-10-div">
+        <p class="s-p">Q</p>
+        <p class="p">1</p>
+      </div>
+    </div>
+    <div class="frame-div5">
+      <div class="s-10-div">
+        <p class="s-p">S</p>
+        <p class="p">2</p>
+      </div>
+    </div>
+    <div class="frame-div6">
+      <div class="s-10-div">
+        <p class="s-p">S</p>
+        <p class="p">3</p>
+      </div>
+    </div>
+    <img class="ellipse-icon" alt="" src="../../../assets/ellipse-4.svg" />
+    <div class="frame-div7">
+      <div class="s-10-div">
+        <p class="s-p">D</p>
+        <p class="p">4</p>
+      </div>
+    </div>
+  </ion-content>
   <ion-searchbar class="custom"></ion-searchbar>
   
 <ion-slides pager="false" [options]="slideOpts">
@@ -25,6 +76,21 @@
 
 <h2>Treinos Em Alta</h2>
 
+
+<ion-content class="treino">
+  <img class="image-icon1" alt="" src="../../../assets/placeholder/arm.svg" />
+  <div class="overlay-div1"></div>
+  <div class="overlay-text-div1"></div>
+  <div class="kcal-div2">
+    <img class="box-11-icon1" alt="" src="../../../assets/placeholder/box-11.svg" />
+    <div class="cal-div">500 Cal</div>
+  </div>
+  <div class="minutes-div1">
+    <img class="box-11-icon1" alt="" src="../../../assets/placeholder/ball-9.svg" />
+    <div class="cal-div">1 Min</div>
+  </div>
+  <img class="ic-play-icon1" alt="" src="../../../assets/placeholder/ic-play.svg" />
+</ion-content>
 
 </ion-content>
 
