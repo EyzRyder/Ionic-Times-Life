@@ -25,8 +25,8 @@
       <ion-card class="card" >
         <div (click)="openTreino(treino)">
         <div class="treinoNome">{{treino.nome}}</div>
-        <div class="treinoNum">{{treino.num}} Exercícios</div>
-        <div class="treinoNivel">{{treino.dificuldade}}</div>
+        <ion-chip class="treinoNum">{{treino.num}} Exercícios</ion-chip>
+        <ion-chip  class="treinoNivel">{{treino.dificuldade}}</ion-chip>
       </div>
       <ion-label id={{i}}>
         <ion-icon name="ellipsis-vertical-outline"></ion-icon>
