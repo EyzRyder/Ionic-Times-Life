@@ -1,0 +1,23 @@
+.exercicios {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    img {
+        height: 200px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+
+        .exercicioName {}
+
+        .exercicioNum {}
+    }
+
+
+
+}
