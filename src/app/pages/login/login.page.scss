@@ -3,7 +3,7 @@
 
 .container {
     margin: auto;
-    margin-top: 15rem;
+    margin-top: 9rem;
     display: flex;
     // width: 36.749125em;
     width: 100%;
@@ -29,22 +29,36 @@ ion-input {
 }
 
 ion-input:nth-child(1){
+    color: black;
     margin-bottom: 27px;
 }
 
 ion-input:nth-child(2){
+    color: black;
     margin-top: 27px;
 
 }
 ion-input:nth-child(3){
+    color: #8391A1;
     margin-top: 27px;
 }
+
+
+.esqueci{
+    margin-top: 1em;
+    margin-left: 11em;
+    position: relative;
+    color: #6A707C;
+    text-decoration: none;
+}
+
 
 .env{
     margin-left: 0.7em;
 }
 
 .header-text {
+    visibility: hidden;
     font-size: 1.5em;
     margin-top: 1em;
 }
@@ -61,22 +75,27 @@ ion-input:nth-child(3){
 }
 
 .change-template{
-    margin-top: 1em;
-    font-size: 1.1em;
+    margin-top: 15em;
+    font-size: 1em;
     text-indent: 0.5em;
     display: flex;
     justify-content: center; 
     align-items: center;
     text-decoration: none;
-    color: #FFF;
+    color: #1E232C;
+
+    u{
+        font-size: 0.9em;
+    }
+
 }
 
 
 .submit-button {
     height: 4em;
-    margin-top: 10%;
+    margin-top: 6%;
     font-size: 13px;
-    background-color: #9400FF;
+    background-color: #1E232C;
     // background-color: #1E232C;
     border-radius: 0.5em;
     font-family: 'Work Sans', sans-serif;
@@ -103,22 +122,56 @@ ion-input:nth-child(3){
 }
 
 .header{
-    display: grid;
-    justify-content: center;
+    // display: grid;
+    // justify-content: center;
 }
 
-.header .log{
+.bem-vindo{
+    
+    top: 3em;
     position: absolute;
-    left: 43%;
-    right: 42.83%;
-    top: 10.27%;
-    bottom: 83.61%;
+    left: 12%;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    text-align: left;
+    font-size: 30px;
+    color: var(--dark);
+
+            .shape-div,
+            .shape-div1 {
+            position: absolute;
+            top: 21px;
+            left: 0;
+            background-color: #BBF246;
+            width: 71px;
+            height: 14px;
+            }
+            .shape-div1 {
+            top: 52px;
+            left: 218px;
+            }
+            .bem-vindo-de {
+            margin-block-start: 0;
+            margin-block-end: 2px;
+            }
+            .a-h1,
+            .bom-ve-lo-novamente {
+            margin: 0;
+            }
+            .a-h1 {
+            position: absolute;
+            width: calc(100% - 8px);
+            top: 0;
+            left: 8px;
+            font-size: inherit;
+            letter-spacing: -0.01em;
+            line-height: 130%;
+            font-weight: 700;
+            font-family: inherit;
+            display: inline-block;
+            }
 }
 
-.header .log2{
-    position: absolute;
-    width: 279px;
-    height: 54px;
-    left: 67px;
-    top: 175px;
-}
+
+  

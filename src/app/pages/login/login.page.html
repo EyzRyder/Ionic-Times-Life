@@ -1,13 +1,17 @@
 <ion-content>
 
-  <div class="logo">
-  
-  </div>
-  
   
   <div class="header">
-    <!-- <img src="../../../assets/img/Vector.svg" class="log">
-    <img src="../../../assets/img/T I M E S L I F E.svg" class="log2"> -->
+
+  <div class="bem-vindo">
+    <div class="shape-div"></div>
+    <div class="shape-div1"></div>
+    <h1 class="a-h1">
+      <p class="bem-vindo-de">Bem Vindo de Volta!</p>
+      <p class="bom-ve-lo-novamente">Bom ve-lo Novamente.</p>
+    </h1>
+  </div>
+
   </div>
   
   <div class="container">
@@ -16,11 +20,11 @@
   
       <div *ngIf="userAuthService.state !== 'form'">
       <ion-input *ngIf="userAuthService.state == 'signup'" [(ngModel)]="userNameInput" placeholder="Usuário"><img src="../../../assets/img/person.circle.svg" class="env"></ion-input>
-      <ion-input type="email" [(ngModel)]="emailInput" placeholder="Email"><img src="../../../assets/img/Envelope Fill.svg" class="env"></ion-input>
+      <ion-input type="email" [(ngModel)]="emailInput" placeholder="Digite Seu Email"></ion-input>
       <ion-input type="password" *ngIf="userAuthService.state != 'forgotPassword'" [(ngModel)]="passwordInput"
-        placeholder="Senha"><img src="../../../assets/img/lock.fill.svg" class="env"></ion-input> 
+        placeholder="Digite Sua Senha"></ion-input> 
 
-  
+        <!-- <img src="../../../assets/img/lock.fill.svg" class="env"> <img src="../../../assets/img/Envelope Fill.svg" class="env">-->
     </div>
   
     <div *ngIf="userAuthService.state == 'form'">
@@ -46,17 +50,21 @@
           <span slot="title">Coloque Data de Nascimento</span>
       </ion-datetime>
     </div>
-  
-      <ion-button (click)="submit()" class="submit-button" color="third">Entrar</ion-button>  <!-- Alterar o botão para 'Registrar' 'Entrar'-->
+
+    
+    <a *ngIf="userAuthService.state=='login'" (click)="userAuthService.changeState('forgotPassword')"
+    class="change-template-link" href="javascript:;" class="esqueci">Esqueceu a Senha?</a> <br>
+      <ion-button (click)="submit()" class="submit-button" color="third">ENVIAR</ion-button>  <!-- Alterar o botão para 'Registrar' 'Entrar'-->
       <a *ngIf="userAuthService.state!='signup'" (click)="userAuthService.changeState('signup')"
       class="change-template" href="javascript:;">Não Possui uma conta?<br> <u class="ul">Registre-se</u></a> <br>
-    <a *ngIf="userAuthService.state=='login'" (click)="userAuthService.changeState('forgotPassword')"
-      class="change-template-link" href="javascript:;">Esqueci minha senha</a> <br>
+    <!-- <a *ngIf="userAuthService.state=='login'" (click)="userAuthService.changeState('forgotPassword')"
+      class="change-template-link" href="javascript:;" class="esqueci">Esqueci minha senha</a> <br> -->
       <a *ngIf="userAuthService.state != 'login'" (click)="userAuthService.changeState('login')"
       class="change-template-link" href="javascript:;">Possui uma conta?<u class="ul">Entrar</u></a><br> 
     </div>
   
   </div>
+  
   
   </ion-content>
     
