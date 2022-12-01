@@ -39,14 +39,16 @@ ion-input:nth-child(2){
 
 }
 ion-input:nth-child(3){
-    color: #8391A1;
+    color: black;
     margin-top: 27px;
 }
 
 
 .esqueci{
+    font-size: 0.9em;
+    font-weight: 600;
     margin-top: 1em;
-    margin-left: 11em;
+    margin-left: 15em;
     position: relative;
     color: #6A707C;
     text-decoration: none;
@@ -68,10 +70,11 @@ ion-input:nth-child(3){
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #FFF;
+    color: #1E232C;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-indent: 0.5em;
 }
 
 .change-template{
@@ -117,7 +120,7 @@ ion-input:nth-child(3){
 
 .ul{
     font-family: 'Work Sans', sans-serif;
-    font-style: bold;
+    // font-style: bold;
     font-weight: 10px;
 }
 
