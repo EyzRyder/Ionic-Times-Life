@@ -25,6 +25,7 @@ export class SaudePage implements OnInit {
   }
   showImcDescription(des) {
     if (this.tabsPage.imc < 20) {
+      this.list = this.listService.list.pesoBaixo.rec;
       return this.listService.list.pesoBaixo[des];
     }
     else if (this.tabsPage.imc <= 25) {
@@ -34,8 +35,10 @@ export class SaudePage implements OnInit {
       return this.listService.list.preObesidade[des];
     }
     else if (this.tabsPage.imc <= 40) {
+      this.list = this.listService.list.obesidade.rec;
       return this.listService.list.obesidade[des];
     } else if (this.tabsPage.imc > 40) {
+      this.list = this.listService.list.pesoBaixo.rec;
       return this.listService.list.obesidadeGrave[des];
     } else {
       return 'Calcule seu peso no Dashboard';

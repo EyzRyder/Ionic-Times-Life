@@ -12,8 +12,13 @@
 <ion-content>
 <h2>{{showImcDescription('nome')}}</h2>
 <p>{{showImcDescription('descrition')}}</p>
+<ion-list *ngFor="let num of list; let i = index" style="display: flex;">
+<div style="display: flex; flex-direction: column;
+">
+  <h3>{{i+1}} {{num.nome}}</h3>
+  <p>{{num.texto}}</p>
+</div>
+</ion-list>
 
-<h4>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas id sit eu tellus sed cursus eleifend id porta. Lorem adipiscing mus vestibulum consequat porta eu ultrices feugiat. Et, faucibus ut amet turpis. Facilisis faucibus semper cras purus.
-</h4>
+
 </ion-content>

@@ -23,7 +23,7 @@ export class DashboradPage implements OnInit {
   sexo;
   dataNasc;
   imc;
-
+  steps;
   totalDailySteps: number = 0;
   lastHeartRate: number = 0;
 
