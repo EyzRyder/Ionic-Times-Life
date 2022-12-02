@@ -29,17 +29,17 @@ ion-input {
 }
 
 ion-input:nth-child(1){
-    color: black;
+    color: --text-first;
     margin-bottom: 27px;
 }
 
 ion-input:nth-child(2){
-    color: black;
+    color: --text-first;
     margin-top: 27px;
 
 }
 ion-input:nth-child(3){
-    color: black;
+    color: --text-first;
     margin-top: 27px;
 }
 
@@ -146,7 +146,7 @@ ion-input:nth-child(3){
             position: absolute;
             top: 21px;
             left: 0;
-            background-color: var(--ion-block);
+            background-color: var(--ion-home);
             width: 71px;
             height: 14px;
             }
