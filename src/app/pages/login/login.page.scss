@@ -70,7 +70,7 @@ ion-input:nth-child(3){
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #1E232C;
+    color: #6A707C;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -85,7 +85,7 @@ ion-input:nth-child(3){
     justify-content: center; 
     align-items: center;
     text-decoration: none;
-    color: #1E232C;
+    color: #6A707C;
 
     u{
         font-size: 0.9em;
@@ -124,10 +124,10 @@ ion-input:nth-child(3){
     font-weight: 10px;
 }
 
-.header{
-    // display: grid;
-    // justify-content: center;
-}
+// .header{
+//     // display: grid;
+//     // justify-content: center;
+// }
 
 .bem-vindo{
     
@@ -146,7 +146,7 @@ ion-input:nth-child(3){
             position: absolute;
             top: 21px;
             left: 0;
-            background-color: #BBF246;
+            background-color: var(--ion-block);
             width: 71px;
             height: 14px;
             }
@@ -175,6 +175,3 @@ ion-input:nth-child(3){
             display: inline-block;
             }
 }
-
-
-  

@@ -5,10 +5,10 @@
 :root {
 
   --ion-font-family: 'Lato', sans-serif;
-
+  --ion-block: #BBF246;
 
   /** primary **/
-  --ion-color-primary: #D1BBFB;
+    --ion-color-primary: #D1BBFB;
     --ion-color-primary-rgb: 209, 187, 251;
     --ion-color-primary-contrast: #000000;
     --ion-color-primary-contrast-rgb: 0, 0, 0;
@@ -69,15 +69,21 @@
   --ion-background-color: #F7F8FB;
 
   --ion-text-color: #021815;
+
   --ion-text-color-highlight: #19c5ae;
 
   --ion-border-color: #c8b8e7;
 
   --ion-item-background: #e3ddf1;
 
+  // --ion-item-background: white;
+  
   --ion-toolbar-background: #B28EF8;
 
   --ion-tab-bar-background: #beaee6;
+  // --ion-toolbar-background: #BBF246;
+
+  // --ion-tab-bar-background: #BBF246;
 
   --ion-card-background: #c5b8e6;
 }
@@ -92,7 +98,8 @@
   // }
 
   body {
-  --ion-color-primary: #fff;
+    --ion-block: #ADA3ED;
+    --ion-color-primary: #fff;
     --ion-color-primary-rgb: 209, 187, 251;
     --ion-color-primary-contrast: #000000;
     --ion-color-primary-contrast-rgb: 0, 0, 0;
