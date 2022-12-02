@@ -25,7 +25,8 @@
 
 <ion-content>
   <div class="exercicios" *ngFor="let exercicio of treino.exercicios; let i = index">
-    <img src={{exercicio.gifUrl}} alt={{exercicio.nome}} />
+    <!-- style="background: url({{exercicio.imgUrl}});" -->
+    <ion-img class="gif" [src]="exercicio.gifUrl" alt={{exercicio.nome}}></ion-img>
     <div>
     <div class="exercicioName">{{exercicio.nome}}</div>
     <div class="exercicioNum">{{exercicio.num}}</div>

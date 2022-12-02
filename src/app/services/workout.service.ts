@@ -16,13 +16,13 @@ export class WorkoutService {
           nome: 'Modified push up to lower arms',
           setTemp: 'temp',
           num: '00:30',
-          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/1421.gif'
+          gifUrl: 'http://d205bpvrqc9yn1.cloudfront.net/1421.gif'
         },
         {
           nome: 'Flexões Militar',
           setTemp: 'set',
           num: 'x14',
-          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0662.gif'
+          gifUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0662.gif'
         },
       ]
     },
@@ -35,13 +35,13 @@ export class WorkoutService {
           nome: 'air bike',
           setTemp: 'temp',
           num: '00:30',
-          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0003.gif'
+          gifUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0003.gif'
         },
         {
           nome: '3/4 sit-up',
           setTemp: 'set',
           num: 'x14',
-          imgUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0001.gif'
+          gifUrl: 'http://d205bpvrqc9yn1.cloudfront.net/0001.gif'
         },
       ]
     },
