@@ -11,7 +11,7 @@ import { AlertController, Platform, ToastController } from '@ionic/angular';
 import { TabsPage } from './../../tabs/tabs.page';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 import { Health } from '@awesome-cordova-plugins/health/ngx';
-import { Chart, scales } from 'chart.js/auto';
+//import { Chart, scales } from 'chart.js/auto';
 
 @Component({
   selector: 'app-dashborad',
@@ -65,7 +65,7 @@ export class DashboradPage implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit(): void {
-    this.barChartMethod();
+    // this.barChartMethod();
   }
 
   requestPermissions() {
@@ -129,28 +129,28 @@ export class DashboradPage implements OnInit, AfterViewInit {
       });
   }
 
-  barChartMethod() {
-    this.barChart = new Chart(this.barCanvas.nativeElement, {
-      type: 'bar',
-      data: {
-        labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-        datasets: [
-          {
-            data: [200, 50, 30, 15, 20, 34, 87],
-            borderRadius: 8,
-            borderWidth: 1,
-          },
-        ],
-      },
-      options: {
-        plugins: {
-          legend: {
-            display: false
-          }
-        },
-      }
-    });
-  }
+  // barChartMethod() {
+  //   this.barChart = new Chart(this.barCanvas.nativeElement, {
+  //     type: 'bar',
+  //     data: {
+  //       labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+  //       datasets: [
+  //         {
+  //           data: [200, 50, 30, 15, 20, 34, 87],
+  //           borderRadius: 8,
+  //           borderWidth: 1,
+  //         },
+  //       ],
+  //     },
+  //     options: {
+  //       plugins: {
+  //         legend: {
+  //           display: false
+  //         }
+  //       },
+  //     }
+  //   });
+  // }
 
   async registrarUser() {
     const alert = await this.alertController.create({
