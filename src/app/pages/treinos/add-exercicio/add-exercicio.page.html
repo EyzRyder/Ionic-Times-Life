@@ -81,7 +81,7 @@
 
     <ion-list *ngIf="exercicios">
       <ion-item *ngFor="let item of exercicios; let i">
-          <img [src]="item.gifUrl"  alt={{item.nome}} />
+          <img src={{item.gifUrl}}  alt={{item.nome}} />
         <ion-label>{{item.name}}</ion-label>
       </ion-item>
     </ion-list>
