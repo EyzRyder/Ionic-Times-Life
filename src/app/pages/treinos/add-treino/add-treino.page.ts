@@ -28,7 +28,9 @@ export class AddTreinoPage implements OnInit {
     })
 
     modal.onDidDismiss().then(newExercicios => {
-      this.exercicios.push(newExercicios)
+      if (!newExercicios) {return}
+        
+      //this.exercicios.push(newExercicios)
       console.log(newExercicios);
 
     })

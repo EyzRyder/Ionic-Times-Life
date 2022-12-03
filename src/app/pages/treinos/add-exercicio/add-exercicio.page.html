@@ -6,10 +6,12 @@
 </ion-header>
 
 <ion-content>
+
   <ion-card>
     <ion-item>
       <ion-textarea [(ngModel)]="exercicioName" placeholder="Nome do exercício"></ion-textarea>
     </ion-item>
+
     <div>
       <ion-item>
         <ion-segment value="set" (ionChange)="segmentSetTimeChange($event)">
@@ -21,9 +23,11 @@
           </ion-segment-button>
         </ion-segment>
       </ion-item>
+
       <ion-item>
         <ion-textarea [(ngModel)]="exercicioNum" placeholder="Insere o valor"></ion-textarea>
       </ion-item>
+
       <ion-segment value="corpo" (ionChange)="segmentChange($event)">
         <ion-segment-button value="corpo">
           <ion-label>Corpo</ion-label>
@@ -32,45 +36,21 @@
           <ion-label>Músculo</ion-label>
         </ion-segment-button>
       </ion-segment>
+
       <ion-item *ngIf="this.selectedtarget == 'corpo'">
         <ion-label>Partes do corpo deseja treinar</ion-label>
         <ion-select  [(ngModel)]="treinoCorpo">
-          <ion-select-option value="back">back</ion-select-option>
-          <ion-select-option value="cardio">cardio</ion-select-option>
-          <ion-select-option value="chest">chest</ion-select-option>
-          <ion-select-option value="lower arms">lower arms</ion-select-option>
-          <ion-select-option value="lower legs">lower legs</ion-select-option>
-          <ion-select-option value="neck">neck</ion-select-option>
-          <ion-select-option value="shoulders">shoulders</ion-select-option>
-          <ion-select-option value="upper arms">upper arms</ion-select-option>
-          <ion-select-option value="upper legs">upper legs</ion-select-option>
-          <ion-select-option value="waist">waist</ion-select-option>
+          <ion-select-option *ngFor="let body of bodyParts;" value={{body.value}}>{{body.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
+
       <ion-item *ngIf="this.selectedtarget == 'musculo'">
         <ion-label>Musculo que deseja treinar</ion-label>
         <ion-select [(ngModel)]="treinoMusculo">
-          <ion-select-option value="abductors">abductors</ion-select-option>
-          <ion-select-option value="abs">abs</ion-select-option>
-          <ion-select-option value="adductors">adductors</ion-select-option>
-          <ion-select-option value="biceps">biceps</ion-select-option>
-          <ion-select-option value="calves">calves</ion-select-option>
-          <ion-select-option value="cardiovascular system">cardiovascular system</ion-select-option>
-          <ion-select-option value="delts">delts</ion-select-option>
-          <ion-select-option value="forearms">forearms</ion-select-option>
-          <ion-select-option value="glutes">glutes</ion-select-option>
-          <ion-select-option value="hamstrings">hamstrings</ion-select-option>
-          <ion-select-option value="lats">lats</ion-select-option>
-          <ion-select-option value="levator scapulae">levator scapulae</ion-select-option>
-          <ion-select-option value="pectorals">pectorals</ion-select-option>
-          <ion-select-option value="quads">quads</ion-select-option>
-          <ion-select-option value="serratus anterior">serratus anterior</ion-select-option>
-          <ion-select-option value="spine">spine</ion-select-option>
-          <ion-select-option value="traps">traps</ion-select-option>
-          <ion-select-option value="triceps">triceps</ion-select-option>
-          <ion-select-option value="upper back" >upper back</ion-select-option>
+          <ion-select-option *ngFor="let muscle of muscleParts;"  value={{muscle.value}}>{{muscle.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
+      
       <ion-button (click)="pesquisarExercicio()">
         Pesquisar Exercício
       </ion-button>
@@ -81,7 +61,7 @@
 
     <ion-list *ngIf="exercicios">
       <ion-item *ngFor="let item of exercicios; let i">
-          <ion-img class="gif" [src]='item.gifUrl'  alt={{item.nome}} ></ion-img>
+        <ion-img class="gif" [src]='item.gifUrl' alt={{item.nome}}></ion-img>
         <ion-label>{{item.name}}</ion-label>
       </ion-item>
     </ion-list>

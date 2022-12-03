@@ -3,7 +3,7 @@ ion-header::after {
   }
 ion-header{
     font-family: var(--ion-head);
-    color: #192126;
+    color: var(--ion-head-text-color);
     h2{
         font-weight: 600;
         font-size: 1em;
