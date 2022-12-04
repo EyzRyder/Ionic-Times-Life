@@ -139,14 +139,14 @@ ion-input:nth-child(3){
     height: 80px;
     text-align: left;
     font-size: 30px;
-    color: var(--dark);
+    color: var(--ion-head-text-color);
 
             .shape-div,
             .shape-div1 {
             position: absolute;
             top: 21px;
             left: 0;
-            background-color: var(--ion-home);
+            background: linear-gradient(180deg, var(--ion-gradiente-one) 0%, var(--ion-gradiente-two) 100%);
             width: 71px;
             height: 14px;
             }
