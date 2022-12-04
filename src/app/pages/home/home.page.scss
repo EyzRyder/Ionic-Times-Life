@@ -5,6 +5,7 @@ ion-header{
     font-family: var(--ion-head);
     color: #192126;
     h2{
+        font-family: var(--ion-head);
         color: var(--text-sec);
         font-weight: 600;
         font-size: 1em;
@@ -79,6 +80,9 @@ ion-title {
 
 
 h2{
+        font-family: var(--ion-font-family);
+        font-weight: 600;
+        color: var(--text-third);
         margin-left: 20px;
 }
 
@@ -102,7 +106,7 @@ h2{
     box-shadow: none;
     background-image: none;
   }
-
+ 
 
 .date-div {
   left: 6px;
@@ -111,7 +115,7 @@ h2{
     height: 64px;
     text-align: center;
     font-size: 14px;
-    color: #192126;
+    color: var(--text-sec);
     font-family: var(--font-lato);
 
   .s-p {
@@ -130,12 +134,13 @@ h2{
   .frame-div,
   .frame-div1,
   .frame-div2 {
+    color: var(--text-sec);
     margin-top: 0.4em;
     position: absolute;
     top: 0;
     left: 0;
     border-radius: 12px;
-    background-color: #bbf246;
+    background-color: var(--ion-home);
     width: 44.33px;
     display: flex;
     flex-direction: column;
@@ -151,7 +156,7 @@ h2{
   .frame-div2 {
     left: 101.48px;
     background-color: #192126;
-    color: #fff;
+    color: var(--select);
   }
   .frame-div3 {
     left: 151.72px;
@@ -160,11 +165,12 @@ h2{
   .frame-div4,
   .frame-div5,
   .frame-div6 {
+    color: var(--text-sec);
     margin-top: 0.4em;
     position: absolute;
     top: 0;
     border-radius: 12px;
-    background-color: #bbf246;
+    background-color: var(--ion-home);
     width: 44.33px;
     display: flex;
     flex-direction: column;
@@ -175,7 +181,6 @@ h2{
   }
   .frame-div4 {
     left: 202.96px;
-    color: #fff;
   }
   .frame-div5,
   .frame-div6 {
@@ -197,7 +202,7 @@ h2{
     top: 0;
     left: 355.66px;
     border-radius: 12px;
-    background-color: #bbf246;
+    background-color: var(--ion-home);
     width: 44.33px;
     display: flex;
     flex-direction: column;
