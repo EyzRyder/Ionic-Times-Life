@@ -20,9 +20,9 @@ export class NewArticleService {
     )
   }
 
-  getArticleByCategory(Category): Observable<any>{
+  getArticleByCategory(Category,questao): Observable<any>{
     return this.httpClient.get(
-      `${environment.news.url_base}top-headlines?country=br&category=${Category}&apiKey=${environment.news.api_key}`
+      `${environment.news.url_base}top-headlines?country=br&category=${Category}&q=${questao}&apiKey=${environment.news.api_key}`
     )
   }
 

@@ -12,6 +12,8 @@ import { UserAuthService } from '../../services/user-auth.service';
 })
 export class HomePage implements OnInit {
   treinos: any;
+  q;
+  question = '';
   selectedCategory: string = 'health'
   topHeadlines = [];
 
@@ -112,15 +114,24 @@ export class HomePage implements OnInit {
 
   ) { 
     this.treinos = this.workoutService.treinos;
-    this.articleService.getArticleByCategory(this.selectedCategory).subscribe((results) => {
-      console.log(results.articles);
-      this.topHeadlines.push(...results.articles);
-    })
+    this.news(this.selectedCategory, this.question);
   }
 
   ngOnInit() {
   }
 
+  search(q) {
+    this.question = q;
+    this.news(this.selectedCategory, this.question);
+    console.log(this.question)
+  }
   
+  news(Category, question) {
+    this.articleService.getArticleByCategory(Category, question).subscribe((results) => {
+      console.log(results.articles);
+      this.topHeadlines = results.articles;
+      // this.topHeadlines.push(...results.articles);
+    })
+  }
   
 }

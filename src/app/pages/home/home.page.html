@@ -59,7 +59,7 @@
       </div>
     </div>
   </ion-content>
-  <ion-searchbar class="custom"></ion-searchbar>
+  <ion-searchbar  [(ngModel)]="q" (ionBlur)="search(q)" class="custom"></ion-searchbar>
   
 <ion-slides pager="false" [options]="slideOpts">
   <ion-slide *ngFor="let article of topHeadlines">
