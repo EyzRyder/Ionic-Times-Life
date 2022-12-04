@@ -22,7 +22,7 @@
       <ion-input *ngIf="userAuthService.state == 'signup'" [(ngModel)]="userNameInput" placeholder="Usuário"></ion-input>
       <ion-input type="email" [(ngModel)]="emailInput" placeholder="Digite Seu Email"></ion-input>
       <ion-input type="password" *ngIf="userAuthService.state != 'forgotPassword'" [(ngModel)]="passwordInput"
-        placeholder="Digite Sua Senha"></ion-input> 
+        placeholder="Digite Sua Senha"><ion-icon slot="end" name="eye-off-outline" class="it"></ion-icon></ion-input> 
 
         <!-- <img src="../../../assets/img/lock.fill.svg" class="env"> <img src="../../../assets/img/Envelope Fill.svg" class="env"> <img src="../../../assets/img/person.circle.svg" class="env">-->
     </div>
