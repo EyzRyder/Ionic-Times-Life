@@ -1,19 +1,38 @@
-.header-content {
-    // position: absolute;
+.saude {
     display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
     align-items: center;
 
-    img {
-        border-radius: 50%;
-        border: 3px solid rgba(82, 255, 229, 0.795);
-    }
-}
-
-ion-content{
-
-    h4{
-        margin-left: 1px;
-        font-size: 16px;
+    h2 {
+        border-radius: 12px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 30px;
+        padding-left: 30px;
+        width: 75%;
+        color: var(--ion-text-color);
+        background: #849091;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
         align-items: center;
     }
+
+    p {}
+
+    ion-card {
+        padding: 20px;
+    }
+
+    div {
+        h3 {}
+
+        p {}
+    }
+
 }

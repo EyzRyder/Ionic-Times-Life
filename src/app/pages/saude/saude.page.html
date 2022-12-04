@@ -1,18 +1,8 @@
-<ion-header color="transparent">
-  <ion-toolbar color="transparent">
-    <ion-buttons slot="start">
-    </ion-buttons>
-    <h2 style="    display: flex;
-                    align-content: center;
-                    justify-content: center;
-                    align-items: center;">Saúde</h2>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-margin">
+<ion-content >
+  <div class="saude ion-margin">
 <h2>{{showImcDescription('nome')}}</h2>
 <p>{{showImcDescription('descrition')}}</p>
-<ion-list *ngFor="let num of list; let i = index" style="display: flex;">
+<ion-card *ngFor="let num of list; let i = index" style="display: flex;">
 <div
 *ngIf="this.tabsPage.imc < 20 || this.tabsPage.imc > 30" 
 style="display: flex; flex-direction: column;
@@ -20,7 +10,7 @@ style="display: flex; flex-direction: column;
   <h3>{{i+1}} {{num.nome}}</h3>
   <p>{{num.texto}}</p>
 </div>
-</ion-list>
-
+</ion-card>
+</div>
 
 </ion-content>
