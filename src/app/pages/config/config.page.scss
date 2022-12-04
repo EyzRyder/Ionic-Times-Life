@@ -10,10 +10,11 @@
 }
 
 ion-card {
-    --background: white;
-    --color: #9efff0;
+    top: -5em;
+    --background: transparent;
+    --color: transparent;
     position: relative;
-    height: 250px;
+    height: 500px;
     // width: 350px;
     display: flex;
     align-items: center;
@@ -27,25 +28,51 @@ ion-card {
     align-content: center;
     justify-content: center;
     border-radius: 12px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    box-shadow:none !important;
     img {
         align-items: center;
         justify-content: center;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
+        width: 180px;
+        height: 180px;
         // border: 7px solid rgba(82, 255, 229, 0.795);
     }
     ion-card-content{
         button{
-            font-size: 1em;
-            background: none;
-            color: #1c1c1c;
+            border-radius: 12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 1.4em;
+            background: linear-gradient(180deg, #67DF61 0%, #0DDA9F 100%);
+            color: #ffffff;
             justify-content: center;
             align-items: center;
         }
     }
 }
+
+ion-card-content{
+  top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  button{
+    width: 134px;
+    height: 39px;
+    border-radius: 12px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 1.4em;
+            background: #FF968E;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+  }
+}
+
 
 ion-card-title {
     display: flex;
@@ -54,8 +81,27 @@ ion-card-title {
 }
 
 ion-card-subtitle {
+  margin-top: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
     --color: #2A282F;
+    border: 2px solid #29E27F;
+    width: 120px;
+    right: -30px;
+    padding: 8px 20px;
+    font-weight: 700;
+    border-radius: 24px;
 }
+
+ion-label{
+  margin-top: 0.5em;
+  font-family: var(--ion-font-family);
+  font-weight: 600;
+  font-size: 28px;
+}
+
+
 
 /* iOS places the subtitle above the title */
 ion-card-header.ios {
@@ -72,6 +118,7 @@ ion-card-header.ios {
         border-radius: 50%;
         border: 3px solid rgba(82, 255, 229, 0.795);
     }
+
 }
 
 .rectangle-div {
@@ -140,3 +187,4 @@ ion-card-header.ios {
     font-family: "Work Sans";
   }
   
+ 
