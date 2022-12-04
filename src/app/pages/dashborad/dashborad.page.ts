@@ -1,26 +1,22 @@
 import { UserAuthService } from './../../services/user-auth.service';
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController, Platform, ToastController } from '@ionic/angular';
 import { TabsPage } from './../../tabs/tabs.page';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 import { Health } from '@awesome-cordova-plugins/health/ngx';
-//import { Chart, scales } from 'chart.js/auto';
+import { Chart } from 'chart.js/auto';
 
 @Component({
   selector: 'app-dashborad',
   templateUrl: './dashborad.page.html',
   styleUrls: ['./dashborad.page.scss'],
 })
-export class DashboradPage implements OnInit, AfterViewInit {
-  @ViewChild('barCanvas') private barCanvas: ElementRef;
-  barChart: any;
+export class DashboradPage implements OnInit {
+  @ViewChild('stepsBarCanvas') private stepsBarCanvas: ElementRef;
+  @ViewChild('heartBarCanvas') private heartBarCanvas: ElementRef;
+  stepsBarChart: any;
+  heartLineChart: any;
 
   platformReady = false;
   hasData = true;
@@ -36,10 +32,6 @@ export class DashboradPage implements OnInit, AfterViewInit {
   totalDailySteps = 0;
   lastHeartRate = 0;
 
-  dailySteps = [];
-  weeklySteps = [];
-  monthlySteps = [];
-
   requestedPermissions: string[] = [
     'android.permission.ACTIVITY_RECOGNITION',
     'android.permission.BODY_SENSORS',
@@ -47,6 +39,9 @@ export class DashboradPage implements OnInit, AfterViewInit {
   ];
 
   dataTypes: string[] = ['steps', 'weight', 'heart_rate'];
+
+  weekStepsData = [];
+  heartRateData = [];
 
   constructor(
     private platform: Platform,
@@ -58,15 +53,18 @@ export class DashboradPage implements OnInit, AfterViewInit {
     public health: Health,
     public router: Router
   ) {
-    //this.requestPermissions();
-    //this.requestAuthorization();
+    this.requestPermissions();
+    this.requestAuthorization();
   }
 
-  ngOnInit() {}
+  handleRefresh(event) {
+    setTimeout(() => {
+      this.requestAuthorization();
+      event.target.complete();
+    }, 2000);
+  };
 
-  ngAfterViewInit(): void {
-    // this.barChartMethod();
-  }
+  ngOnInit() { }
 
   requestPermissions() {
     this.requestedPermissions.forEach((permission) => {
@@ -81,8 +79,8 @@ export class DashboradPage implements OnInit, AfterViewInit {
         .isAuthorized(this.dataTypes)
         .then(() => {
           this.health.requestAuthorization(this.dataTypes).then(() => {
-            this.getTotalDailySteps();
-            this.getLastHeartRate();
+            this.getUserSteps();
+            this.getUserHeartRate();
           });
         })
         .catch((err) => {
@@ -91,66 +89,123 @@ export class DashboradPage implements OnInit, AfterViewInit {
     }
   }
 
-  getTotalDailySteps() {
-    this.health
-      .queryAggregated({
-        startDate: new Date(),
-        endDate: new Date(),
-        dataType: 'steps',
-        bucket: 'day',
-        filtered: true,
-      })
-      .then((arr) => {
-        arr.forEach((res) => {
-          this.totalDailySteps = Number(res.value);
-        });
-      })
-      .catch((err) => {
-        console.log(err);
+  getUserSteps() {
+    this.health.queryAggregated({
+      startDate: new Date(new Date().getTime() - 6 * 24 * 60 * 60 * 1000),
+      endDate: new Date(),
+      dataType: 'steps',
+      bucket: 'day',
+      filtered: true
+    }).then((arr) => {
+      arr.forEach(res => {
+        this.weekStepsData.push({ startDate: res.startDate, endDate: res.endDate, value: res.value });
       });
+      this.loadStepsBarChart();
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
-  getLastHeartRate() {
-    this.health
-      .query({
-        startDate: new Date(new Date().getTime() - 1 * 24 * 60 * 60 * 1000),
-        endDate: new Date(),
-        dataType: 'heart_rate',
-        filtered: true,
-      })
-      .then((arr) => {
-        arr.forEach((res) => {
-          console.log(res);
-          this.lastHeartRate = Number(res.value);
-        });
-      })
-      .catch((err) => {
-        console.log(err);
+  getUserHeartRate() {
+    this.health.query({
+      startDate: new Date(new Date().getTime() - 1 * 9 * 60 * 60 * 1000),
+      endDate: new Date(),
+      dataType: 'heart_rate',
+      filtered: true
+    }).then((arr) => {
+      arr.forEach((res) => {
+        this.heartRateData.push({ startDate: res.startDate, endDate: res.endDate, value: res.value });
       });
+      this.loadHeartLineChart();
+    }).catch((err) => {
+      console.log(err);
+    });
   }
 
-  // barChartMethod() {
-  //   this.barChart = new Chart(this.barCanvas.nativeElement, {
-  //     type: 'bar',
-  //     data: {
-  //       labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-  //       datasets: [
-  //         {
-  //           data: [200, 50, 30, 15, 20, 34, 87],
-  //           borderRadius: 8,
-  //           borderWidth: 1,
-  //         },
-  //       ],
-  //     },
-  //     options: {
-  //       plugins: {
-  //         legend: {
-  //           display: false
-  //         }
-  //       },
-  //     }
-  //   });
-  // }
+  loadStepsBarChart() {
+    let labels = [];
+    let data = [];
+
+    this.weekStepsData.forEach(obj => {
+      labels.push(obj.startDate.toLocaleTimeString('pt', { weekday: 'short' }).substring(0, 3).toLowerCase());
+      data.push(obj.value);
+    })
+    this.stepsBarChart = new Chart(this.stepsBarCanvas.nativeElement, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'Passos',
+            data: data,
+            borderRadius: 8,
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            callbacks: {
+              /*title: function (tooltipItem) {
+                if (tooltipItem.length > 0) {
+                  const item = tooltipItem[0];
+                  let title = '';
+                  
+                  dates.forEach(date => {
+                    if (item.label.indexOf(date.weekday)) {
+                      title = date.weekday + ", " + date.day;
+                    }
+                  });
+                  return title;             
+                }
+              },
+              label: function (context) {
+                let label = context.dataset.label || '';
+                console.log(label);
+                return label + ' passos';
+              }*/
+            }
+          }
+        },
+      }
+    });
+  }
+
+  loadHeartLineChart() {
+    let labels = [];
+    let data = [];
+
+    this.heartRateData.forEach((obj) => {
+      labels.push(obj.startDate.toLocaleTimeString('pt', { hour: '2-digit', minute: '2-digit' }));
+      data.push(obj.value);
+    });
+
+    this.heartLineChart = new Chart(this.heartBarCanvas.nativeElement, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: 'bpm',
+            data: data,
+            borderWidth: 1,
+            borderColor: '#a33f33',
+          },
+        ],
+      },
+      options: {
+        plugins: {
+          legend: {
+            display: false,
+          },
+        }
+      }
+    })
+  }
 
   async registrarUser() {
     const alert = await this.alertController.create({
