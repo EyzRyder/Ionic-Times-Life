@@ -3,14 +3,15 @@ ion-header::after {
   }
 ion-header{
     font-family: var(--ion-head);
-    color: #192126;
     h2{
+        color: var(--text-sec);
         font-weight: 600;
         font-size: 1em;
         font-weight: 500;
     }
 
     h1{
+        color: var(--text-sec);
         font-weight: 900;
         margin-top: -10px;
         margin-left: 0.6em;
@@ -173,7 +174,7 @@ h2{
   }
   .frame-div4 {
     left: 202.96px;
-    color: #191d1a;
+    color: #fff;
   }
   .frame-div5,
   .frame-div6 {
