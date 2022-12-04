@@ -75,27 +75,24 @@
   --ion-background-color: #F7F8FB;
 
   --ion-head-text-color: #192126;
-
   --ion-text-color: #1E232C;
 
   --ion-gradiente-one: #96DF61;
   --ion-gradiente-two: #0DDA9F;
 
-  --ion-border-color: #c8b8e7;
+  --ion-border-color: #D8DBE3;
 
-  --ion-item-background: #e3ddf1;
+  --ion-item-background: #D8DBE3;
 
-  // --ion-item-background: white;
+  --ion-toolbar-background: #8ef897;
 
-  --ion-toolbar-background: #B28EF8;
-
-  --ion-tab-bar-background: #beaee6;
+  --ion-tab-bar-background: #aee6b3;
 
   // --ion-toolbar-background: #BBF246;
 
   // --ion-tab-bar-background: #BBF246;
 
-  --ion-card-background: #c5b8e6;
+  --ion-card-background: #FFFFFF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -262,12 +259,12 @@
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
-    --ion-item-background: #2A282F;
+    --ion-item-background: #262A34;
 
     --ion-toolbar-background: #B28EF8;
 
     --ion-tab-bar-background: #2A282F;
 
-    --ion-card-background: #2A282F;
+    --ion-card-background: #1E1E1E;
   }
 }
