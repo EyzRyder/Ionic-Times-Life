@@ -36,7 +36,7 @@ export class TabsPage implements OnInit {
 
   getLoginButtonText() {
     if (this.user == null) {
-      return this.name = 'pessoa';
+      return this.name = 'Usuário';
     } else {
       // this.idade = (new Date().getFullYear() - parseInt((this.user.dataNasc).substring(0, 4)));
       this.pic = this.user.profilePic;
