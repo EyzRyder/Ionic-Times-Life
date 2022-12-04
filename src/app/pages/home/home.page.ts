@@ -1,3 +1,4 @@
+import { WorkoutService } from './../../services/workout.service';
 import { NewArticleService } from './../../api/new-article.service';
 import { TabsPage } from './../../tabs/tabs.page';
 import { Component, OnInit } from '@angular/core';
@@ -10,6 +11,7 @@ import { UserAuthService } from '../../services/user-auth.service';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+  treinos: any;
   selectedCategory: string = 'health'
   topHeadlines = [];
 
@@ -105,8 +107,11 @@ export class HomePage implements OnInit {
   constructor(
     public tabsPage: TabsPage,
     public userAuthService: UserAuthService,
-    private articleService: NewArticleService
+    private articleService: NewArticleService,
+    public workoutService: WorkoutService
+
   ) { 
+    this.treinos = this.workoutService.treinos;
     this.articleService.getArticleByCategory(this.selectedCategory).subscribe((results) => {
       console.log(results.articles);
       this.topHeadlines.push(...results.articles);

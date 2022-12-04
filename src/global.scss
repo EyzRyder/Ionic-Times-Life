@@ -29,3 +29,81 @@
     color: #D1BBFB;
     // color: #D1BBFB; fi essa cor ta duida de ver
 }
+
+.cardsList {
+    .card {
+        padding: 10px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        border-radius: 23px;
+        background: linear-gradient(180deg, var(--ion-gradiente-one) 0%, var(--ion-gradiente-two) 100%);
+        width: 90%;
+        height: 84px;
+        font-size: 12px;
+        color: #ffffff;
+
+        .icon {
+            display: flex;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            width: 44px;
+            height: 44px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 100%;
+
+            ion-icon {
+                width: 35px;
+                height: 35px;
+                color: var(--ion-gradiente-two);
+            }
+
+            margin-right: 3%;
+        }
+
+        .cardNames {
+            display: flex;
+            flex-direction: column;
+
+            .treinoNome {
+                font-size: 24px;
+            }
+
+            div {
+                display: flex;
+                flex-direction: row;
+
+                .treinoNum {
+                    background: rgba(236, 228, 243, 0.712);
+                    color: #192126;
+                }
+
+                .treinoNivel {
+                    background: rgba(243, 229, 228, 0.712);
+                    color: #9e4141;
+                    height: 32px;
+                }
+            }
+
+
+        }
+
+        .play {
+            height: 25px;
+            width: 25px;
+            position: absolute;
+            top: 44px;
+            left: 303px;
+        }
+
+        ion-label {
+            position: absolute;
+            right: 5%;
+            top: 12%;
+        }
+    }
+}
