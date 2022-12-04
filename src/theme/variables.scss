@@ -8,6 +8,7 @@
   --ion-font-family: 'Lato', sans-serif;
   --ion-home: #BBF246;
   --text-first: #8391A1;
+  --text-sec: #192126;
 
   /** primary **/
   --ion-color-primary: #3EDC89;
@@ -101,9 +102,13 @@
    */
 
   body {
-    // Criados
+    // DARK CRIADOS
+
     --ion-home: #ADA3ED;
     --text-first: #F7F8F9;
+    --text-sec: #D9E1E6;
+
+    // 
 
     --ion-color-primary: #B0A6F5;
     --ion-color-primary-rgb: 176, 166, 245;

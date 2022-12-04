@@ -13,6 +13,9 @@
   </ion-toolbar>
 </ion-header>-->
 <ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-text>
     <h3 class="dados">DADOS</h3>
   </ion-text>
@@ -26,15 +29,17 @@
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <ng-container *ngIf="this.userAuthService.isLoggedIn === false; then calculateButton; else bodyMassIndexDesc"></ng-container>
+        <ng-container *ngIf="this.userAuthService.isLoggedIn === false; then calculateButton; else bodyMassIndexDesc">
+        </ng-container>
         <ng-template #calculateButton>
           <ion-button style="width: 100%;" color="primary" (click)="alertaEntrada()">CALCULAR</ion-button>
         </ng-template>
         <ng-template #bodyMassIndexDesc>
-          <ion-text style="font-size: 18px;">O Índice de Massa Corpórea é um calculo simples que permite avaliar se a pessoa está dentro do peso que é considerado ideal para a sua altura.</ion-text>
+          <ion-text style="font-size: 18px;">O Índice de Massa Corpórea é um calculo simples que permite avaliar se a
+            pessoa está dentro do peso que é considerado ideal para a sua altura.</ion-text>
         </ng-template>
       </ion-card-content>
-    </ion-card> 
+    </ion-card>
     <!-- Card de Passos -->
     <ion-card class="ion-activatable ripple-parent rectangle">
       <ion-ripple-effect></ion-ripple-effect>
@@ -46,12 +51,7 @@
         <ion-card-subtitle>Últimos 7 dias</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <!--<h1>{{totalDailySteps}}</h1>
-<h2>Hoje</h2>-->
-        <canvas
-          #barCanvas
-          style="position: relative; height: 20vh; width: 100%;"
-        ></canvas>
+        <canvas #stepsBarCanvas style="position: relative; height: 20vh; width: 100%;"></canvas>
       </ion-card-content>
     </ion-card>
   </div>
@@ -67,11 +67,13 @@
           <ion-text>Frequência cardiaca</ion-text>
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </ion-card-title>
-        <ion-card-subtitle>Últimos 7 dias</ion-card-subtitle>
+        <ion-card-subtitle>Últimas 24h.</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <h1>{{lastHeartRate}} bpm</h1>
+        <canvas #heartBarCanvas style="position: relative; height: 20vh; width: 100%;"></canvas>
       </ion-card-content>
     </ion-card>
   </div>
+  <br>
+  <br>
 </ion-content>
