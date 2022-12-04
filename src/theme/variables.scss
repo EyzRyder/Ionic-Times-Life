@@ -13,6 +13,13 @@
   --select: #fff;
 
 
+  // Profile / SETTING VAR
+
+  --imc-brackground: #D8DBE3;
+  --imc-text: #2A282F;
+  --imc-bord: #29E27F;
+  --imc-btn: linear-gradient(180deg, #67DF61 0%, #0DDA9F 100%);
+
   /** primary **/
   --ion-color-primary: #3EDC89;
   --ion-color-primary-rgb: 62, 220, 137;
@@ -110,7 +117,14 @@
     --text-third: #fff;
     --select: #0D0D0D;
 
-    // 
+  // Profile / SETTING VAR
+
+    --imc-brackground: #262A34;
+    --imc-text: #fff;
+    --imc-bord: #8517DC;
+    --imc-btn: linear-gradient(180deg, #B0A6F5 0%, #8517DC 100%);
+    
+
 
     --ion-color-primary: #B0A6F5;
     --ion-color-primary-rgb: 176, 166, 245;
