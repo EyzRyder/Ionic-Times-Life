@@ -5,7 +5,7 @@ import { AlertController, Platform, ToastController } from '@ionic/angular';
 import { TabsPage } from './../../tabs/tabs.page';
 import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 import { Health } from '@awesome-cordova-plugins/health/ngx';
-import { Chart } from 'chart.js/auto';
+import { Chart } from 'chart.js';
 
 @Component({
   selector: 'app-dashborad',
