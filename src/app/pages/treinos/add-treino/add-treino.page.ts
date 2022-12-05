@@ -1,3 +1,4 @@
+import { Itreinos, Iexercicios } from './../../../modal/iTreino';
 import { AddExercicioPage } from './../add-exercicio/add-exercicio.page';
 import { WorkoutService } from './../../../services/workout.service';
 import { ModalController } from '@ionic/angular';
@@ -11,16 +12,30 @@ import { Component, OnInit } from '@angular/core';
 export class AddTreinoPage implements OnInit {
   treinoName;
   treinoPriority;
-  exercicios;
+  exercicios=[];
+  exercicioCount = 0;
+  treino;
 
   constructor(
     public modalCtrl: ModalController,
     public workoutService: WorkoutService,
   ) { }
-
   ngOnInit() {
   }
-  addNewTreino(){}
+  addNewTreino() {
+    // this.treino.nome = this.treinoName;
+    // this.treino.num = this.exercicios.length;
+    // this.treino.dificuldade = this.treinoPriority;
+    // this.treino.exercicios = this.exercicios;
+    this.treino = {
+      nome: this.treinoName,
+      num: this.exercicios.length,
+      dificuldade: this.treinoPriority,
+      exercicios: this.exercicios
+    };
+
+    this.modalCtrl.dismiss(this.treino);
+  }
 
   async addNewExercicio() {
     const modal = await this.modalCtrl.create({
@@ -29,9 +44,9 @@ export class AddTreinoPage implements OnInit {
 
     modal.onDidDismiss().then(newExercicios => {
       if (!newExercicios) {return}
-        
-      //this.exercicios.push(newExercicios)
-      console.log(newExercicios);
+      this.exercicios[this.exercicioCount] = newExercicios.data
+      this.exercicioCount++;
+      console.log(this.exercicios);
 
     })
     return await modal.present();

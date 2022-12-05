@@ -35,8 +35,11 @@ export class MetasPage implements OnInit {
       component: AddTreinoPage
     })
 
-    modal.onDidDismiss().then(newTask => {
-      console.log("added");
+    modal.onDidDismiss().then(newTreino => {
+      if (!newTreino) { return }
+      console.log(this.treinos.length);
+      this.treinos[this.treinos.length] = newTreino.data;
+      console.log(this.treinos);
 
     })
     return await modal.present();

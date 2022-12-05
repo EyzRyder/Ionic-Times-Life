@@ -52,6 +52,10 @@ export class TreinoPage implements OnInit {
   //   return await modal.present();
   // }
 
+  back() {
+    this.location.back();
+}
+
 
   async ComecarContator() {
     const modal = await this.modalCtrl.create({

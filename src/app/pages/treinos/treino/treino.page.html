@@ -1,36 +1,49 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>{{treino.nome}}</ion-title>
-    <ion-label id="menu" slot="end">
-      <ion-icon name="ellipsis-vertical-outline"></ion-icon>
-    </ion-label>
-    <ion-popover trigger="menu" side="left" alignment="start">
-      <ng-template>
-        <ion-content class="ion-padding">
-          <ion-item>
-            Editar
-          </ion-item>
-          <ion-item>
-            Delete
-          </ion-item>
-        </ion-content>
-      </ng-template>
-    </ion-popover>
+
+    <div>
+      <ion-icon name="close" (click)='back()'></ion-icon>
+      <div>
+        <ion-title>{{treino.nome}}</ion-title>
+        <p>{{treino.dificuldade}}</p>
+        <p>{{treino.num}} exercícios</p>
+      </div>
+
+
+
+      <ion-label id="menu">
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-label>
+      <ion-popover trigger="menu" side="left" alignment="start">
+        <ng-template>
+          <ion-content class="ion-padding">
+            <ion-item>
+              Editar
+            </ion-item>
+            <ion-item>
+              Delete
+            </ion-item>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </div>
+
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="exercicios" *ngFor="let exercicio of treino.exercicios; let i = index">
-    <!-- style="background: url({{exercicio.imgUrl}});" -->
-    <ion-img class="gif" [src]="exercicio.gifUrl" alt={{exercicio.nome}}></ion-img>
-    <div>
-    <div class="exercicioName">{{exercicio.nome}}</div>
-    <div class="exercicioNum">{{exercicio.num}}</div>
+  <div class="body">
+
+    <div class="exercicios" *ngFor="let exercicio of treino.exercicios; let i = index">
+      <!-- style="background: url({{exercicio.imgUrl}});" -->
+      <ion-img class="gif" [src]="exercicio.gifUrl" alt={{exercicio.nome}}></ion-img>
+      <div>
+        <div class="exercicioName">{{exercicio.nome}}</div>
+        <div class="exercicioNum">{{exercicio.num}}</div>
+      </div>
     </div>
+
+    <ion-button (click)="ComecarContator()">Começar</ion-button>
   </div>
-  <ion-button (click)="ComecarContator()">Começar</ion-button>
 </ion-content>
