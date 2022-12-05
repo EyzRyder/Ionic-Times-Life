@@ -10,7 +10,7 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
 })
 export class AddExercicioPage implements OnInit {
   exercicios;
-  exercicio ={};
+  exercicio;
   exercicioName;
   selectedtarget = 'corpo';
   selectedSetTime = 'set';
@@ -56,6 +56,7 @@ export class AddExercicioPage implements OnInit {
       value: 'waist'
     }
   ];
+  gifUrl;
 
   muscleParts = [
     {
@@ -143,7 +144,9 @@ export class AddExercicioPage implements OnInit {
     public modalCtrl: ModalController,
     public dbExercicioService: DbExercicioService,
 
-  ) { }
+  ) { 
+    this.gifUrl = 'http://d205bpvrqc9yn1.cloudfront.net/1494.gif'
+  }
 
   ngOnInit() {
     
@@ -180,7 +183,7 @@ export class AddExercicioPage implements OnInit {
       nome: this.exercicioName,
       setTemp: this.selectedSetTime,
       num: this.exercicioNum,
-      gifUrl: 'oie',
+      gifUrl: this.gifUrl,
     };
 
     this.modalCtrl.dismiss(this.exercicio);

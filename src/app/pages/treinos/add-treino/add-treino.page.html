@@ -19,10 +19,14 @@
     </ion-item>
 <ion-button (click)="addNewExercicio()"> Adicionar Exercicio</ion-button>
 <ion-button (click)="addNewTreino()"> Adicionar Treino</ion-button>
-        <ion-item *ngIf="exercicios">
-          <ion-label>{{exercicios.nome}}</ion-label>
+        <ion-list *ngIf="exercicios">
+          <ion-item *ngFor="let item of exercicios; let i">
+                  <ion-img class="gif" [src]='item.gifUrl' alt={{item.nome}}></ion-img>
+                  <ion-label>{{item.nome}}</ion-label>
+                  <ion-label>{{item.num}}</ion-label>
+          </ion-item>
 
-        </ion-item>
+        </ion-list>
     
 </ion-card>
 </ion-content>

@@ -1,12 +1,13 @@
 export interface Itreinos{
     nome: string,
+    num: string,
     dificuldade: string,
-    exercicios: Iexercicios
+    exercicios: object
 };
 
 export interface Iexercicios {
     nome: string,
     setTemp: string,
     num: string,
-    imgUrl: string
+    gifUrl: string
 };
