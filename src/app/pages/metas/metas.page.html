@@ -29,7 +29,7 @@
         <div class="treinoNome">{{treino.nome}}</div>
         <div>
           <ion-chip class="treinoNum">{{treino.num}} Exercícios</ion-chip>
-          <ion-chip class="treinoNivel">{{treino.dificuldade}}</ion-chip>
+          <ion-chip [style.color]="treino.dificuldade === 'Avançado' ? 'red' : (treino.dificuldade  === 'Fácil' ? 'green' : 'orange')" class="treinoNivel">{{treino.dificuldade}}</ion-chip>
         </div>
       </div>
       <ion-icon class="play" name="play"></ion-icon>
