@@ -60,9 +60,10 @@
     </ion-button>
 
     <ion-list *ngIf="exercicios">
-      <ion-item *ngFor="let item of exercicios; let i">
+      <ion-item  *ngFor="let item of exercicios; let i">
         <ion-img class="gif" [src]='item.gifUrl' alt={{item.nome}}></ion-img>
         <ion-label>{{item.name}}</ion-label>
+        <ion-button (click)="addNewimg(item.nome,item.gifUrl)">add</ion-button>
       </ion-item>
     </ion-list>
     <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">

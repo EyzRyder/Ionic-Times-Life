@@ -158,6 +158,11 @@ export class AddExercicioPage implements OnInit {
     }, 50);
   }
 
+  addNewimg(nome,img) {
+    // this.exercicioName = nome;
+    this.gifUrl = img;
+  }
+
   async pesquisarExercicio() {
     if (this.selectedtarget == 'corpo') {
       const exData = await this.dbExercicioService.fetchData('bodyPart', this.treinoCorpo);
