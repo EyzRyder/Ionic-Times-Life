@@ -40,34 +40,6 @@
           </ion-card-content>
   </ion-card>
 
-  <ion-content *ngIf="this.userAuthService.isLoggedIn ==true" class="imc-calc-div" (click)="calcImc()">
-    <div class="profilesettings-div">
-      <div class="background-div"></div>
-      <b class="ui8-design-b">Ajustar IMC</b
-      ><img class="check-icon" alt="" src="../../../assets/placeholder/check.svg" />
-      <div class="togglestyle-01-div">
-        <div class="backgroundfilled-div"></div>
-        <img class="ellipse-icon" alt="" src="public/ellipse-5.svg" />
-      </div>
-    </div>
-  </ion-content>
-<br> <!-- ATÉ ONDE A PREGUIÇA VAI? ATÉ USAR <br> 😎-->
-  <ion-content *ngIf="this.userAuthService.isLoggedIn ==true" class="imc-calc-div">
-    <div class="profilesettings-div">
-      <div class="background-div"></div>
-      <b class="ui8-design-b">Lorem</b
-      ><img class="check-icon" alt="" src="../../../assets/placeholder/check.svg" />
-      <div class="togglestyle-01-div">
-        <div class="backgroundfilled-div"></div>
-        <img class="ellipse-icon" alt="" src="public/ellipse-5.svg" />
-      </div>
-    </div>
-  </ion-content>
-
-  <ion-card-content>
-    <button *ngIf="this.userAuthService.isLoggedIn == true" (click)="this.userAuthService.logout();" class="sair">Sair</button>
-  </ion-card-content>
-
 </ion-content>
 
 

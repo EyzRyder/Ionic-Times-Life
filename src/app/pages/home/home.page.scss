@@ -1,15 +1,141 @@
 ion-header::after {
     background-image: none; // Divisória da header, basicamente tira a sombra 
   }
-ion-header{
-    font-family: var(--ion-head);
-    color: #192126;
-    h2{
-        font-family: var(--ion-head);
-        color: var(--text-sec);
-        font-weight: 600;
-        font-size: 1em;
-        font-weight: 500;
+
+.home-page-div {
+    position: relative;
+    width: 100%;
+    height: 896px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 16px;
+    font-family: "Work Sans";
+
+    .calender {
+        position: relative;
+        margin: 15px;
+        border-radius: 10px;
+        background-color: white;
+        height: 114px;
+
+        .meta-da-semana {
+            position: absolute;
+            top: 12%;
+            left: 3%;
+            font-size: 13px;
+            letter-spacing: 0.2px;
+            line-height: 40px;
+            font-weight: 500;
+            color: #2a282f;
+            display: flex;
+            align-items: center;
+            width: 134px;
+            height: 12px;
+        }
+
+        .dias-do-semana {
+            position: absolute;
+            top: 7%;
+            left: 92%;
+            font-size: 13px;
+            letter-spacing: 0.2px;
+            line-height: 40px;
+            font-weight: 500;
+            color: #2a282f;
+            display: flex;
+            align-items: center;
+            width: 377px;
+            height: 24px;
+        }
+
+        .group-dias {
+            position: absolute;
+            top: 35%;
+            left: 3%;
+            display: flex;
+            height: 59px;
+            width: 391px;
+            font-size: 15px;
+            color: #000;
+            font-family: Inter;
+        }
+
+        .dia-card {
+            position: relative;
+            width: 48.75px;
+            height: 59px;
+            margin-right: 16px;
+
+            .card-layout {
+                position: absolute;
+                border-radius: 10px;
+                border: 0.5px solid #2a282f;
+                box-sizing: border-box;
+                width: 48.75px;
+                height: 59px;
+                opacity: 0.4;
+                mix-blend-mode: normal;
+            }
+
+            .card-layoutt{
+                position: absolute;
+                border-radius: 10px;
+                box-sizing: border-box;
+                width: 48.75px;
+                height: 59px;
+                opacity: 0.4;
+                background: linear-gradient(180deg, #8561CD 0%, #DBA4C4 100%);
+            }
+            //a poha do child não funciona por algum motivo tmnc
+            .numm {
+                color: #fff;
+                position: absolute;
+                left: 15.83px;
+                display: inline-block;
+                top: 28px;
+                line-height: 18px;
+                font-weight: 600;
+                width: 23px;
+            }
+
+
+            .textt {
+                color: #fff;
+                position: absolute;
+                left: 15.83px;
+                display: inline-block;
+                top: 11px;
+                font-size: 11px;
+                line-height: 16px;
+                width: 28px;
+                opacity: 0.6;
+                mix-blend-mode: normal;
+            }
+        }
+
+            .num {
+                position: absolute;
+                left: 15.83px;
+                display: inline-block;
+                top: 28px;
+                line-height: 18px;
+                font-weight: 600;
+                width: 23px;
+            }
+
+
+            .text {
+                position: absolute;
+                left: 15.83px;
+                display: inline-block;
+                top: 11px;
+                font-size: 11px;
+                line-height: 16px;
+                width: 28px;
+                opacity: 0.6;
+                mix-blend-mode: normal;
+            }
+        }
     }
 
     h1{
