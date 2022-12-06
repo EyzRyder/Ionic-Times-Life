@@ -36,7 +36,7 @@
     </ion-card-header>
           <ion-card-content>
             <button routerLink="../../login" *ngIf="this.userAuthService.isLoggedIn !== true" class="ENTRAR">Entrar</button>
-            <!-- <button *ngIf="this.userAuthService.isLoggedIn == true" (click)="this.userAuthService.logout();">Sair</button> -->
+            <button *ngIf="this.userAuthService.isLoggedIn == true" (click)="this.userAuthService.logout();">Sair</button>
           </ion-card-content>
   </ion-card>
 
