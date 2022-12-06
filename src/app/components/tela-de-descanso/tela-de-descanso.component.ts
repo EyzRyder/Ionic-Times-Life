@@ -23,7 +23,7 @@ export class TelaDeDescansoComponent implements OnInit {
 
   ngOnInit() { 
     // this.ss = 20;
-    this.ss = 1;
+    this.ss = 20;
     this.start();
 
   }
