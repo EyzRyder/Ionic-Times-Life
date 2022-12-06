@@ -53,6 +53,6 @@ export class WorkoutService {
     this.treinos[this.treinos.length] = NewTreino;
   }
   deleteTreino(i) {
-    this.treinos.splice(i, i+1); 
+    this.treinos.splice(i, 1); 
   }
 }
