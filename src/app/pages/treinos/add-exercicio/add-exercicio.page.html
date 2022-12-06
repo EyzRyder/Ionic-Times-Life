@@ -1,11 +1,23 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>Add Exercicio</ion-title>
   </ion-toolbar>
   <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="this.modalCtrl.dismiss()"></ion-icon>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
+
+  <div class="headerAddTreino">
+    <h1 style=" 
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;">
+      Add Exercicio
+    </h1>
+
+    <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="this.modalCtrl.dismiss()"></ion-icon>
+  </div>
 
   <ion-card>
     <ion-item>
@@ -47,10 +59,11 @@
       <ion-item *ngIf="this.selectedtarget == 'musculo'">
         <ion-label>Musculo que deseja treinar</ion-label>
         <ion-select [(ngModel)]="treinoMusculo">
-          <ion-select-option *ngFor="let muscle of muscleParts;"  value={{muscle.value}}>{{muscle.nome}}</ion-select-option>
+          <ion-select-option *ngFor="let muscle of muscleParts;" value={{muscle.value}}>{{muscle.nome}}
+          </ion-select-option>
         </ion-select>
       </ion-item>
-      
+
       <ion-button (click)="pesquisarExercicio()">
         Pesquisar Exercício
       </ion-button>
@@ -60,7 +73,7 @@
     </ion-button>
 
     <ion-list *ngIf="exercicios">
-      <ion-item  *ngFor="let item of exercicios; let i">
+      <ion-item *ngFor="let item of exercicios; let i">
         <ion-img class="gif" [src]='item.gifUrl' alt={{item.nome}}></ion-img>
         <ion-label>{{item.name}}</ion-label>
         <ion-button (click)="addNewimg(item.nome,item.gifUrl)">add</ion-button>

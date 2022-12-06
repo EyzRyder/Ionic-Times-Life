@@ -102,3 +102,22 @@
         }
     }
 }
+
+.headerAddTreino {
+    position: relative;
+    font-size: 24px;
+    color: var(--ion-head-text-color);
+    margin-bottom: 10%;
+
+    h1 {
+        font-size: 32px;
+        font-weight: 800;
+        // font-family: lato;
+    }
+
+    ion-icon {
+        position: absolute;
+        right: 0;
+        top: -45%;
+    }
+}

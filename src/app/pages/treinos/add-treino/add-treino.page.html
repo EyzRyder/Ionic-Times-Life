@@ -1,14 +1,29 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
       <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="this.modalCtrl.dismiss()"></ion-icon>
     <ion-title>addTreino</ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
+
+
+
 <ion-content>
-<ion-card>
-  <ion-item>
-    <ion-textarea [(ngModel)]="treinoName" placeholder="Write your task here"></ion-textarea>
-  </ion-item>
+  <div class="headerAddTreino">
+    <h1 style=" 
+                display: flex;
+                align-content: center;
+                justify-content: center;
+                align-items: center;">
+      Add Treino
+    </h1>
+    <ion-icon name="close" slot="end" size="large" class="ion-padding" (click)="this.modalCtrl.dismiss()"></ion-icon>
+  </div>
+
+
+  <ion-card>
+    <ion-item>
+      <ion-textarea [(ngModel)]="treinoName" placeholder="Write your task here"></ion-textarea>
+    </ion-item>
     <ion-item>
       <ion-label>Dificuldade</ion-label>
       <ion-select [(ngModel)]="treinoPriority">
@@ -17,16 +32,16 @@
         <ion-select-option value="Avançado" selected>Avançado</ion-select-option>
       </ion-select>
     </ion-item>
-<ion-button (click)="addNewExercicio()"> Adicionar Exercicio</ion-button>
-<ion-button (click)="addNewTreino()"> Adicionar Treino</ion-button>
-        <ion-list *ngIf="exercicios">
-          <ion-item *ngFor="let item of exercicios; let i">
-                  <ion-img class="gif" [src]='item.gifUrl' alt={{item.nome}}></ion-img>
-                  <ion-label>{{item.nome}}</ion-label>
-                  <ion-label>{{item.num}}</ion-label>
-          </ion-item>
+    <ion-button (click)="addNewExercicio()"> Adicionar Exercicio</ion-button>
+    <ion-button (click)="addNewTreino()"> Adicionar Treino</ion-button>
+    <ion-list *ngIf="exercicios">
+      <ion-item *ngFor="let item of exercicios; let i">
+        <ion-img class="gif" [src]='item.gifUrl' alt={{item.nome}}></ion-img>
+        <ion-label>{{item.nome}}</ion-label>
+        <ion-label>{{item.num}}</ion-label>
+      </ion-item>
 
-        </ion-list>
-    
-</ion-card>
+    </ion-list>
+
+  </ion-card>
 </ion-content>
