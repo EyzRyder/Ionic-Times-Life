@@ -20,12 +20,12 @@
   </div>
 
   <ion-card>
-    <ion-item>
+    <ion-item class="inputItem">
       <ion-textarea [(ngModel)]="exercicioName" placeholder="Nome do exercício"></ion-textarea>
     </ion-item>
 
     <div>
-      <ion-item>
+      <ion-item class="inputItem">
         <ion-segment value="set" (ionChange)="segmentSetTimeChange($event)">
           <ion-segment-button value="set">
             <ion-label>Set</ion-label>
@@ -36,7 +36,7 @@
         </ion-segment>
       </ion-item>
 
-      <ion-item>
+      <ion-item class="inputItem">
         <ion-textarea [(ngModel)]="exercicioNum" placeholder="Insere o valor"></ion-textarea>
       </ion-item>
 
@@ -49,14 +49,14 @@
         </ion-segment-button>
       </ion-segment>
 
-      <ion-item *ngIf="this.selectedtarget == 'corpo'">
+      <ion-item class="inputItem" *ngIf="this.selectedtarget == 'corpo'">
         <ion-label>Partes do corpo deseja treinar</ion-label>
         <ion-select [(ngModel)]="treinoCorpo">
           <ion-select-option *ngFor="let body of bodyParts;" value={{body.value}}>{{body.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
 
-      <ion-item *ngIf="this.selectedtarget == 'musculo'">
+      <ion-item class="inputItem" *ngIf="this.selectedtarget == 'musculo'">
         <ion-label>Musculo que deseja treinar</ion-label>
         <ion-select [(ngModel)]="treinoMusculo">
           <ion-select-option *ngFor="let muscle of muscleParts;" value={{muscle.value}}>{{muscle.nome}}
@@ -68,9 +68,7 @@
         Pesquisar Exercício
       </ion-button>
     </div>
-    <ion-button (click)="addNewExercicio()">
-      Adicionar Exercício
-    </ion-button>
+
 
     <ion-list *ngIf="exercicios">
       <ion-item *ngFor="let item of exercicios; let i">
@@ -85,4 +83,10 @@
 
 
   </ion-card>
+
+  <div class="ContinuoBtn">
+    <ion-button (click)="addNewExercicio()">
+      Adicionar Exercício
+    </ion-button>
+  </div>
 </ion-content>

@@ -21,10 +21,12 @@
 
 
   <ion-card>
-    <ion-item>
-      <ion-textarea [(ngModel)]="treinoName" placeholder="Write your task here"></ion-textarea>
+    <ion-item class="inputItem">
+      <ion-label>Nome do Treino</ion-label>
+      <ion-textarea [(ngModel)]="treinoName" placeholder="Escreva o nome do Treino"></ion-textarea>
     </ion-item>
-    <ion-item>
+
+    <ion-item class="inputItem">
       <ion-label>Dificuldade</ion-label>
       <ion-select [(ngModel)]="treinoPriority">
         <ion-select-option value="Fácil">Fácil</ion-select-option>
@@ -32,16 +34,28 @@
         <ion-select-option value="Avançado" selected>Avançado</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-button (click)="addNewExercicio()"> Adicionar Exercicio</ion-button>
-    <ion-button (click)="addNewTreino()"> Adicionar Treino</ion-button>
-    <ion-list *ngIf="exercicios">
-      <ion-item *ngFor="let item of exercicios; let i">
+
+    <div class="inputItem" style="
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;"
+    >
+        <ion-button (click)="addNewExercicio()"> Adicionar Exercicio</ion-button>
+    </div>
+
+    <ion-list class="exerciciosItens" *ngIf="exercicios">
+      <ion-item class="exercicioItem" *ngFor="let item of exercicios; let i">
         <ion-img class="gif" [src]='item.gifUrl' alt={{item.nome}}></ion-img>
         <ion-label>{{item.nome}}</ion-label>
         <ion-label>{{item.num}}</ion-label>
       </ion-item>
 
     </ion-list>
-
   </ion-card>
+
+<div class="ContinuoBtn" >
+      <ion-button (click)="addNewTreino()"> Adicionar Treino</ion-button>
+</div>
 </ion-content>

@@ -121,3 +121,40 @@
         top: -45%;
     }
 }
+
+.inputItem {
+    --background: transparent;
+}
+
+.exerciciosItens {
+    background: transparent;
+
+    .exercicioItem {
+        --background: transparent;
+        display: flex;
+
+        .gif {
+            // --background: transparent;
+            height: 200px;
+        }
+
+        ion-label {
+            // --background: transparent;
+        }
+    }
+}
+
+.ContinuoBtn {
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+        ion-button {
+                --background: linear-gradient(180deg, var(--ion-gradiente-one) 0%, var(--ion-gradiente-two) 100%);
+                color: white;
+            }
+}
