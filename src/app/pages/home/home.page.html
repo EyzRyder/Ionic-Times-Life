@@ -59,28 +59,34 @@
       </div>
     </div>
   </ion-content>
+
   <ion-searchbar  [(ngModel)]="q" (ionBlur)="search(q)" class="custom"></ion-searchbar>
   
 <ion-slides pager="false" [options]="slideOpts">
   <ion-slide *ngFor="let article of topHeadlines">
-    <ion-card  class="carroseu" style="background-image: url({{article.urlToImage}});     background-size: cover;">
-      <!-- <img src={{article.urlToImage}} alt=""/> -->
+    <a href={{article.url}}>
+    <ion-card class="carroseu" style="background-image: url({{article.urlToImage}});     background-size: cover;"
+    >
+      <!--  (click)={{article.url}}  <img src={{article.urlToImage}} alt=""/> -->
     
-      <ion-card-content>
+      <ion-card-content >
         <p>{{article.title}}</p>
           <!-- <p>{{article.author}}</p> -->
       </ion-card-content>
     </ion-card>
+    </a>
   </ion-slide>
 </ion-slides>
 
 <h2>Treinos Em Alta</h2>
 
 <div *ngFor="let treino of treinos; let i = index" class="cardsList ion-margin">
+
   <ion-card class="card">
     <div class="icon">
       <ion-icon name="barbell"></ion-icon>
     </div>
+
     <div class="cardNames" routerLink="/tabs/metas">
       <div class="treinoNome">{{treino.nome}}</div>
       <div>
@@ -88,7 +94,9 @@
         <ion-chip class="treinoNivel">{{treino.dificuldade}}</ion-chip>
       </div>
     </div>
+
     <ion-icon class="play" name="play"></ion-icon>
+    
     <ion-label id={{i}}>
       <ion-icon name="ellipsis-vertical-outline"></ion-icon>
     </ion-label>

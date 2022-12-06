@@ -136,8 +136,8 @@ ion-header::after {
                 mix-blend-mode: normal;
             }
         }
-    }
-
+    
+}
     h1{
         color: var(--text-sec);
         font-weight: 900;
@@ -145,7 +145,8 @@ ion-header::after {
         margin-left: 0.6em;
         font-size: 1.9em;
     }
-}
+
+
   
     .carroseu {
         margin-top: 2em;
@@ -338,166 +339,3 @@ h2{
   }
 }
 
-
-.base-div {
-  position: absolute;
-  top: 0;
-  left: 24px;
-  border-radius: 11px;
-  background: linear-gradient(180deg, #67df61, #0dda9f);
-  width: 343px;
-  height: 84px;
-}
-.play-icon {
-  position: absolute;
-  top: 44px;
-  left: 323px;
-  width: 24px;
-  height: 24px;
-  overflow: hidden;
-}
-.workout-div {
-  position: relative;
-  line-height: 14px;
-  display: none;
-}
-.project-div {
-  position: absolute;
-  top: 44px;
-  left: 169px;
-  border-radius: 6px;
-  background-color: #fef5ed;
-  overflow: hidden;
-  display: none;
-  flex-direction: column;
-  padding: 5px 8px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: flex-start;
-  color: #07e092;
-}
-.personal-div {
-  color: #07E092;
-  position: relative;
-  line-height: 14px;
-  display: inline-block;
-}
-.tag-div {
-  position: absolute;
-  top: 44px;
-  left: 96px;
-  border-radius: 6px;
-  background-color: #f2f2f2;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 5px 8px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: flex-start;
-  color: #828282;
-}
-.div,
-.x-sit-up-div {
-  color: #fff;
-  position: absolute;
-  top: 16px;
-  line-height: 20px;
-  display: inline-block;
-}
-.div {
-  left: 297px;
-  text-align: right;
-}
-.x-sit-up-div {
-  left: 96px;
-  font-size: 14px;
-  font-weight: 500;
-}
-.icon-barbell-circle,
-.situp-light {
-  position: absolute;
-  top: 16px;
-  left: 36px;
-  width: 44px;
-  height: 44px;
-}
-.situp-light {
-  top: 0;
-  left: 0;
-  width: 343px;
-  height: 84px;
-}
-.div1,
-.group-div1 {
-  color: #fff;
-  position: absolute;
-  width: 50px;
-}
-.div1 {
-  top: 0;
-  left: 0;
-  border-radius: 6px;
-  background-color: #e6fcf4;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 5px 8px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: flex-start;
-}
-.group-div1 {
-  top: 44px;
-  left: 187px;
-  height: 24px;
-  color: #07e092;
-}
-.group-div {
-  position: relative;
-  width: 100%;
-  height: 84px;
-  text-align: left;
-  font-size: 12px;
-  color: #fff;
-}
-
-.group-div2 {
-  top: 2em;
-  position: relative;
-  width: 100%;
-  height: 84px;
-  text-align: left;
-  font-size: 12px;
-  color: black;
-}
-
-// segundo treino (placeholder)
-
-.group-div3 {
-  top: 44px;
-  left: 187px;
-  height: 24px;
-  color: #07e092;
-}
-
-.personal-div3 {
-  color: #E06F07;
-  position: relative;
-  line-height: 14px;
-  display: inline-block;
-}
-
-.div3 {
-  top: 0;
-  left: 0;
-  border-radius: 6px;
-  background-color: #FCF1E6;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: 5px 8px;
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: flex-start;
-}
