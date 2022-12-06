@@ -138,9 +138,9 @@
             height: 200px;
         }
 
-        ion-label {
-            // --background: transparent;
-        }
+        // ion-label {
+        //     --background: transparent;
+        // }
     }
 }
 
@@ -152,9 +152,9 @@
     align-items: center;
     justify-content: center;
     align-content: center;
+}
 
-        ion-button {
-                --background: linear-gradient(180deg, var(--ion-gradiente-one) 0%, var(--ion-gradiente-two) 100%);
-                color: white;
-            }
+.btnDegraD {
+    --background: linear-gradient(180deg, var(--ion-gradiente-one) 0%, var(--ion-gradiente-two) 100%);
+    color: white;
 }

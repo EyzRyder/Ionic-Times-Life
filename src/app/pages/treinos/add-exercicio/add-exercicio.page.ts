@@ -158,7 +158,7 @@ export class AddExercicioPage implements OnInit {
     }, 50);
   }
 
-  addNewimg(nome,img) {
+  setNewimg(nome,img) {
     // this.exercicioName = nome;
     this.gifUrl = img;
   }
