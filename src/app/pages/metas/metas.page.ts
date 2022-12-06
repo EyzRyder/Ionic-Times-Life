@@ -36,7 +36,7 @@ export class MetasPage implements OnInit {
     })
 
     modal.onDidDismiss().then(newTreino => {
-      if (!newTreino) { return }
+      if (!newTreino.data) { return }
       console.log(this.treinos.length);
       this.workoutService.setTreino(newTreino.data);
       // this.treinos[this.treinos.length] = newTreino.data;

@@ -43,10 +43,12 @@ export class AddTreinoPage implements OnInit {
     })
 
     modal.onDidDismiss().then(newExercicios => {
-      if (!newExercicios) {return}
-      this.exercicios[this.exercicioCount] = newExercicios.data
-      this.exercicioCount++;
-      console.log(this.exercicios);
+      if (!newExercicios.data) { return }
+      else {
+        this.exercicios[this.exercicioCount] = newExercicios.data
+        this.exercicioCount++;
+      }
+      console.log(newExercicios.data);
 
     })
     return await modal.present();
