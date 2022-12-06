@@ -49,5 +49,7 @@ export class WorkoutService {
 
   constructor() { }
 
-  
+  setTreino(NewTreino) {
+    this.treinos[this.treinos.length] = NewTreino;
+  }
 }

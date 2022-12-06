@@ -39,7 +39,7 @@
 
       <ion-item *ngIf="this.selectedtarget == 'corpo'">
         <ion-label>Partes do corpo deseja treinar</ion-label>
-        <ion-select  [(ngModel)]="treinoCorpo">
+        <ion-select [(ngModel)]="treinoCorpo">
           <ion-select-option *ngFor="let body of bodyParts;" value={{body.value}}>{{body.nome}}</ion-select-option>
         </ion-select>
       </ion-item>
