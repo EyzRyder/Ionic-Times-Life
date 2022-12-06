@@ -52,4 +52,7 @@ export class WorkoutService {
   setTreino(NewTreino) {
     this.treinos[this.treinos.length] = NewTreino;
   }
+  deleteTreino(i) {
+    this.treinos.splice(i, i+1); 
+  }
 }

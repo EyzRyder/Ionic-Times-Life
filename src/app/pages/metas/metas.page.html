@@ -39,10 +39,10 @@
       <ion-popover trigger={{i}} side="left" alignment="start">
         <ng-template>
           <ion-content class="ion-padding">
-            <ion-item>
+            <ion-item class="inputItem">
               Editar
             </ion-item>
-            <ion-item>
+            <ion-item (click)="deleteTreino(i)" class="inputItem">
               Delete
             </ion-item>
           </ion-content>

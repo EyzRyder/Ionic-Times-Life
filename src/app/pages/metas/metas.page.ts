@@ -51,4 +51,9 @@ export class MetasPage implements OnInit {
     this.router.navigate(['treino'], navigationExtras);
   }
 
+  deleteTreino(i) {
+    console.log(i);
+    this.workoutService.deleteTreino(i);
+  }
+
 }
