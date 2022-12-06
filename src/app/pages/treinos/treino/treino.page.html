@@ -2,14 +2,12 @@
   <ion-toolbar>
 
     <div>
-      <ion-icon name="close" (click)='back()'></ion-icon>
-      <div>
+      <ion-icon class="close" name="close" (click)='back()'></ion-icon>
+      <div class="title">
         <ion-title>{{treino.nome}}</ion-title>
-        <p>{{treino.dificuldade}}</p>
-        <p>{{treino.num}} exercícios</p>
+        <p class="dificuldadeText">{{treino.dificuldade}}</p>
+        <p class="quantidadeText">{{treino.num}} exercícios</p>
       </div>
-
-
 
       <ion-label id="menu">
         <ion-icon name="ellipsis-vertical-outline"></ion-icon>
@@ -27,7 +25,6 @@
         </ng-template>
       </ion-popover>
     </div>
-
 
   </ion-toolbar>
 </ion-header>
