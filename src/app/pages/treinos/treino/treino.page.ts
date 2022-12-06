@@ -55,8 +55,6 @@ export class TreinoPage implements OnInit {
   back() {
     this.location.back();
 }
-
-
   async ComecarContator() {
     const modal = await this.modalCtrl.create({
       component: TelaDeDescansoComponent
@@ -70,7 +68,6 @@ export class TreinoPage implements OnInit {
     })
     return await modal.present();
   }
-
 
   start() {
     this.temp = setInterval(() => { this.timer(); }, 1000);
@@ -87,5 +84,10 @@ export class TreinoPage implements OnInit {
         this.hh++;
       }
     }
+  }
+
+  deleteTreino(i) {
+    console.log(i);
+    // this.workoutService.deleteTreino(i);
   }
 }
