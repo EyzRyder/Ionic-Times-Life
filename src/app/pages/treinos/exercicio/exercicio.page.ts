@@ -46,17 +46,8 @@ export class ExercicioPage implements OnInit {
     this.workoutService.count = Object.keys(this.exercicio).length
   }
 
-  buttonPausePronto() {
-    if (this.workoutService.treinoAtual == this.workoutService.count) {
-      this.workoutService.treinoAtual = 0;
-      this.location.back();
-      this.final();
-    } else {
-      clearInterval(this.temp);
-      this.ComecarContator();
-      // this.workoutService.treinoAtual++;
-    }
-
+  pauseButton() {
+    clearInterval(this.temp);
   }
 
 
@@ -106,6 +97,19 @@ export class ExercicioPage implements OnInit {
           this.hh--;
         }
       }
+    }
+  }
+
+  voltarExercicio() { }
+  proximoExercicio() { 
+    if (this.workoutService.treinoAtual == this.workoutService.count) {
+      this.workoutService.treinoAtual = 0;
+      this.location.back();
+      this.final();
+    } else {
+      clearInterval(this.temp);
+      this.ComecarContator();
+      // this.workoutService.treinoAtual++;
     }
   }
 
