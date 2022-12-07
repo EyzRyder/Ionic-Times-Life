@@ -1,7 +1,21 @@
+<ion-header>
+  <ion-toolbar class="treinoHeader">
+    <div>
+      <div class="title">
+        <ion-title>
+          {{exercicio[this.workoutService.treinoAtual-1].nome}}
+        </ion-title>
+        <p class="quantidadeText">
+          {{this.workoutService.treinoAtual}}/{{this.workoutService.count}}
+        </p>
+      </div>
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
 <ion-content>
-<div>
-  {{this.workoutService.treinoAtual}}/{{this.workoutService.count}}
-</div>
+
 <img src={{exercicio[this.workoutService.treinoAtual-1].gifUrl}} />
 <div>
   {{exercicio[this.workoutService.treinoAtual-1].nome}}
@@ -15,6 +29,5 @@
 00:{{this.ss}} 
 <ion-button (click)="buttonPausePronto()">Pausa</ion-button>
 </div>
-
 
 </ion-content>
