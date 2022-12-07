@@ -1,8 +1,20 @@
-
 <ion-content>
-  <h1>
-    Parabéns
-  </h1>
-<ion-button (click)="this.modalCtrl.dismiss();"></ion-button>
-</ion-content>
+  <div class="telaFinal">
+    <ion-icon name="trophy" style="color:#F9E215;" ></ion-icon>
+    <h1>
+      Parabéns você terminou seu treino
+    </h1>
+    <div class="dados">
+      <div>
+        <p>0</p>
+        <p>contagem</p>
+      </div>
+      <div>
+        <p>00:00</p>
+        <p>duração</p>
+      </div>
+    </div>
+    <ion-button (click)="this.modalCtrl.dismiss();">Voltar</ion-button>
+  </div>
 
+</ion-content>
