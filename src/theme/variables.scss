@@ -76,6 +76,13 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-color-dark: #222428;
+  --ion-color-dark-rgb: 34, 36, 40;
+  --ion-color-dark-contrast: #ffffff;
+  --ion-color-dark-contrast-rgb: 255, 255, 255;
+  --ion-color-dark-shade: #1e2023;
+  --ion-color-dark-tint: #383a3e;
 }
 
 .md body {
@@ -117,13 +124,13 @@
     --text-third: #fff;
     --select: #0D0D0D;
 
-  // Profile / SETTING VAR
+    // Profile / SETTING VAR
 
     --imc-brackground: #262A34;
     --imc-text: #fff;
     --imc-bord: #8517DC;
     --imc-btn: linear-gradient(180deg, #B0A6F5 0%, #8517DC 100%);
-    
+
 
 
     --ion-color-primary: #B0A6F5;
