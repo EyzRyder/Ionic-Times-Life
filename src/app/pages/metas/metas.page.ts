@@ -1,34 +1,40 @@
+import { TabsPage } from './../../tabs/tabs.page';
 import { WorkoutService } from './../../services/workout.service';
 import { AddTreinoPage } from './../treinos/add-treino/add-treino.page';
 import { ModalController } from '@ionic/angular';
 import { Router, NavigationExtras } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { UserAuthService } from '../../services/user-auth.service';
+
 @Component({
   selector: 'app-metas',
   templateUrl: './metas.page.html',
   styleUrls: ['./metas.page.scss'],
 })
 export class MetasPage implements OnInit {
-  treinos : any;
+  public treinos = [];
+
   constructor(
-    public userAuthService: UserAuthService,
+    public tabsPage: TabsPage,
     public router: Router,
     public modalCtrl: ModalController,
     public workoutService: WorkoutService,
 
   ) { 
-    this.treinos = this.workoutService.treinos;
+  this.getTreino();
   }
 
   ngOnInit() {
   }
 
+  getTreino() {
+    try{
+      this.workoutService.findTreino(this.tabsPage.user.id).subscribe(dadosRetorno => {
+        this.treinos = dadosRetorno.payload.data()['treinos'];
+        console.log(this.treinos)
+      }); 
+    } catch(err){ console.log(err)}
 
-  // exibirFilme(filme: Ifilme) {
-  //   const navigationExtras: NavigationExtras = { state: { paramFilme: filme } };
-  //   this.router.navigate(['filme-detalhe'], navigationExtras);
-  // }
+  }
 
   async addNewTreino() {
     const modal = await this.modalCtrl.create({
@@ -37,10 +43,10 @@ export class MetasPage implements OnInit {
 
     modal.onDidDismiss().then(newTreino => {
       if (!newTreino.data) { return }
-      console.log(this.treinos.length);
-      this.workoutService.setTreino(newTreino.data);
+      // console.log(this.treinos.length);
+      this.workoutService.addTreino(newTreino.data, this.treinos, this.tabsPage.user.id);
       // this.treinos[this.treinos.length] = newTreino.data;
-      console.log(this.treinos);
+      console.log(newTreino.data,' - ' , this.tabsPage.user.id);
 
     })
     return await modal.present();
@@ -53,7 +59,7 @@ export class MetasPage implements OnInit {
 
   deleteTreino(i) {
     console.log(i);
-    this.workoutService.deleteTreino(i);
+    this.workoutService.deleteTreino(i, this.treinos, this.tabsPage.user.id);
   }
 
 }

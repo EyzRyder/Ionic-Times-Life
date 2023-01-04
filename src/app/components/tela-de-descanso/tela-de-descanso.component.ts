@@ -2,7 +2,6 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { async } from '@firebase/util';
 
 @Component({
   selector: 'app-tela-de-descanso',

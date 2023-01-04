@@ -157,6 +157,8 @@ export class UserAuthService {
       user.imc = IMC;
       this.db.collection("users").doc(id).set(user).then(userData => {
         resolve(userData);
+        this.db.collection('treino').doc(id).set({ treinos: [] });
+
       })
         .catch(error => {
           reject(error);

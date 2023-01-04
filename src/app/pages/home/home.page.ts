@@ -111,9 +111,8 @@ export class HomePage implements OnInit {
     public userAuthService: UserAuthService,
     private articleService: NewArticleService,
     public workoutService: WorkoutService
-
   ) { 
-    this.treinos = this.workoutService.treinos;
+    // this.treinos = this.workoutService.treinos;
     this.news(this.selectedCategory, this.question);
   }
 

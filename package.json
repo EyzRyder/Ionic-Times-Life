@@ -32,7 +32,7 @@
     "chart.js": "^4.0.1",
     "cordova-plugin-android-permissions": "^1.1.5",
     "cordova-plugin-health": "^2.0.5",
-    "firebase": "^9.14.0",
+    "firebase": "^9.15.0",
     "ionicons": "^6.0.3",
     "ngx-tailwind": "^4.0.0",
     "nodejs": "^0.0.0",
