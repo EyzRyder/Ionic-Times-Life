@@ -36,7 +36,7 @@ h1 {
     @apply text-4xl
 }
 
-h2{
+h2 {
     @apply text-3xl
 }
 
@@ -50,60 +50,32 @@ h4 {
 
 .cardsList {
     .card {
-        padding: 10px;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        align-content: center;
-        border-radius: 23px;
-        background: linear-gradient(180deg, var(--ion-gradiente-one) 0%, var(--ion-gradiente-two) 100%);
-        width: 90%;
-        height: 84px;
-        font-size: 12px;
-        color: #ffffff;
+        @apply p-[10px] relative flex flex-row items-center content-center rounded-3xl bg-gradient-to-b from-primary-default to-secondary-default w-[90%] h-[84px] text-xs text-[#ffffff];
 
         .icon {
-            display: flex;
-            flex-wrap: nowrap;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            width: 44px;
-            height: 44px;
-            background-color: rgb(255, 255, 255);
-            border-radius: 100%;
+            @apply flex flex-nowrap content-center justify-center items-center w-11 h-11 bg-[#ffffff] rounded-[100%] mr-[3%];
 
             ion-icon {
-                width: 35px;
-                height: 35px;
-                color: var(--ion-gradiente-two);
+                @apply w-9 h-9 text-secondary-default;
             }
-
-            margin-right: 3%;
         }
 
         .cardNames {
-            display: flex;
-            flex-direction: column;
+            @apply flex flex-col;
 
             .treinoNome {
-                font-size: 24px;
+                @apply text-2xl;
             }
 
             div {
-                display: flex;
-                flex-direction: row;
+                @apply flex flex-row;
 
                 .treinoNum {
-                    background: rgba(236, 228, 243, 0.712);
-                    color: #192126;
+                    @apply text-[#192126] bg-[#ece4f3b6];
                 }
 
                 .treinoNivel {
-                    background: rgba(243, 229, 228, 0.712);
-                    color: #9e4141;
-                    height: 32px;
+                    @apply text-[#9e4141] bg-[#f3e5e4b6] h-8;
                 }
             }
 
@@ -111,37 +83,26 @@ h4 {
         }
 
         .play {
-            height: 25px;
-            width: 25px;
-            position: absolute;
-            top: 44px;
-            left: 303px;
+            @apply h-6 w-6 absolute top-11 left-[303px];
         }
 
         ion-label {
-            position: absolute;
-            right: 5%;
-            top: 12%;
+            @apply absolute right-[5%] top-[12%];
         }
     }
 }
 
 .headerAddTreino {
-    position: relative;
-    font-size: 24px;
-    color: var(--ion-head-text-color);
-    margin-bottom: 10%;
+    @apply relative text-2xl text-[var(--ion-head-text-color)] mb-[10%];
+
 
     h1 {
-        font-size: 32px;
-        font-weight: 800;
+        @apply text-3xl font-extrabold;
         // font-family: lato;
     }
 
     ion-icon {
-        position: absolute;
-        right: 0;
-        top: -45%;
+        @apply absolute right-0 top-[-45%];
     }
 }
 
@@ -154,11 +115,11 @@ h4 {
 
     .exercicioItem {
         --background: transparent;
-        display: flex;
+        @apply flex;
 
         .gif {
             // --background: transparent;
-            height: 200px;
+            @apply h-[200px];
         }
 
         // ion-label {
@@ -168,13 +129,7 @@ h4 {
 }
 
 .ContinuoBtn {
-    position: fixed;
-    bottom: 3%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
+    @apply flex bottom-[3%] w-full fixed items-center justify-center content-center;
 }
 
 .btnDegraD {
@@ -184,49 +139,33 @@ h4 {
 
 ion-toolbar.treinoHeader {
     --ion-toolbar-background: linear-gradient(180deg, var(--ion-gradiente-one) 0%, var(--ion-gradiente-two) 100%);
-    height: 113px;
+    @apply h-[113px];
 
     .title {
-        margin-left: 20px;
+        @apply ml-5;
 
         ion-title,
         p {
-            margin: 0;
-            padding: 0;
+            @apply m-0 p-0 ;
         }
 
         ion-title {
-            font-weight: 600;
-            font-size: 20px;
+            @apply font-semibold text-xl flex items-center text-[#ffffff];
             line-height: 45px;
-            display: flex;
-            align-items: center;
-            letter-spacing: 0.2px;
-
-            color: #FFFFFF;
         }
 
         .dificuldadeText {
-            font-weight: 600;
-            font-size: 15px;
-            line-height: 20px;
-            display: flex;
-            align-items: center;
-            letter-spacing: 0.2px;
+            @apply font-semibold text-sm flex items-center ;
         }
 
         .quantidadeText {
-            margin-top: 23px;
+            @apply mt-6;
         }
 
     }
 
     .close {
-        position: absolute;
-        top: 5%;
-        right: 1%;
-        width: 50px;
-        height: 50px;
+        @apply absolute top-[5%] right-[1%] w-12 h-12;
         z-index: 2;
     }
 }
