@@ -26,9 +26,9 @@ export class MetasPage implements OnInit {
   ngOnInit() {
   }
 
-  getTreino() {
+  async getTreino() {
     try{
-      this.workoutService.findTreino(this.tabsPage.user.id).subscribe(dadosRetorno => {
+      await this.workoutService.findTreino(this.tabsPage.user.id).subscribe(dadosRetorno => {
         this.treinos = dadosRetorno.payload.data()['treinos'];
         console.log(this.treinos)
       }); 
