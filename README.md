@@ -44,7 +44,19 @@ npx ionic serve
 
 2. Abra o arquivo `.env` com um editor de texto e adicione as seguintes variáveis de ambiente:
 ```
-Fire_Key
+firebase_apiKey=""
+firebase_authDomain=""
+firebase_projectId=""
+firebase_storageBucket=""
+firebase_messagingSenderId=""
+firebase_appId=""
+
+news_api_key=''
+news_url_base=''
+
+
+ExerciseDB_headers_X-RapidAPI-Key=''
+ExerciseDB_headers_X-RapidAPI-Host=''
 ```
 
 ## Planos de Atualizações
